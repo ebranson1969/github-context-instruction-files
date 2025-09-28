@@ -210,3 +210,33 @@ The user wants me to create multiple README files to document the project struct
   - `/Users/ericbranson/IdeaProjects/github-context-instruction-files/README.md` (Updated)
 - **Change Summary:** Added README documentation for guides and project logs, updated main README to reflect project purpose
 - **Reasoning:** User requested comprehensive README documentation for better project understanding and navigation
+**Git Commit:** `599e4aa` - "Auto-commit: Created comprehensive README documentation system"
+
+---
+
+### Question 7 | September 28, 2025, 13:30:00.000
+
+**Original Question:**
+> Create the guide for this. Create a summary guid here and a new file that is a detailed guide.
+
+**Question Restatement:**
+The user wants me to populate the project-prompts-guide.md file with comprehensive content and create an additional detailed guide file. The current guide is mostly placeholder content and needs to be filled with practical information about using the `.github/prompts/project.prompt.md` file effectively.
+
+**Research and Reasoning:**
+- Need to examine the actual `.github/prompts/project.prompt.md` file to understand its current structure and content
+- Should create a summary guide in the existing file with practical overview information
+- Need to create a separate detailed guide file with comprehensive implementation details
+- Both guides should provide actionable guidance for using AI prompt templates effectively
+- Should include real examples and practical use cases
+
+**Actions Taken:**
+- Analyzed existing content in `.github/prompts/project.prompt.md` to understand current prompt structure (5 main templates + project interaction patterns)
+- Populated `project-prompts-guide.md` with comprehensive summary content covering all key components
+- Created new detailed implementation guide: `project-prompts-detailed-guide.md` with advanced usage patterns and integration strategies
+- Both guides now provide practical, actionable guidance for using AI prompt templates effectively
+
+**File Modifications:**
+- **File Updated:** `/Users/ericbranson/IdeaProjects/github-context-instruction-files/documents/guides/copilot-instructions-guide/project-prompts-guide.md`
+- **File Created:** `/Users/ericbranson/IdeaProjects/github-context-instruction-files/documents/guides/copilot-instructions-guide/project-prompts-detailed-guide.md`
+- **Change Summary:** Complete guide system for project prompts - summary guide with practical overview and detailed implementation guide with advanced techniques
+- **Content Added:** Usage instructions, best practices, examples, troubleshooting, team integration strategies, optimization techniques, and extension framework

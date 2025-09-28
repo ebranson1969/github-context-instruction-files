@@ -24,25 +24,25 @@
 #### Question Processing Rules
 *These rules control what happens after each user question is asked and define the complete workflow for documenting responses.*
 
-**RULE 3: Question Logging Protocol**
+**RULE 1: Question Logging Protocol**
 - Log the timestamp when the question was asked with format: "Month DD, YYYY, HH:MM:SS.mmm"
 - Record the user's original question verbatim in the log
 - Provide a restatement of the question in your own words for clarity
 - Use consistent formatting for question entries in the log
 
-**RULE 4: Research and Reasoning Documentation Protocol**
+**RULE 2: Research and Reasoning Documentation Protocol**
 - Before making any changes or providing solutions, document all research steps taken
 - Log the reasoning process, including alternative approaches considered
 - Record failed attempts and why they didn't work
 - Cache all findings and decision-making rationale in the session log
 - Include tool usage and exploration steps taken to understand the problem
 
-**RULE 5: Change Documentation Protocol**
+**RULE 3: Change Documentation Protocol**
 - Log all file modifications made during the session
 - Record which files were created, edited, or deleted
 - Include brief summaries of what was changed and why
 - Provide file paths and change descriptions for easy reference
-- Link changes back to the reasoning documented in Rule 4
+- Link changes back to the reasoning documented in Rule 2
 
 **RULE FINAL: Git Commit Message Logging Protocol**
 - After pushing changes to the repository, log the commit message in the session log
@@ -52,14 +52,20 @@
 - Links git history to session documentation for complete audit trail
 - **This rule always executes last after completing all other protocol actions**
 
+**RULE OPTIMIZE: Fast Terminal-Based Logging Protocol**
+- After all Question Processing Rules complete, append optimized summary to log using terminal commands
+- Use echo/cat commands for faster file operations than file editing tools
+- Template format: `Q[N] | [Timestamp] | [Brief Summary] | [Commit Hash if applicable]`
+- Append to end of log file using: `echo "[template]" >> [log-file-path]`
+- Maintains audit trail while providing faster logging performance
+- **This rule executes after RULE FINAL for performance optimization only**
+
 **Status: PROTOCOL ACTIVE**
 - Protocol framework established
-- Rule 1 implemented
-- Rule 2 implemented
-- Rule 3 implemented
-- Rule 4 implemented
-- Rule 5 implemented
+- Session Management Rules: Rule 1-2 implemented  
+- Question Processing Rules: Rule 1-3 implemented
 - Rule Final implemented
+- Rule Optimize implemented
 - Ready for additional rules
 
 ---

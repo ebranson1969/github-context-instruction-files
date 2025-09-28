@@ -23,25 +23,25 @@
 ### Question Processing Rules
 *These rules control what happens after each user question is asked and define the complete workflow for documenting responses.*
 
-### RULE 3: Question Logging Protocol
+### RULE 1: Question Logging Protocol
 - Log the timestamp when the question was asked with format: "Month DD, YYYY, HH:MM:SS.mmm"
 - Record the user's original question verbatim in the log
 - Provide a restatement of the question in your own words for clarity
 - Use consistent formatting for question entries in the log
 
-### RULE 4: Research and Reasoning Documentation Protocol
+### RULE 2: Research and Reasoning Documentation Protocol
 - Before making any changes or providing solutions, document all research steps taken
 - Log the reasoning process, including alternative approaches considered
 - Record failed attempts and why they didn't work
 - Cache all findings and decision-making rationale in the session log
 - Include tool usage and exploration steps taken to understand the problem
 
-### RULE 5: Change Documentation Protocol
+### RULE 3: Change Documentation Protocol
 - Log all file modifications made during the session
 - Record which files were created, edited, or deleted
 - Include brief summaries of what was changed and why
 - Provide file paths and change descriptions for easy reference
-- Link changes back to the reasoning documented in Rule 4
+- Link changes back to the reasoning documented in Rule 2
 
 ### RULE FINAL: Git Commit Message Logging Protocol
 - After pushing changes to the repository, log the commit message in the session log

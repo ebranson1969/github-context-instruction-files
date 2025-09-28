@@ -240,3 +240,40 @@ The user wants me to populate the project-prompts-guide.md file with comprehensi
 - **File Created:** `/Users/ericbranson/IdeaProjects/github-context-instruction-files/documents/guides/copilot-instructions-guide/project-prompts-detailed-guide.md`
 - **Change Summary:** Complete guide system for project prompts - summary guide with practical overview and detailed implementation guide with advanced techniques
 - **Content Added:** Usage instructions, best practices, examples, troubleshooting, team integration strategies, optimization techniques, and extension framework
+**Git Commit:** `8ce7f1c` - "Auto-commit: Created comprehensive project prompts guide system"
+
+---
+
+### Question 8 | September 28, 2025, 13:45:00.000
+
+**Original Question:**
+> Create a bunch of example files and store them in examples is this guide. Name them project.prompt.N.md, where N is a number starting at 0 and getting larger with each docuemnt. Create as many as are needed to go over different seneriaos
+
+**Question Restatement:**
+The user wants me to create multiple example files demonstrating different scenarios for using the project prompt templates. The files should be stored in an examples directory within the guide structure, named sequentially as project.prompt.0.md, project.prompt.1.md, etc., covering various development scenarios.
+
+**Research and Reasoning:**
+- Need to create an examples directory within the copilot-instructions-guide folder
+- Should create examples covering all 5 main prompt categories (Code Review, Documentation, Bug Analysis, Feature Implementation, Refactoring)
+- Each example should show realistic scenarios with actual context and expected usage
+- Examples should demonstrate different complexity levels and use cases
+- Should include both simple and complex scenarios to show the full range of capabilities
+
+**Actions Taken:**
+- Created new directory: `documents/guides/copilot-instructions-guide/examples/`
+- Developed comprehensive set of 8 example files covering diverse scenarios:
+  - `project.prompt.0.md`: Code Review (Node.js authentication security)
+  - `project.prompt.1.md`: Documentation Generation (Python file upload utility)
+  - `project.prompt.2.md`: Bug Analysis (E-commerce checkout performance issues)
+  - `project.prompt.3.md`: Feature Implementation (Social media scheduling system)
+  - `project.prompt.4.md`: Code Refactoring (Java user management service)
+  - `project.prompt.5.md`: Performance Bug Analysis (Dashboard query optimization)
+  - `project.prompt.6.md`: Security Code Review (Payment processing PCI compliance)
+  - `project.prompt.7.md`: Multi-Audience Documentation (Go microservice documentation)
+
+**File Modifications:**
+- **Directory Created:** `/Users/ericbranson/IdeaProjects/github-context-instruction-files/documents/guides/copilot-instructions-guide/examples/`
+- **Files Created:** 8 comprehensive example files (project.prompt.0.md through project.prompt.7.md)
+- **Content Coverage:** Examples span all 5 main prompt categories with varied complexity levels (beginner to advanced)
+- **Technology Stack Diversity:** Node.js, Python, Java, Go, .NET, databases, microservices, security
+- **Scenario Variety:** Security reviews, performance issues, feature planning, refactoring, multi-platform documentation

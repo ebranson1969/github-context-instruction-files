@@ -19,7 +19,7 @@
 - Full file path format: `documents/project-logs/<ProjectName>/copilot-session-log.md`
 
 **RULE 3: Question Logging Protocol**
-- Log the timestamp when the question was asked
+- Log the timestamp when the question was asked with format: "Month DD, YYYY, HH:MM:SS.mmm"
 - Record the user's original question verbatim in the log
 - Provide a restatement of the question in your own words for clarity
 - Use consistent formatting for question entries in the log

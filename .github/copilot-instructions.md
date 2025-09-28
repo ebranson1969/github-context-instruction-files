@@ -6,6 +6,23 @@
 ### Session Context Preservation Rules
 *This section contains critical session management protocols that MUST be maintained across all interactions, regardless of token limitations or session failures.*
 
+**RULE: Mandatory Session Logging**
+- All agent interactions must be logged in dedicated project directories
+- Session logs must capture: original questions, research reasoning, actions taken, file modifications, git commits
+- Logging format must include timestamps, question numbers, and detailed change summaries
+- Session logs serve as project history and context for future interactions
+
+**RULE: Session Continuity**
+- Each logged session must maintain connection to previous sessions through cross-references
+- Project context must be preserved across session restarts
+- Session logs must be updated throughout the interaction, not just at the end
+- Critical protocols must be maintained regardless of session length or complexity
+
+**RULE: Context Failure Recovery**
+- If session context appears degraded, immediately reference session logs to restore project understanding
+- Session logs act as backup context when AI token limits cause instruction degradation
+- All critical protocols must be re-established from session logs when context fails
+
 ## 🔴 CRITICAL: Session Context Preservation Alert Protocol
 **HIGHEST PRIORITY - PREVENT CONTEXT DEGRADATION IN LONG SESSIONS**
 

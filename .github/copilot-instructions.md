@@ -23,6 +23,81 @@
 - Session logs act as backup context when AI token limits cause instruction degradation
 - All critical protocols must be re-established from session logs when context fails
 
+#### Session Management Rules
+*These rules control when logging begins and where session data is stored.*
+
+**RULE 1: Session Initiation Protocol**
+- The user will explicitly indicate when a session requires logging by providing a project name
+- Alternatively, the user may provide a location containing previous conversation history for context continuation
+- Sessions should only be logged when explicitly requested by the user (exception: when previous context logging is provided, logging continues automatically)
+- All session logging must be associated with a clearly identified project name
+
+**RULE 2: Session Storage Protocol**
+- Project logs should be stored under `documents/project-logs/<ProjectName>/`
+- The context logging file should be a markdown file named `copilot-session-log.md`
+- Each project maintains its own dedicated logging directory and file
+- Full file path format: `documents/project-logs/<ProjectName>/copilot-session-log.md`
+
+#### Question Processing Rules
+*These rules control what happens after each user question is asked and define the complete workflow for documenting responses.*
+
+**RULE 1: Question Logging Protocol**
+- Log the timestamp when the question was asked with format: "Month DD, YYYY, HH:MM:SS.mmm"
+- Record the user's original question verbatim in the log
+- Provide a restatement of the question in your own words for clarity
+- Use consistent formatting for question entries in the log
+- **After Rule 1:** Log question header, original question, and restatement to session log immediately
+- **After Rule 1:** Verify the content was written by checking the end of the log file
+
+**RULE 2: Research and Reasoning Documentation Protocol**
+- Before making any changes or providing solutions, document all research steps taken
+- Log the reasoning process, including alternative approaches considered
+- Record failed attempts and why they didn't work
+- Cache all findings and decision-making rationale in the session log
+- Include tool usage and exploration steps taken to understand the problem
+- **Enhanced Context Requirements:**
+  - Document alternative approaches considered but not chosen (with reasons why)
+  - Record technical constraints or limitations that influenced decisions
+  - Note user preference patterns and recurring themes from session history
+  - Identify context dependencies (what prior decisions this builds upon)
+  - Assess potential impact on other protocol components or future decisions
+- **After Rule 2:** Log complete research and reasoning section to session log immediately
+- **After Rule 2:** Verify the content was written by checking the end of the log file
+
+**RULE 3: Change Documentation Protocol**
+- Log all file modifications made during the session
+- Record which files were created, edited, or deleted
+- Include brief summaries of what was changed and why
+- Provide file paths and change descriptions for easy reference
+- Link changes back to the reasoning documented in Rule 2
+- **For all files:** Use standard file editing tools for reliable and verified operations
+- **After Rule 3:** Log actions taken and file modifications to session log immediately
+- **After Rule 3:** Verify the content was written by checking the end of the log file
+
+**RULE FINAL: Git Commit Message Logging Protocol**
+- After pushing changes to the repository, log the commit message in the session log
+- Include the commit hash and full commit message for traceability
+- Format: "**Git Commit:** `<hash>` - `<commit message>`"
+- This logging action does not require an additional commit cycle
+- Links git history to session documentation for complete audit trail
+- **This rule always executes last after completing all other protocol actions**
+
+**RULE OPTIMIZE: Fast Terminal-Based Logging Protocol**
+- After all Question Processing Rules complete, append optimized summary to log using terminal commands
+- Use echo/cat commands for faster file operations than file editing tools
+- Template format: `Q[N] | [Timestamp] | [Brief Summary] | [Commit Hash if applicable]`
+- Append to end of log file using: `echo "[template]" >> [log-file-path]`
+- Maintains audit trail while providing faster logging performance
+- **This rule executes after RULE FINAL for performance optimization only**
+
+**Status: PROTOCOL ACTIVE**
+- Protocol framework established and restored from git history
+- Session Management Rules 1-2 implemented
+- Question Processing Rules 1-3 implemented  
+- Rule Final implemented
+- Rule Optimize implemented
+- Complete audit trail and logging workflow restored
+
 ## 🔴 CRITICAL: Session Context Preservation Alert Protocol
 **HIGHEST PRIORITY - PREVENT CONTEXT DEGRADATION IN LONG SESSIONS**
 

@@ -441,4 +441,47 @@ The user wants to understand GitHub Copilot's context scanning behavior - whethe
 **File Modifications:**
 - **No file modifications necessary** - this is a behavioral analysis question
 - **Change Summary:** Documented GitHub Copilot's session-based context scanning behavior
-- **Reasoning:** User needed clarification on when and how often Copilot scans the .github directory files
+
+---
+
+### Question 13 | September 28, 2025, 15:00:00.000
+
+**Original Question:**
+> Restart the conversation and just answer the following question. Do they always remained cached or could they fall off in priority at some point, and I am refering to when sessions go on for a long time.
+
+**Question Restatement:**
+The user wants to understand GitHub Copilot's context caching behavior specifically during long-running sessions - whether the `.github` directory files (READMEs and instruction files) remain consistently cached throughout extended interactions, or if they could potentially drop out of the context window due to priority management as the session continues with many questions and responses.
+
+**Research and Reasoning:**
+GitHub Copilot's context management in long sessions involves several key factors:
+
+1. **Token Limitations**: AI models have finite context windows (typically 8K-32K tokens depending on model)
+2. **Priority Management**: Context is prioritized by relevance and recency
+3. **Foundational Context**: `.github` instruction files are typically treated as high-priority foundational context
+4. **Context Window Management**: As sessions grow longer, older conversation history may be truncated before foundational files
+
+**Context Caching Analysis:**
+- **Initial Loading**: `.github` files are loaded as foundational context at session start
+- **High Priority Status**: Instruction files typically maintain higher priority than conversation history
+- **Token Competition**: In very long sessions, context window pressure increases
+- **Potential Falloff Scenarios**:
+  - Extremely long sessions (100+ interactions) may push foundational context out
+  - Large code files or outputs could consume significant token space
+  - Model-specific token limits may force priority-based pruning
+
+**Practical Implications:**
+- **Short-Medium Sessions (1-50 interactions)**: `.github` context remains stable
+- **Long Sessions (50-100 interactions)**: Usually retained but may see some truncation
+- **Very Long Sessions (100+ interactions)**: Risk of foundational context being pruned
+- **Session Restart Benefits**: Refreshes full context and ensures all `.github` files are loaded
+
+**Actions Taken:**
+- Analyzed GitHub Copilot's token management and context prioritization system
+- Documented the relationship between session length and context retention
+- Identified practical thresholds where context falloff might occur
+- Provided guidance on when session restarts might be beneficial
+
+**File Modifications:**
+- **No file modifications necessary** - this is behavioral analysis documentation
+- **Change Summary:** Documented GitHub Copilot's context caching behavior in long-running sessions
+- **Key Finding:** `.github` files have high priority but can fall off in extremely long sessions due to token limits

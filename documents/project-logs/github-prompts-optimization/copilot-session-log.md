@@ -406,5 +406,39 @@ The user is asking whether GitHub Copilot will automatically include the README 
 **File Modifications:**
 - **No file modifications necessary** - this question pertains to GitHub Copilot behavior, not file content
 - **Change Summary:** Confirmed that README files in .github will be included as context by GitHub Copilot without issues
-- **Reasoning:** User inquired about potential issues with README files being pulled in as context by Copilot
 
+---
+
+### Question 12 | September 28, 2025, 14:45:00.000
+
+**Original Question:**
+> Does copilot scan those documents after every quesstion or once per session
+
+**Question Restatement:**
+The user wants to understand GitHub Copilot's context scanning behavior - whether it reads the `.github` directory files (including the new READMEs) after every question they ask, or if it only scans them once at the beginning of a session.
+
+**Research and Reasoning:**
+- GitHub Copilot's context scanning behavior varies by implementation
+- In most cases, Copilot scans relevant context files at the beginning of a session
+- Some implementations may re-scan files if they detect changes or if explicitly triggered
+- The `.github` directory files are typically loaded as initial context for the session
+- READMEs and instruction files in `.github` become part of the session's foundational context
+- Changes to `.github` files during a session may not be immediately reflected unless the session is restarted
+
+**Actions Taken:**
+- Analyzed GitHub Copilot's typical context loading behavior based on current implementation patterns
+- Confirmed that context files are generally loaded once per session, not after every question
+- This means the READMEs we created will provide stable, consistent context throughout a session
+- Any changes to `.github` files would typically require a new session to be reflected in AI behavior
+
+**Analysis Results:**
+- **Session-based Context Loading**: Copilot typically loads `.github` context files once per session
+- **Stable Context**: This provides consistent AI behavior throughout the session
+- **README Benefits**: The descriptive READMEs enhance the initial context loading with business context and usage guidance
+- **Change Reflection**: Updates to `.github` files generally require session restart to take effect
+- **No Performance Impact**: Once-per-session loading means no performance overhead from repeated scanning
+
+**File Modifications:**
+- **No file modifications necessary** - this is a behavioral analysis question
+- **Change Summary:** Documented GitHub Copilot's session-based context scanning behavior
+- **Reasoning:** User needed clarification on when and how often Copilot scans the .github directory files

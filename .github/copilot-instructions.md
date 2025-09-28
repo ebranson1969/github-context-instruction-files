@@ -6,80 +6,33 @@
 ### Session Context Preservation Rules
 *This section contains critical session management protocols that MUST be maintained across all interactions, regardless of token limitations or session failures.*
 
-#### Session Management Rules
-*These rules control when logging begins and where session data is stored.*
+## 🔴 CRITICAL: Session Context Preservation Alert Protocol
+**HIGHEST PRIORITY - PREVENT CONTEXT DEGRADATION IN LONG SESSIONS**
 
-**RULE 1: Session Initiation Protocol**
-- The user will explicitly indicate when a session requires logging by providing a project name
-- Alternatively, the user may provide a location containing previous conversation history for context continuation
-- Sessions should only be logged when explicitly requested by the user (exception: when previous context logging is provided, logging continues automatically)
-- All session logging must be associated with a clearly identified project name
+### Context Degradation Prevention Rules
+*This section contains critical protocols to maintain .github instruction file context integrity during extended sessions.*
 
-**RULE 2: Session Storage Protocol**
-- Project logs should be stored under `documents/project-logs/<ProjectName>/`
-- The context logging file should be a markdown file named `copilot-session-log.md`
-- Each project maintains its own dedicated logging directory and file
-- Full file path format: `documents/project-logs/<ProjectName>/copilot-session-log.md`
+**RULE: Session Restart Alert Protocol**
+- **Question Counting**: Track question count starting from 1 at the beginning of each logged session
+- **50-Question Threshold**: When a logged session reaches exactly 50 questions AND after completing the git commit and logging to chat, immediately prompt the user with the following message:
+  
+  > "⚠️ **Session Context Alert**: You've reached 50 questions in this session. Due to AI token limitations, your `.github` instruction files may begin to lose priority in the context window during very long sessions (100+ questions). Would you like to end this session and start a new one to refresh the full context? This ensures optimal adherence to your copilot instructions and project prompts. (Type 'yes' to restart or 'no' to continue)"
 
-#### Question Processing Rules
-*These rules control what happens after each user question is asked and define the complete workflow for documenting responses.*
+- **One-Time Trigger**: This prompt should only appear ONCE per session when crossing the 50-question threshold
+- **Technical Rationale**: AI models have finite context windows (8K-32K tokens). While `.github` files have high priority, extremely long sessions can force foundational context to be pruned due to token competition from conversation history and code outputs
+- **User Choice Preservation**: Always allow the user to choose whether to restart - never force a session restart
+- **Context Refresh Benefits**: Session restart reloads all `.github` files with full priority, ensuring consistent instruction adherence
 
-**RULE 1: Question Logging Protocol**
-- Log the timestamp when the question was asked with format: "Month DD, YYYY, HH:MM:SS.mmm"
-- Record the user's original question verbatim in the log
-- Provide a restatement of the question in your own words for clarity
-- Use consistent formatting for question entries in the log
-- **After Rule 1:** Log question header, original question, and restatement to session log immediately
-- **After Rule 1:** Verify the content was written by checking the end of the log file
-
-**RULE 2: Research and Reasoning Documentation Protocol**
-- Before making any changes or providing solutions, document all research steps taken
-- Log the reasoning process, including alternative approaches considered
-- Record failed attempts and why they didn't work
-- Cache all findings and decision-making rationale in the session log
-- Include tool usage and exploration steps taken to understand the problem
-- **Enhanced Context Requirements:**
-  - Document alternative approaches considered but not chosen (with reasons why)
-  - Record technical constraints or limitations that influenced decisions
-  - Note user preference patterns and recurring themes from session history
-  - Identify context dependencies (what prior decisions this builds upon)
-  - Assess potential impact on other protocol components or future decisions
-- **After Rule 2:** Log complete research and reasoning section to session log immediately
-- **After Rule 2:** Verify the content was written by checking the end of the log file
-
-**RULE 3: Change Documentation Protocol**
-- Log all file modifications made during the session
-- Record which files were created, edited, or deleted
-- Include brief summaries of what was changed and why
-- Provide file paths and change descriptions for easy reference
-- Link changes back to the reasoning documented in Rule 2
-- **For all files:** Use standard file editing tools for reliable and verified operations
-- **After Rule 3:** Log actions taken and file modifications to session log immediately
-- **After Rule 3:** Verify the content was written by checking the end of the log file
-
-**RULE FINAL: Git Commit Message Logging Protocol**
-- After pushing changes to the repository, log the commit message in the session log
-- Include the commit hash and full commit message for traceability
-- Format: "**Git Commit:** `<hash>` - `<commit message>`"
-- This logging action does not require an additional commit cycle
-- Links git history to session documentation for complete audit trail
-- **This rule always executes last after completing all other protocol actions**
-
-**RULE OPTIMIZE: Fast Terminal-Based Logging Protocol**
-- After all Question Processing Rules complete, append optimized summary to log using terminal commands
-- Use echo/cat commands for faster file operations than file editing tools
-- Template format: `Q[N] | [Timestamp] | [Brief Summary] | [Commit Hash if applicable]`
-- Append to end of log file using: `echo "[template]" >> [log-file-path]`
-- Maintains audit trail while providing faster logging performance
-- **This rule executes after RULE FINAL for performance optimization only**
+**Session Length Thresholds for Reference:**
+- **1-50 questions**: `.github` context remains stable ✅
+- **50-100 questions**: Usually retained but may see some truncation ⚠️  
+- **100+ questions**: Higher risk of foundational context being pruned ❌
 
 **Status: PROTOCOL ACTIVE**
-- Protocol framework established
-- Session Management Rules: Rule 1-2 implemented  
-- Question Processing Rules: Rule 1-3 implemented
-- Rule Final implemented
-- Rule Optimize implemented
-- Ready for additional rules
+- Addresses context caching behavior analyzed in session logs
+- Provides proactive solution to prevent instruction degradation
+- Balances session continuity with context integrity
+- Ready for implementation in all logged sessions
 
 ---
 
@@ -192,7 +145,7 @@
    - Links to the child `README.md` files, if any
    - A detailed description of each document in the directory and what it is to be used for
 8. This rule should be applied whenever a new README is created or an existing README is updated.
-   - All READMEs up the parent directory should be updated.
+   - All READMEs up to the parent directory should be updated.
 
 ### Automatic Git Operations
 - At the end of each agent interaction, automatically perform git operations with enhanced verification

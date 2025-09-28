@@ -482,6 +482,52 @@ GitHub Copilot's context management in long sessions involves several key factor
 - Provided guidance on when session restarts might be beneficial
 
 **File Modifications:**
-- **No file modifications necessary** - this is behavioral analysis documentation
+- **No file modifications necessary** - this is a behavioral analysis documentation
 - **Change Summary:** Documented GitHub Copilot's context caching behavior in long-running sessions
-- **Key Finding:** `.github` files have high priority but can fall off in extremely long sessions due to token limits
+
+---
+
+### Question 14 | September 28, 2025, 15:15:00.000
+
+**Original Question:**
+> Can you create a Rule in .github/copilot-instructions.md 
+1. If we are logging a session and ,
+2. the user has just asked the 50 questions and ,
+3. you have completed the commit and logged to the chat
+You need to ask the user if they want to end the session and start a new one as the .github context may start to get stale.
+Please reword this as you see fit. Give the rule a good name.
+This is to address the issue I just asked you about so you may want to put a summery in the rule as to why we are doing this? Also, the question count should start at 1 at the beginning of each session. This should be considered critical along with "CRITICAL: Copilot Session Logging Protocol" but you only need to ask the user 1 time when the question count is greater then 50 as they will probably reach the token limit very soon.
+
+**Question Restatement:**
+The user wants to create a critical rule in the copilot-instructions.md file that automatically prompts users to restart their session after 50 questions to prevent context degradation. This addresses the issue we just discussed about `.github` files potentially falling off in very long sessions due to token limitations. The rule should track question counts, trigger only once when crossing the 50-question threshold, and be positioned as critical protocol alongside the existing session logging rules.
+
+**Research and Reasoning:**
+- This directly addresses the context caching issue we analyzed in Question 13
+- Need to create a rule that balances session continuity with context freshness
+- Should be positioned in the critical section alongside existing session logging protocols
+- Must include question counting mechanism and one-time triggering
+- Should explain the technical reasoning (token limits, context degradation) to help users understand why
+- Rule should be proactive rather than reactive - asking before context degrades significantly
+
+**Alternative Approaches Considered:**
+1. **Automatic Session Restart**: Could force restart at 50 questions, but this removes user choice
+2. **Variable Threshold**: Could adjust based on session complexity, but adds unnecessary complexity
+3. **Multiple Warnings**: Could warn at 40, 50, 60 questions, but this would be annoying
+4. **Token-Based Detection**: Could try to detect actual token pressure, but this is technically difficult
+
+**Chosen Approach:** Single prompt at 50 questions with clear explanation and user choice
+
+**Actions Taken:**
+- Adding new critical rule: "CRITICAL: Session Context Preservation Alert Protocol"
+- Positioning it alongside existing critical session logging protocols
+- Including technical explanation about token limits and context degradation
+- Implementing one-time trigger mechanism
+- Adding question counting requirements starting from 1 each session
+- Linking this rule to the analysis from Question 13 about context falloff thresholds
+
+**File Modifications:**
+- **File:** `/Users/ericbranson/IdeaProjects/github-context-instruction-files/.github/copilot-instructions.md`
+- **Section:** Adding new critical rule after existing "CRITICAL: Copilot Session Logging Protocol"  
+- **Rule Name:** "CRITICAL: Session Context Preservation Alert Protocol"
+- **Key Features:** Question counting, one-time 50-question trigger, technical explanation, user choice preservation
+- **Change Summary:** Added critical rule to prevent context degradation in long sessions by prompting session restart at 50 questions

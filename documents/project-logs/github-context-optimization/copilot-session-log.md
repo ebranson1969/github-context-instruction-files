@@ -305,3 +305,23 @@ Working on optimizing and improving the context instruction files in the `.githu
 
 **Files Modified:**
 - `documents/project-logs/github-context-optimization/copilot-session-log.md` - Added Question 12 entry analyzing logging performance optimization
+
+---
+
+#### Question 13 - Terminal-Based Project Logs Optimization (September 28, 2025, 13:15:42.856)
+**User's Original Question:** "This is to only happen in project-logs for the logging files. The other files you change can be done as you normally do them"
+
+**Question Restatement (Question 13):** User wants to modify the logging protocol so that project-logs files use terminal commands for changes, while other files continue using normal file editing tools.
+
+**Research and Reasoning:**
+- Current RULE 3 (Change Documentation Protocol) uses file editing tools for all files including project-logs
+- User wants terminal-based logging specifically for project-logs files to improve performance
+- Other files (.github configs, code files) should continue using normal file editing approach
+- Need to update RULE 3 to distinguish between project-logs and other file types
+- This provides targeted optimization where it matters most (session logging)
+
+**Actions Taken:**
+- Updated RULE 3 (Change Documentation Protocol) to distinguish between file types
+- Project-logs files now use terminal commands (echo >>) for faster operations
+- Other files (.github configs, code files) continue using standard file editing tools
+- Applied new terminal-based logging approach to this Question 13 entry

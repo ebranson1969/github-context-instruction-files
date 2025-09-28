@@ -43,6 +43,8 @@
 - Include brief summaries of what was changed and why
 - Provide file paths and change descriptions for easy reference
 - Link changes back to the reasoning documented in Rule 2
+- **For project-logs files:** Use terminal commands (echo >>) for faster append operations
+- **For other files:** Use standard file editing tools as normal
 
 **RULE FINAL: Git Commit Message Logging Protocol**
 - After pushing changes to the repository, log the commit message in the session log

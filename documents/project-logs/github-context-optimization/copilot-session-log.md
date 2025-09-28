@@ -219,3 +219,30 @@ Working on optimizing and improving the context instruction files in the `.githu
 - `.github/copilot-instructions.md` - Renamed RULE 6 to RULE FINAL with execution order clarification
 - `documents/project-logs/github-context-optimization/protocol-working-file.md` - Updated rule naming to match
 - `documents/project-logs/github-context-optimization/copilot-session-log.md` - Added Question 8 entry and applied RULE FINAL logging
+
+---
+
+#### Question 9 - Protocol Restructure: Session vs Question Rules (September 28, 2025, 12:02:17.451)
+**User's Original Question:** "I need Rule 3 through Rule Final to be in their own section. They control the logging protocol after I ask a question and Rule 1 and 2 control how to start or restart logging and where the log goes. Please word this appropriatly"
+
+**Question Restatement (Question 9):** User wants to reorganize the protocol rules into two distinct sections: session management rules (Rules 1-2) that control session initiation and storage, and question processing rules (Rules 3-Final) that control what happens after each question is asked.
+
+**Research and Reasoning:**
+- Current protocol structure treats all rules as equal in a single section
+- Rules 1-2 are session-level protocols (when to start logging, where logs go)
+- Rules 3-Final are question-level protocols (what to do after each question)
+- This restructure will clarify the two different phases of protocol execution
+- Better organization will improve protocol comprehension and implementation
+- Need to update both copilot-instructions.md and protocol-working-file.md
+
+**Actions Taken:**
+- Restructured both protocol files to separate session-level and question-level rules
+- Added appropriate section headers and descriptions for clarity
+- Maintained all existing rule content while improving organization
+
+**Git Commit:** `e0447f2` - `Auto-commit: Restructured protocol rules into Session Management and Question Processing sections`
+
+**Files Modified:**
+- `.github/copilot-instructions.md` - Reorganized protocol with Session Management Rules (1-2) and Question Processing Rules (3-Final)
+- `documents/project-logs/github-context-optimization/protocol-working-file.md` - Applied same restructure for consistency
+- `documents/project-logs/github-context-optimization/copilot-session-log.md` - Added Question 9 entry and applied RULE FINAL logging

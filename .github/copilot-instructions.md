@@ -6,6 +6,9 @@
 ### Session Context Preservation Rules
 *This section contains critical session management protocols that MUST be maintained across all interactions, regardless of token limitations or session failures.*
 
+#### Session Management Rules
+*These rules control when logging begins and where session data is stored.*
+
 **RULE 1: Session Initiation Protocol**
 - The user will explicitly indicate when a session requires logging by providing a project name
 - Alternatively, the user may provide a location containing previous conversation history for context continuation
@@ -17,6 +20,9 @@
 - The context logging file should be a markdown file named `copilot-session-log.md`
 - Each project maintains its own dedicated logging directory and file
 - Full file path format: `documents/project-logs/<ProjectName>/copilot-session-log.md`
+
+#### Question Processing Rules
+*These rules control what happens after each user question is asked and define the complete workflow for documenting responses.*
 
 **RULE 3: Question Logging Protocol**
 - Log the timestamp when the question was asked with format: "Month DD, YYYY, HH:MM:SS.mmm"

@@ -173,11 +173,9 @@
 
 ### Automatic Git Operations
 - At the end of each agent interaction, automatically perform git operations with enhanced verification
-- **Step 1: List modified files** - Execute `git status --porcelain` to show all modified files from top-level directory
-- **Step 2: Add, commit, and push** - Execute `git add . && git commit -m "Auto-commit: Changes made by GitHub Copilot" && git push` in one command
-- **Step 3: Verify completion** - Execute `git status --porcelain` again to confirm all files were committed
+- **Execute single command:** `git status --porcelain && git add . && git commit -m "Auto-commit: Changes made by GitHub Copilot" && git push && git status --porcelain`
 - **Chat Logging:** Log the successful commit message to chat for confirmation
-- **Error handling:** If Step 2 fails, retry once. If it fails again, stop and report the issue for manual resolution
+- **Error handling:** If the command fails, retry once. If it fails again, stop and report the issue for manual resolution
 - This should be the very last action performed before ending the agent session
 
 ### Manual Git Trigger

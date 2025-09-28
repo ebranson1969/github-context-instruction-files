@@ -37,6 +37,13 @@
 - Provide file paths and change descriptions for easy reference
 - Link changes back to the reasoning documented in Rule 4
 
+### RULE 6: Git Commit Message Logging Protocol
+- After pushing changes to the repository, log the commit message in the session log
+- Include the commit hash and full commit message for traceability
+- Format: "**Git Commit:** `<hash>` - `<commit message>`"
+- This logging action does not require an additional commit cycle
+- Links git history to session documentation for complete audit trail
+
 ## Protocol Development History
 - Initial framework established in copilot-protocol-development project
 - Successfully tested and validated through 13 question iterations

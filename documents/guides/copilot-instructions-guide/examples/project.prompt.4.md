@@ -1,15 +1,21 @@
 # Project Prompt Example 4: Code Refactoring Scenario
 
 ## Scenario Description
+*This section sets up the real-world context and business situation that prompted the need for AI assistance. It explains the background, stakeholders involved, and why this particular type of prompt is needed.*
+
 An existing user management module has grown complex and difficult to maintain. The code handles user registration, authentication, profile updates, and password management in a single large class. Performance issues have emerged, and adding new features requires extensive changes.
 
 ## Context Information
+*This section provides specific technical details about the project environment, technology stack, and constraints that will influence the AI's response. Include details like frameworks, databases, team size, compliance requirements, etc.*
+
 - **Project:** Customer Relationship Management (CRM) System
 - **Technology Stack:** Java, Spring Boot, MySQL, Redis
 - **Current Issues:** Long methods, tight coupling, difficult testing, performance bottlenecks
 - **Goals:** Improve maintainability, testability, and performance
 
 ## Legacy Code to Refactor
+*This section contains the actual code, configuration, or content that needs analysis. Keep it realistic and representative of actual work scenarios. Include enough context for meaningful analysis.*
+
 ```java
 @Service
 public class UserService {
@@ -89,6 +95,8 @@ public class UserService {
 ```
 
 ## Applied Prompt Template
+*This section shows how to properly use the project prompt template from .github/prompts/project.prompt.md. It demonstrates the correct format, context inclusion, and specific requirements to get the best AI response.*
+
 Using the **Code Refactoring Prompt** from `.github/prompts/project.prompt.md`:
 
 ```
@@ -108,6 +116,8 @@ Team: 4 developers, emphasis on clean code and testability
 ```
 
 ## Expected AI Response Structure
+*This section shows what kind of response you should expect from the AI when using the prompt correctly. It serves as both a quality benchmark and a template for consistent AI interactions across your team.*
+
 ```
 ## Code Refactoring Analysis & Recommendations
 
@@ -379,6 +389,8 @@ class UserRegistrationServiceIntegrationTest {
 ```
 
 ## Key Learning Points
+*This section summarizes the most important takeaways about effective prompt usage. It highlights best practices, common mistakes to avoid, and tips for getting better results from AI assistance.*
+
 - Identify specific anti-patterns and architectural issues
 - Provide concrete refactoring solutions with actual code examples
 - Include a realistic migration strategy that can be implemented incrementally

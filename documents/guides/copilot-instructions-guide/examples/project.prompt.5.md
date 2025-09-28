@@ -1,9 +1,13 @@
 # Project Prompt Example 5: Performance Bug Analysis Scenario
 
 ## Scenario Description
+*This section sets up the real-world context and business situation that prompted the need for AI assistance. It explains the background, stakeholders involved, and why this particular type of prompt is needed.*
+
 A data analytics dashboard is experiencing severe performance degradation. Users report that loading complex reports takes 45+ seconds, and the application becomes unresponsive during peak usage. Memory usage has increased dramatically over the past month.
 
 ## Context Information
+*This section provides specific technical details about the project environment, technology stack, and constraints that will influence the AI's response. Include details like frameworks, databases, team size, compliance requirements, etc.*
+
 - **Project:** Business Intelligence Dashboard
 - **Technology Stack:** React frontend, Python Django REST API, PostgreSQL, Elasticsearch
 - **Issue Timeline:** Performance degraded over 4 weeks
@@ -11,6 +15,8 @@ A data analytics dashboard is experiencing severe performance degradation. Users
 - **Current State:** Some reports timeout after 60 seconds
 
 ## Performance Metrics & Logs
+*This section contains the actual code, configuration, or content that needs analysis. Keep it realistic and representative of actual work scenarios. Include enough context for meaningful analysis.*
+
 ```
 Database Metrics:
 - Average query time: 15-20 seconds (was 2-3 seconds)
@@ -74,6 +80,8 @@ class ReportView(APIView):
 ```
 
 ## Applied Prompt Template
+*This section shows how to properly use the project prompt template from .github/prompts/project.prompt.md. It demonstrates the correct format, context inclusion, and specific requirements to get the best AI response.*
+
 Using the **Bug Analysis Prompt** with performance focus:
 
 ```
@@ -94,6 +102,8 @@ Code Context: [PROBLEMATIC CODE ABOVE]
 ```
 
 ## Expected AI Response Structure
+*This section shows what kind of response you should expect from the AI when using the prompt correctly. It serves as both a quality benchmark and a template for consistent AI interactions across your team.*
+
 ```
 ## Performance Bug Analysis Report
 
@@ -305,6 +315,8 @@ class AsyncReportView(APIView):
 ```
 
 ## Key Learning Points
+*This section summarizes the most important takeaways about effective prompt usage. It highlights best practices, common mistakes to avoid, and tips for getting better results from AI assistance.*
+
 - Performance bugs require detailed metrics and profiling data
 - Identify specific anti-patterns causing performance issues (N+1 queries, memory loading)
 - Provide both immediate fixes and long-term architectural solutions

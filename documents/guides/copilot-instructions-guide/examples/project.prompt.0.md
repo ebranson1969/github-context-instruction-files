@@ -1,15 +1,21 @@
 # Project Prompt Example 0: Code Review Scenario
 
 ## Scenario Description
+*This section sets up the real-world context and business situation that prompted the need for AI assistance. It explains the background, stakeholders involved, and why this particular type of prompt is needed.*
+
 A developer has created a new REST API endpoint for user authentication and needs a thorough code review before merging to production. The code handles sensitive user data and requires security validation.
 
 ## Context Information
+*This section provides specific technical details about the project environment, technology stack, and constraints that will influence the AI's response. Include details like frameworks, databases, team size, compliance requirements, etc.*
+
 - **Project:** E-commerce Web Application
 - **Technology Stack:** Node.js, Express, MongoDB, JWT
 - **File:** `src/routes/auth.js`
 - **Feature:** User login endpoint with JWT token generation
 
 ## Code Under Review
+*This section contains the actual code, configuration, or content that needs analysis. Keep it realistic and representative of actual work scenarios. Include enough context for meaningful analysis.*
+
 ```javascript
 const express = require('express');
 const bcrypt = require('bcrypt');
@@ -50,6 +56,8 @@ module.exports = router;
 ```
 
 ## Applied Prompt Template
+*This section shows how to properly use the project prompt template from .github/prompts/project.prompt.md. It demonstrates the correct format, context inclusion, and specific requirements to get the best AI response.*
+
 Using the **Code Review Prompt** from `.github/prompts/project.prompt.md`:
 
 ```
@@ -68,6 +76,8 @@ Project Standards: RESTful APIs, error handling, logging, rate limiting
 ```
 
 ## Expected AI Response Structure
+*This section shows what kind of response you should expect from the AI when using the prompt correctly. It serves as both a quality benchmark and a template for consistent AI interactions across your team.*
+
 ```
 ## Code Review Analysis
 
@@ -102,12 +112,9 @@ Project Standards: RESTful APIs, error handling, logging, rate limiting
 ```
 
 ## Key Learning Points
+*This section summarizes the most important takeaways about effective prompt usage. It highlights best practices, common mistakes to avoid, and tips for getting better results from AI assistance.*
+
 - Always include relevant project context when requesting code reviews
 - Specify security requirements for sensitive endpoints
 - Request structured responses for easier action item tracking
 - Include both positive feedback and improvement areas
-
----
-*Example Type: Code Review*
-*Complexity Level: Intermediate*
-*Focus Areas: Security, Authentication, Node.js Best Practices*

@@ -1,15 +1,21 @@
 # Project Prompt Example 1: Documentation Generation Scenario
 
 ## Scenario Description
+*This section sets up the real-world context and business situation that prompted the need for AI assistance. It explains the background, stakeholders involved, and why this particular type of prompt is needed.*
+
 A developer has created a new utility function for handling file uploads with validation and needs comprehensive documentation for the team's API reference.
 
 ## Context Information
+*This section provides specific technical details about the project environment, technology stack, and constraints that will influence the AI's response. Include details like frameworks, databases, team size, compliance requirements, etc.*
+
 - **Project:** Content Management System
 - **Technology Stack:** Python, Flask, SQLAlchemy
 - **File:** `utils/file_handler.py`
 - **Feature:** File upload validation and processing utility
 
 ## Code to Document
+*This section contains the actual code, configuration, or content that needs analysis. Keep it realistic and representative of actual work scenarios. Include enough context for meaningful analysis.*
+
 ```python
 import os
 import mimetypes
@@ -61,6 +67,8 @@ def process_upload(file, upload_path, allowed_extensions=None, max_size_mb=10):
 ```
 
 ## Applied Prompt Template
+*This section shows how to properly use the project prompt template from .github/prompts/project.prompt.md. It demonstrates the correct format, context inclusion, and specific requirements to get the best AI response.*
+
 Using the **Documentation Generation Prompt** from `.github/prompts/project.prompt.md`:
 
 ```
@@ -79,6 +87,8 @@ Audience: Backend developers, integration teams
 ```
 
 ## Expected AI Response Structure
+*This section shows what kind of response you should expect from the AI when using the prompt correctly. It serves as both a quality benchmark and a template for consistent AI interactions across your team.*
+
 ```
 ## File Upload Processor Documentation
 
@@ -152,6 +162,8 @@ The function raises `ValueError` exceptions for:
 ```
 
 ## Key Learning Points
+*This section summarizes the most important takeaways about effective prompt usage. It highlights best practices, common mistakes to avoid, and tips for getting better results from AI assistance.*
+
 - Provide clear context about the code's purpose and environment
 - Request specific documentation format (docstring, API docs, etc.)
 - Include audience information to tailor the documentation level

@@ -1,9 +1,13 @@
 # Project Prompt Example 3: Feature Implementation Scenario
 
 ## Scenario Description
+*This section sets up the real-world context and business situation that prompted the need for AI assistance. It explains the background, stakeholders involved, and why this particular type of prompt is needed.*
+
 The product team has requested a new feature allowing users to schedule social media posts in advance with support for multiple platforms (Twitter, LinkedIn, Facebook). This is a complex feature requiring database design, background job processing, and third-party API integration.
 
 ## Context Information
+*This section provides specific technical details about the project environment, technology stack, and constraints that will influence the AI's response. Include details like frameworks, databases, team size, compliance requirements, etc.*
+
 - **Project:** Social Media Management Platform
 - **Technology Stack:** Ruby on Rails, PostgreSQL, Sidekiq, Redis, React
 - **Timeline:** 4-week sprint
@@ -11,6 +15,8 @@ The product team has requested a new feature allowing users to schedule social m
 - **Current System:** Basic posting to social platforms in real-time
 
 ## Feature Requirements
+*This section contains the actual code, configuration, or content that needs analysis. Keep it realistic and representative of actual work scenarios. Include enough context for meaningful analysis.*
+
 ```
 User Story: As a social media manager, I want to schedule posts in advance 
 so that I can maintain consistent content publishing without manual intervention.
@@ -32,6 +38,8 @@ Business Requirements:
 ```
 
 ## Applied Prompt Template
+*This section shows how to properly use the project prompt template from .github/prompts/project.prompt.md. It demonstrates the correct format, context inclusion, and specific requirements to get the best AI response.*
+
 Using the **Feature Implementation Prompt** from `.github/prompts/project.prompt.md`:
 
 ```
@@ -51,6 +59,8 @@ Feature Request: [FEATURE REQUIREMENTS INSERTED ABOVE]
 ```
 
 ## Expected AI Response Structure
+*This section shows what kind of response you should expect from the AI when using the prompt correctly. It serves as both a quality benchmark and a template for consistent AI interactions across your team.*
+
 ```
 ## Feature Implementation Plan: Scheduled Social Media Posts
 
@@ -209,6 +219,8 @@ end
 ```
 
 ## Key Learning Points
+*This section summarizes the most important takeaways about effective prompt usage. It highlights best practices, common mistakes to avoid, and tips for getting better results from AI assistance.*
+
 - Break complex features into manageable phases with clear deliverables
 - Identify all dependencies early, including external API limitations
 - Consider edge cases and failure scenarios from the beginning

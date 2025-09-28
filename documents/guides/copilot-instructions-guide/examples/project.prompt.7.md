@@ -1,9 +1,13 @@
 # Project Prompt Example 7: Multi-Platform Documentation Generation
 
 ## Scenario Description
+*This section sets up the real-world context and business situation that prompted the need for AI assistance. It explains the background, stakeholders involved, and why this particular type of prompt is needed.*
+
 A new microservice for user notification preferences has been completed and needs comprehensive documentation for multiple audiences: API consumers, internal developers, and system administrators. The service handles email, SMS, and push notification settings across different user tiers.
 
 ## Context Information
+*This section provides specific technical details about the project environment, technology stack, and constraints that will influence the AI's response. Include details like frameworks, databases, team size, compliance requirements, etc.*
+
 - **Project:** Customer Notification Management Service
 - **Technology Stack:** Go, gRPC, Protocol Buffers, PostgreSQL, Redis
 - **Audiences:** External API consumers, internal developers, DevOps team
@@ -11,6 +15,8 @@ A new microservice for user notification preferences has been completed and need
 - **Deployment:** Kubernetes, multiple environments
 
 ## Service Code to Document
+*This section contains the actual code, configuration, or content that needs analysis. Keep it realistic and representative of actual work scenarios. Include enough context for meaningful analysis.*
+
 ```go
 // notification_service.go - Main service implementation
 package notification
@@ -95,6 +101,8 @@ func (s *NotificationService) GetPreferences(ctx context.Context, req *pb.GetPre
 ```
 
 ## Applied Prompt Template
+*This section shows how to properly use the project prompt template from .github/prompts/project.prompt.md. It demonstrates the correct format, context inclusion, and specific requirements to get the best AI response.*
+
 Using **Documentation Generation Prompt** with multi-audience focus:
 
 ```
@@ -114,6 +122,8 @@ Integration: Part of larger notification system, publishes events to message que
 ```
 
 ## Expected AI Response Structure
+*This section shows what kind of response you should expect from the AI when using the prompt correctly. It serves as both a quality benchmark and a template for consistent AI interactions across your team.*
+
 ```
 # Notification Preferences Service Documentation
 
@@ -417,9 +427,10 @@ Events are published to the configured message queue (Kafka/RabbitMQ) and consum
 - PostgreSQL 13+ for data persistence
 - Redis 6+ for caching and session management
 - Message queue (Kafka recommended) for event publishing
-```
 
 ## Key Learning Points
+*This section summarizes the most important takeaways about effective prompt usage. It highlights best practices, common mistakes to avoid, and tips for getting better results from AI assistance.*
+
 - Multi-audience documentation requires different levels of detail for each user type
 - Include comprehensive examples in multiple programming languages
 - Provide both API reference documentation and practical integration guides

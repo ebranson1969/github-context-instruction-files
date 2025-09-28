@@ -1,9 +1,13 @@
 # Project Prompt Example 6: Security-Focused Code Review Scenario
 
 ## Scenario Description
+*This section sets up the real-world context and business situation that prompted the need for AI assistance. It explains the background, stakeholders involved, and why this particular type of prompt is needed.*
+
 A payment processing module has been developed for an e-commerce platform. Given the sensitive nature of financial data and PCI compliance requirements, this code requires thorough security review before deployment to production.
 
 ## Context Information
+*This section provides specific technical details about the project environment, technology stack, and constraints that will influence the AI's response. Include details like frameworks, databases, team size, compliance requirements, etc.*
+
 - **Project:** E-commerce Payment Gateway
 - **Technology Stack:** .NET Core, Entity Framework, SQL Server, Redis
 - **Compliance:** PCI DSS Level 1 required
@@ -11,6 +15,8 @@ A payment processing module has been developed for an e-commerce platform. Given
 - **Security Requirements:** Encryption, audit logging, input validation
 
 ## Code Under Security Review
+*This section contains the actual code, configuration, or content that needs analysis. Keep it realistic and representative of actual work scenarios. Include enough context for meaningful analysis.*
+
 ```csharp
 [Route("api/[controller]")]
 [ApiController]
@@ -92,6 +98,8 @@ public class PaymentController : ControllerBase
 ```
 
 ## Applied Prompt Template
+*This section shows how to properly use the project prompt template from .github/prompts/project.prompt.md. It demonstrates the correct format, context inclusion, and specific requirements to get the best AI response.*
+
 Using **Code Review Prompt** with security emphasis:
 
 ```
@@ -111,6 +119,8 @@ Security Standards: OWASP guidelines, secure coding practices, input validation
 ```
 
 ## Expected AI Response Structure
+*This section shows what kind of response you should expect from the AI when using the prompt correctly. It serves as both a quality benchmark and a template for consistent AI interactions across your team.*
+
 ```
 ## Security Code Review Analysis
 
@@ -349,6 +359,8 @@ public class PaymentAuditLogger
 ```
 
 ## Key Learning Points
+*This section summarizes the most important takeaways about effective prompt usage. It highlights best practices, common mistakes to avoid, and tips for getting better results from AI assistance.*
+
 - Security reviews require explicit focus on compliance requirements and threat models
 - Identify specific regulatory violations (PCI DSS in this case)
 - Provide concrete, implementable security fixes with code examples

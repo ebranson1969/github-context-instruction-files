@@ -1,9 +1,13 @@
 # Project Prompt Example 2: Bug Analysis Scenario
 
 ## Scenario Description
+*This section sets up the real-world context and business situation that prompted the need for AI assistance. It explains the background, stakeholders involved, and why this particular type of prompt is needed.*
+
 Production users are reporting intermittent 500 errors when trying to checkout their shopping carts. The error occurs sporadically, affecting roughly 15% of checkout attempts during peak hours.
 
 ## Context Information
+*This section provides specific technical details about the project environment, technology stack, and constraints that will influence the AI's response. Include details like frameworks, databases, team size, compliance requirements, etc.*
+
 - **Project:** E-commerce Platform
 - **Technology Stack:** React frontend, Node.js/Express backend, PostgreSQL, Redis cache
 - **Environment:** Production
@@ -11,6 +15,8 @@ Production users are reporting intermittent 500 errors when trying to checkout t
 - **Frequency:** ~15% of checkout attempts during peak traffic
 
 ## Bug Report Details
+*This section contains the actual code, configuration, or content that needs analysis. Keep it realistic and representative of actual work scenarios. Include enough context for meaningful analysis.*
+
 ```
 Error Message: "Internal Server Error - Unable to process checkout"
 Status Code: 500
@@ -70,6 +76,8 @@ router.post('/checkout', async (req, res) => {
 ```
 
 ## Applied Prompt Template
+*This section shows how to properly use the project prompt template from .github/prompts/project.prompt.md. It demonstrates the correct format, context inclusion, and specific requirements to get the best AI response.*
+
 Using the **Bug Analysis Prompt** from `.github/prompts/project.prompt.md`:
 
 ```
@@ -89,6 +97,8 @@ Code Context: [CODE SNIPPET INSERTED ABOVE]
 ```
 
 ## Expected AI Response Structure
+*This section shows what kind of response you should expect from the AI when using the prompt correctly. It serves as both a quality benchmark and a template for consistent AI interactions across your team.*
+
 ```
 ## Bug Analysis Report
 
@@ -176,6 +186,8 @@ try {
 ```
 
 ## Key Learning Points
+*This section summarizes the most important takeaways about effective prompt usage. It highlights best practices, common mistakes to avoid, and tips for getting better results from AI assistance.*
+
 - Provide comprehensive context including business impact and technical environment
 - Include relevant code snippets and error logs when available
 - Request structured analysis covering immediate and long-term solutions

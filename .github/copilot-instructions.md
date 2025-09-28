@@ -29,6 +29,7 @@
 - Record the user's original question verbatim in the log
 - Provide a restatement of the question in your own words for clarity
 - Use consistent formatting for question entries in the log
+- **After Rule 1:** Log question header, original question, and restatement to session log immediately
 
 **RULE 2: Research and Reasoning Documentation Protocol**
 - Before making any changes or providing solutions, document all research steps taken
@@ -42,6 +43,7 @@
   - Note user preference patterns and recurring themes from session history
   - Identify context dependencies (what prior decisions this builds upon)
   - Assess potential impact on other protocol components or future decisions
+- **After Rule 2:** Log complete research and reasoning section to session log immediately
 
 **RULE 3: Change Documentation Protocol**
 - Log all file modifications made during the session
@@ -51,6 +53,7 @@
 - Link changes back to the reasoning documented in Rule 2
 - **For project-logs files:** Use terminal commands (echo >>) for faster append operations
 - **For other files:** Use standard file editing tools as normal
+- **After Rule 3:** Log actions taken and file modifications to session log immediately
 
 **RULE FINAL: Git Commit Message Logging Protocol**
 - After pushing changes to the repository, log the commit message in the session log

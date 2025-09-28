@@ -305,12 +305,6 @@ The user wants me to create multiple example files demonstrating different scena
 - **Outcome-Based**: Shows what happens when teams use structured prompts vs. generic questions
 - **Team Impact**: Demonstrates how systematic prompting helps junior developers, saves time, prevents mistakes
 
-**File Modifications:**
-- **File Updated:** `project-prompts-guide.md` - Added comprehensive multi-file guidance and real-world scenarios
-- **Files Enhanced:** Multiple example files with realistic business scenarios and detailed usage instructions
-- **Change Summary:** Transformed generic template examples into practical, outcome-focused learning materials
-- **Business Impact:** Examples now show real revenue stakes, client relationships, and career implications
-
 ---
 
 ### Question 9 | September 28, 2025, 14:00:00.000
@@ -345,3 +339,42 @@ The user wants to establish a standardized README generation rule in the copilot
 - **File Updated:** `/Users/ericbranson/IdeaProjects/github-context-instruction-files/documents/guides/copilot-instructions-guide/examples/README.md` - Updated to follow standardized format
 - **File Updated:** `/Users/ericbranson/IdeaProjects/github-context-instruction-files/README.md` - Added Child READMEs section and updated documentation links
 - **Change Summary:** Implemented complete README hierarchy with standardized formatting and proper parent-child linking throughout the documentation system
+**Git Commit:** `fdf5be6` - "Auto-commit: Implemented README Generation Rule with complete hierarchy linking"
+
+---
+
+### Question 10 | September 28, 2025, 14:15:00.000
+
+**Original Question:**
+> Can you create a README for .github/instructions and .github/prompts. Be super descriptive and make sure to point to the guide for each of these. Do the same when you create the readme for the parent directory
+
+**Question Restatement:**
+The user wants me to create comprehensive README files for the `.github/instructions` and `.github/prompts` directories, plus a parent README for the `.github` directory. Each README should be highly descriptive and include links to the relevant guides in the documentation system.
+
+**Research and Reasoning:**
+- Need to apply the README Generation Rule to create standardized documentation in the .github directory structure
+- Must create READMEs for: `.github/instructions/`, `.github/prompts/`, and `.github/` (parent)
+- Each README should link to the corresponding guides in `documents/guides/copilot-instructions-guide/`
+- Should provide detailed descriptions of the instruction files and their purposes
+- Need to ensure proper parent-child linking according to the established rule
+
+**Actions Taken:**
+- Created comprehensive README for `.github/instructions/` directory with detailed description of project-instructions.md
+- Created comprehensive README for `.github/prompts/` directory with extensive coverage of project.prompt.md and all related guides
+- Created parent README for `.github/` directory with complete system integration overview
+- All READMEs follow the standardized format with proper parent-child linking
+- Each README includes detailed business context, usage scenarios, and links to corresponding guides
+- Ensured proper integration documentation showing how all components work together
+
+**File Modifications:**
+- **Files Created:**
+  - `/Users/ericbranson/IdeaProjects/github-context-instruction-files/.github/instructions/README.md` (New)
+  - `/Users/ericbranson/IdeaProjects/github-context-instruction-files/.github/prompts/README.md` (New)
+  - `/Users/ericbranson/IdeaProjects/github-context-instruction-files/.github/README.md` (New)
+- **Content Features:**
+  - **Super Descriptive**: Each file includes comprehensive purpose, coverage, usage, target audience, business impact
+  - **Guide Integration**: Direct links to all corresponding guides in documents/guides/copilot-instructions-guide/
+  - **Real Business Context**: Examples of revenue impact, crisis management, contract wins
+  - **System Integration**: Complete workflow examples showing how all components work together
+- **Change Summary:** Created complete README documentation system for .github directory with detailed descriptions and proper guide linking
+- **Reasoning:** User requested super descriptive READMEs with guide references for the .github directory structure

@@ -22,6 +22,7 @@ This project provides a structured framework for:
     └── 📄 project.prompt.md            # AI prompt templates
 
 📁 documents/
+├── 📄 README.md                        # Documents overview
 ├── 📁 guides/                          # Documentation guides
 │   ├── 📄 README.md                    # Guides overview
 │   └── 📁 copilot-instructions-guide/  # Detailed instruction guides
@@ -30,6 +31,17 @@ This project provides a structured framework for:
     ├── 📁 github-context-optimization/ # Original optimization project
     └── 📁 github-prompts-optimization/ # Current optimization work
 ```
+
+## Child READMEs
+- **[📁 Documents](documents/README.md)** - Complete documentation system overview
+
+## Documentation
+
+- **📖 [Documents Overview](documents/README.md)** - Complete documentation system
+- **📖 [Guides Overview](documents/guides/README.md)** - Comprehensive guide documentation
+- **📊 [Project Logs](documents/project-logs/README.md)** - Session logging and tracking
+- **⚙️ [Copilot Instructions](.github/copilot-instructions.md)** - Main AI configuration
+- **🎯 [Prompt Templates](.github/prompts/project.prompt.md)** - AI interaction templates
 
 ## Key Features
 
@@ -70,13 +82,6 @@ This project provides a structured framework for:
 2. **Use prompt templates:** Reference project.prompt.md for consistent interactions
 3. **Follow logging protocols:** Maintain session logs for continuity
 4. **Update documentation:** Keep guides current with usage patterns
-
-## Documentation
-
-- **📖 [Guides Overview](documents/guides/README.md)** - Comprehensive guide documentation
-- **📊 [Project Logs](documents/project-logs/README.md)** - Session logging and tracking
-- **⚙️ [Copilot Instructions](.github/copilot-instructions.md)** - Main AI configuration
-- **🎯 [Prompt Templates](.github/prompts/project.prompt.md)** - AI interaction templates
 
 ## Current Status
 

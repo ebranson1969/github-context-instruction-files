@@ -36,6 +36,12 @@
 - Record failed attempts and why they didn't work
 - Cache all findings and decision-making rationale in the session log
 - Include tool usage and exploration steps taken to understand the problem
+- **Enhanced Context Requirements:**
+  - Document alternative approaches considered but not chosen (with reasons why)
+  - Record technical constraints or limitations that influenced decisions
+  - Note user preference patterns and recurring themes from session history
+  - Identify context dependencies (what prior decisions this builds upon)
+  - Assess potential impact on other protocol components or future decisions
 
 **RULE 3: Change Documentation Protocol**
 - Log all file modifications made during the session
@@ -161,10 +167,12 @@
 ## Agent Workflow Requirements
 
 ### Automatic Git Operations
-- At the end of each agent interaction, automatically perform git operations
-- Add, commit, and push all changed or created files in one command
-- Use the command: `git add . && git commit -m "Auto-commit: Changes made by GitHub Copilot" && git push`
+- At the end of each agent interaction, automatically perform git operations with enhanced verification
+- **Step 1: List modified files** - Execute `git status --porcelain` to show all modified files from top-level directory and log results to chat
+- **Step 2: Add, commit, and push** - Execute `git add . && git commit -m "Auto-commit: Changes made by GitHub Copilot" && git push` in one command
 - Report the results of the git operations in the chat response
+- **Step 3: Verify completion** - Execute `git status --porcelain` again to confirm all files were committed and log results to chat
+- **Error handling:** If Step 2 fails, retry once. If it fails again, stop and report the issue for manual resolution
 - This should be the very last action performed before ending the agent session
 
 ### Manual Git Trigger

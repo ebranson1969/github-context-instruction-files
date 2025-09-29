@@ -98,3 +98,36 @@ This session is dedicated to all documentation improvements, updates, and creati
 **Git Commit:** `5439eaa` - `Auto-commit: Move examples directory to project-prompts subfolder for better organization`
 
 ---
+
+## Question 4
+- **Timestamp:** December 20, 2024, 16:00:00.000
+- **Original Question:** For just 1 of the examples in documents/guides/copilot-instructions-guide/project-prompts/examples can you create a file that would go over a real world example of how that file would be used. The md should use the actors, a development team, to demonstrate how we could use the promt. Create it like a play. Be as descriptive and assume I know nothing. Use documents/guides/copilot-instructions-guide/project-prompts/examples/code-review-authentication-security.md
+- **Restatement:** Create a theatrical play-style demonstration file showing a real development team using the code-review-authentication-security.md example prompt in a realistic workplace scenario.
+
+---
+
+## Research & Reasoning - Question 4
+- **Example Analysis:** Examined code-review-authentication-security.md and found it contains a realistic e-commerce authentication scenario with Node.js/Express code
+- **Play Structure:** Will create a theatrical script showing Sarah (developer), Marcus (senior dev), and Emma (security engineer) working through a real code review scenario
+- **Educational Approach:** Structure it as a workplace drama to make the learning engaging and memorable
+- **Target Audience:** Assume reader knows nothing about AI prompts or code review processes
+- **Demonstration Goals:** Show the complete workflow from problem identification to AI prompt usage to resolution
+- **File Location:** Will create the play as a companion file next to the original example
+- **Alternative Approaches:** Could create a simple tutorial, but theatrical format makes complex concepts more accessible
+
+---
+
+## Change Documentation - Question 4
+- **File Created:** documents/guides/copilot-instructions-guide/project-prompts/examples/code-review-authentication-security-DEMO.md
+- **Change Summary:** Created a comprehensive theatrical play-style demonstration showing how a real development team would use the code-review-authentication-security.md prompt in a workplace scenario
+- **Educational Features:**
+  - 6 scenes showing complete workflow from problem to solution
+  - 4 realistic characters representing different roles (developer, senior dev, security engineer, DevOps)
+  - Real workplace dialogue and technical challenges
+  - Step-by-step demonstration of AI prompt usage
+  - Clear explanation of benefits and proper workflow
+  - Practical "Try This Yourself" section for readers
+
+**Git Commit:** `[commit completed]` - `Auto-commit: Create theatrical demonstration for code review authentication security prompt usage`
+
+---

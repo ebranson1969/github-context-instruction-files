@@ -20,6 +20,13 @@ This directory contains comprehensive documentation for the `.github/prompts/pro
 - Extension framework documentation
 - Troubleshooting and best practices
 
+### 📁 [examples/](./examples/)
+**Real-world usage scenarios and examples**
+- Collection of 8 practical examples demonstrating AI prompt usage
+- Crisis management, security reviews, feature planning scenarios
+- Performance optimization and refactoring examples
+- Reference materials for training and emergency situations
+
 ## Navigation
 
 - **Parent Directory:** [../README.md](../README.md) - Copilot Instructions Guide
@@ -34,3 +41,4 @@ Use these guides to:
 - Train team members on standardized AI interactions  
 - Optimize prompts for your specific development context
 - Extend the system for specialized use cases
+- Learn from real-world examples and scenarios

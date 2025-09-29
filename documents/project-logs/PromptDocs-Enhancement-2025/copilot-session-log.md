@@ -70,3 +70,31 @@ This session is dedicated to all documentation improvements, updates, and creati
 **Git Commit:** `c50a6b6` - `Auto-commit: Reorganize project prompts documentation into dedicated subfolder`
 
 ---
+
+## Question 3
+- **Timestamp:** December 20, 2024, 15:45:00.000
+- **Original Question:** The examples should be moved as well
+- **Restatement:** Move the examples directory from copilot-instructions-guide into the project-prompts subfolder since the examples are specifically related to project prompt usage.
+
+---
+
+## Research & Reasoning - Question 3
+- **Context Analysis:** User has identified that the examples directory contains project prompt-related examples and should be moved to the project-prompts subfolder for better organization
+- **Directory Review:** The examples/ directory contains 8 detailed examples demonstrating AI prompt usage in realistic business scenarios
+- **Logical Grouping:** Since examples demonstrate project prompt usage, they belong with the project prompt documentation
+- **Impact Assessment:** This will create a more cohesive documentation structure where all project prompt related content is together
+- **Alternative Approaches:** Could keep examples separate, but consolidation makes more sense for user experience
+- **Context Dependencies:** Need to update README files to reflect the new examples location and maintain proper navigation
+
+---
+
+## Change Documentation - Question 3
+- **Directory Moved:** examples/ → project-prompts/examples/
+- **File Updated:** documents/guides/copilot-instructions-guide/README.md (removed separate examples section, updated directory structure)
+- **File Updated:** documents/guides/copilot-instructions-guide/project-prompts/README.md (added examples section and navigation)
+- **Change Summary:** Successfully moved examples directory into project-prompts subfolder, creating a cohesive documentation structure where all project prompt related content is consolidated together
+- **Git Operations:** Used `git mv` command to preserve file history during directory move
+
+**Git Commit:** `5439eaa` - `Auto-commit: Move examples directory to project-prompts subfolder for better organization`
+
+---

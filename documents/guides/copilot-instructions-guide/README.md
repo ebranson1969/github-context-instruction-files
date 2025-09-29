@@ -10,19 +10,18 @@ copilot-instructions-guide/
 ├── copilot-instructions-guide.md
 ├── git-commit-instructions-guide.md
 ├── project-instructions-guide.md
-├── project-prompts/
-│   ├── README.md
-│   ├── project-prompts-guide.md
-│   └── project-prompts-detailed-guide.md
-└── examples/
-    └── README.md
+└── project-prompts/
+    ├── README.md
+    ├── project-prompts-guide.md
+    ├── project-prompts-detailed-guide.md
+    └── examples/
+        └── README.md
 ```
 
 ## Parent Directory
 - **[↑ Guides](../README.md)** - Parent directory with all project guides
 
 ## Child READMEs
-- **[📁 Examples README](examples/README.md)** - Real-world usage scenarios and examples
 - **[📁 Project Prompts README](project-prompts/README.md)** - Project prompt documentation and guides
 
 ## Document Descriptions
@@ -61,14 +60,7 @@ copilot-instructions-guide/
 - **Contains**: 
   - [Project Prompts Guide](project-prompts/project-prompts-guide.md) - Overview and basic usage
   - [Project Prompts Detailed Guide](project-prompts/project-prompts-detailed-guide.md) - Advanced implementation
-
-### 📁 **[Examples Directory](examples/)**
-**Real-World Usage Scenarios**
-- **Purpose**: Collection of practical examples demonstrating AI prompt usage in realistic business scenarios
-- **Coverage**: 8 detailed examples covering crisis management, security reviews, feature planning, performance optimization
-- **Usage**: Learning from real scenarios, finding examples matching current situations, training teams
-- **Target Audience**: All developers, especially those learning effective AI prompt usage
-- **When to Use**: Before applying prompts to new scenarios, training team members, reference during emergencies
+  - [Examples Directory](project-prompts/examples/) - Real-world usage scenarios and practical examples
 
 ---
 

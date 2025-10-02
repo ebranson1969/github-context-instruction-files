@@ -40,22 +40,29 @@ tasks.register<Delete>("deleteDocuments") {
     }
 }
 
-// Configure build task to run our custom tasks
-tasks.named("build") {
+// Create our own build task that runs our setup tasks
+tasks.register("build") {
+    description = "Build task that copies .github files to root and deletes documents"
+    group = "build"
+
     dependsOn("copyGithubToRoot")
     finalizedBy("deleteDocuments")
+
+    doLast {
+        println("Build completed: .github files copied to root and documents directory deleted")
+    }
 }
 
-// Configure clean task to also delete documents
-tasks.register("cleanSetup") {
-    description = "Clean setup by deleting documents directory"
-    group = "setup"
+// Create our own clean task
+tasks.register("clean") {
+    description = "Clean task that deletes documents directory"
+    group = "build"
+
     dependsOn("deleteDocuments")
-}
 
-// Ensure clean build runs our tasks in the right order
-tasks.named("clean") {
-    finalizedBy("cleanSetup")
+    doLast {
+        println("Clean completed: documents directory deleted")
+    }
 }
 
 // Default task configuration

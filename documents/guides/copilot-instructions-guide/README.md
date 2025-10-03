@@ -10,19 +10,17 @@ copilot-instructions-guide/
 ├── copilot-instructions-guide.md
 ├── git-commit-instructions-guide.md
 ├── project-instructions-guide.md
-└── project-prompts/
-    ├── README.md
-    ├── project-prompts-guide.md
-    ├── project-prompts-detailed-guide.md
-    └── examples/
-        └── README.md
+├── project-prompts-guide.md
+├── project-prompts-detailed-guide.md
+└── examples/
+    └── README.md
 ```
 
 ## Parent Directory
 - **[↑ Guides](../README.md)** - Parent directory with all project guides
 
 ## Child READMEs
-- **[📁 Project Prompts README](project-prompts/README.md)** - Project prompt documentation and guides
+- **[📁 Examples README](examples/README.md)** - Real-world usage scenarios and examples
 
 ## Document Descriptions
 
@@ -50,17 +48,29 @@ copilot-instructions-guide/
 - **Target Audience**: Development teams, new project contributors, external contractors
 - **When to Use**: Project initialization, team expansion, establishing development standards
 
-### 📁 **[Project Prompts Directory](project-prompts/)**
-**AI Prompt Templates and Implementation**
-- **Purpose**: Comprehensive documentation for `.github/prompts/project.prompt.md` system and related templates
-- **Coverage**: Basic and advanced prompt usage, team integration, optimization techniques, real-world scenarios
-- **Usage**: Complete guidance for implementing and using standardized AI prompts across development workflows
-- **Target Audience**: All developers, team leads, AI system architects
-- **When to Use**: Daily development work, code reviews, AI workflow setup, team training
-- **Contains**: 
-  - [Project Prompts Guide](project-prompts/project-prompts-guide.md) - Overview and basic usage
-  - [Project Prompts Detailed Guide](project-prompts/project-prompts-detailed-guide.md) - Advanced implementation
-  - [Examples Directory](project-prompts/examples/) - Real-world usage scenarios and practical examples
+### 🎯 **[Project Prompts Guide](project-prompts-guide.md)**
+**AI Prompt Templates Overview**
+- **Purpose**: Summary documentation for `.github/prompts/project.prompt.md` - AI interaction templates
+- **Coverage**: Code review prompts, documentation generation, bug analysis frameworks, feature planning
+- **Usage**: Learning how to use AI prompt templates effectively, understanding when to use each template
+- **Target Audience**: All developers, team leads, anyone using AI for development assistance
+- **When to Use**: Daily development work, code reviews, bug investigations, feature planning
+
+### 📖 **[Project Prompts Detailed Guide](project-prompts-detailed-guide.md)**
+**Advanced AI Prompt Implementation**
+- **Purpose**: Comprehensive implementation guide for advanced AI prompt usage and customization
+- **Coverage**: Advanced usage patterns, team integration strategies, optimization techniques, extension frameworks
+- **Usage**: Deep implementation guidance, creating custom prompts, team training, performance optimization
+- **Target Audience**: Senior developers, AI system architects, team leads implementing AI workflows
+- **When to Use**: Advanced AI integration, custom prompt development, team training programs, optimization initiatives
+
+### 📁 **[Examples Directory](examples/)**
+**Real-World Usage Scenarios**
+- **Purpose**: Collection of practical examples demonstrating AI prompt usage in realistic business scenarios
+- **Coverage**: 8 detailed examples covering crisis management, security reviews, feature planning, performance optimization
+- **Usage**: Learning from real scenarios, finding examples matching current situations, training teams
+- **Target Audience**: All developers, especially those learning effective AI prompt usage
+- **When to Use**: Before applying prompts to new scenarios, training team members, reference during emergencies
 
 ---
 

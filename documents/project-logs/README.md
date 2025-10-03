@@ -1,41 +1,52 @@
 # Project Logs Documentation
 
-This directory contains session logs for various projects and optimization efforts related to the GitHub Context Instruction Files system.
+## Description
+This directory contains comprehensive session logs for various projects and optimization efforts related to the GitHub Context Instruction Files system. The logging system provides detailed documentation of AI-assisted development sessions, maintaining context preservation and audit trails for all development activities.
 
-## Purpose
+## Directory Structure
+```
+project-logs/
+├── README.md (this file)
+└── github-context-organization/
+    └── copilot-session-log.md
+```
 
-The project-logs system provides comprehensive documentation of AI-assisted development sessions, including:
-- Question tracking and analysis
-- Research and reasoning documentation
-- File modifications and changes
-- Git commit history linking
-- Context preservation across sessions
+## Parent Directory
+- **[↑ Documents](../README.md)** - Parent directory documentation
 
-## Current Project Logs
+## Child READMEs
+*No child README files in this directory*
 
-### 📊 [GitHub Context Optimization](github-context-optimization/)
-- **Focus:** Original optimization project for GitHub context instruction files
-- **Session Log:** `copilot-session-log.md`
-- **Status:** Completed - Protocol framework established
-- **Key Achievements:**
-  - Implemented session management rules
-  - Established question processing protocols
-  - Created git commit logging system
-  - Developed fast terminal-based logging
+## Document Descriptions
 
-### 🎯 [GitHub Prompts Optimization](github-prompts-optimization/)
-- **Focus:** Analysis and optimization of `.github/prompts/project.prompt.md`
-- **Session Log:** `copilot-session-log.md`
-- **Status:** Active - Documentation and guides creation
-- **Key Achievements:**
-  - Consolidated git operations workflow
-  - Created comprehensive guide system
-  - Analyzed git verification capabilities
-  - Organized documentation structure
+### 📁 **[GitHub Context Organization Project](github-context-organization/)**
+**Consolidated GitHub Context Instruction Files Optimization Project**
+- **Purpose**: Unified session logging for all GitHub context instruction files optimization and organization efforts
+- **Coverage**: Session management protocols, question processing workflows, file modifications tracking, git commit correlation, context preservation
+- **Usage**: Active development sessions for optimizing copilot instruction files, maintaining audit trails, preserving context across sessions
+- **Target Audience**: Development teams working on copilot instruction optimization, project managers tracking AI-assisted development
+- **When to Use**: During active development sessions on GitHub context files, when tracking optimization progress, for session continuity
+- **Contains**: Complete session log with timestamped questions, research documentation, file modifications, and git commit tracking
+- **Status**: Active project with ongoing optimization efforts
+
+#### **Session Log: copilot-session-log.md**
+**Comprehensive Development Session Documentation**
+- **Purpose**: Detailed log of all AI-assisted development sessions for the GitHub context instruction files project
+- **Coverage**: Question tracking, research reasoning, file modifications, git commits, context preservation protocols
+- **Usage**: Maintaining session continuity, audit trails, decision documentation, learning from past sessions
+- **Format**: Timestamped entries with original questions, AI reasoning, actions taken, and file changes
+- **Target Audience**: Development teams, project managers, auditors, future session participants
+- **When to Use**: Every development session, context recovery, project retrospectives, audit reviews
+
+**Project Consolidation History:**
+This project represents the consolidation of previous separate optimization efforts (September 30, 2025):
+- Original `github-context-optimization` project (September 27, 2025)
+- `github-prompts-optimization` project (empty logs)
+- Combined into single unified project for better resource management and reduced redundancy
 
 ## Session Log Structure
 
-Each project log follows the standardized format:
+Each project log follows the standardized format established by the Question Processing Rule:
 
 ### Header Information
 - **Project Name:** Clear identifier for the session
@@ -44,81 +55,23 @@ Each project log follows the standardized format:
 
 ### Question Log Format
 Each question entry includes:
-- **Timestamp:** When the question was asked
-- **Original Question:** User's exact request
+- **Timestamp:** When the question was asked (Month DD, YYYY, HH:MM:SS.mmm format)
+- **Original Question:** User's exact request verbatim
 - **Question Restatement:** AI's interpretation for clarity
 - **Research and Reasoning:** Analysis and decision-making process
 - **Actions Taken:** Specific steps and modifications made
-- **File Modifications:** Detailed change documentation
+- **File Modifications:** Detailed change documentation with file paths
+- **Git Commit Logging:** Correlation with version control history
 
-### Git Integration
-- **Commit Tracking:** Links session changes to git commits
-- **Hash Documentation:** Preserves commit hashes for traceability
-- **Change Correlation:** Maps session activities to version control
+## Usage Guidelines
 
-## Logging Protocol Rules
-
-### Session Management
-- **Rule 1:** Sessions initiated by explicit project name or context continuation
-- **Rule 2:** Logs stored under `project-logs/<ProjectName>/copilot-session-log.md`
-
-### Question Processing
-- **Rule 1:** Log timestamp, original question, and restatement
-- **Rule 2:** Document research steps and reasoning process
-- **Rule 3:** Record all file modifications with change summaries
-- **Rule Final:** Log git commit messages with hashes
-- **Rule Optimize:** Fast terminal-based summary logging
-
-## Using Project Logs
-
-### For Developers
-- Review session context before continuing work
-- Understand reasoning behind changes
-- Track evolution of project decisions
-- Learn from documented approaches
-
-### For Project Management
-- Monitor development progress
-- Understand time investment in different areas
-- Identify recurring issues or patterns
-- Track completion of objectives
-
-### For Documentation
-- Source material for project documentation
-- Historical context for design decisions
-- Examples of problem-solving approaches
-- Reference for future similar projects
-
-## Creating New Project Logs
-
-When starting a new project session:
-1. Create directory: `project-logs/<ProjectName>/`
-2. Initialize log file: `copilot-session-log.md`
-3. Include project context header
-4. Follow established question logging format
-5. Maintain git commit correlation
-
-## Maintenance
-
-### Regular Tasks
-- Archive completed project logs
-- Update status information
-- Cross-reference related projects
-- Verify git commit links remain valid
-
-### Quality Control
-- Ensure consistent formatting
-- Validate documentation completeness
-- Check cross-references accuracy
-- Maintain timestamp consistency
-
-## Related Documentation
-
-- **Guides:** `../guides/README.md` - Documentation guides overview
-- **Main README:** `../../README.md` - Project overview and structure
-- **Copilot Instructions:** `../../.github/copilot-instructions.md` - Logging protocol details
+1. **Session Continuity**: Use existing logs to maintain context across sessions
+2. **Audit Trail**: Reference logs for understanding past decisions and changes
+3. **Context Recovery**: Use logs to restore session context when AI context degrades
+4. **Project Tracking**: Monitor optimization progress and decision rationale
+5. **Knowledge Sharing**: Share insights and lessons learned across team members
 
 ---
 
-*Last updated: September 28, 2025*
-*Part of: GitHub Context Instruction Files Project*
+*Last updated: October 1, 2025*
+*Part of: GitHub Context Instruction Files Project - Session Logging Documentation*

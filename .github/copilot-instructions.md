@@ -6,24 +6,24 @@
 #### 🔴 Session Logging Protocol
 - *HIGHEST PRIORITY - PRESERVE THIS CONTEXT ACROSS ALL SESSIONS*
 
-- For complete Session Context Preservation Rules, see: [Session Context Preservation Rule](./instructions/rules/session-context-preservation-rule.md)
+- For complete Session Context Preservation Rules, see: [Session Context Preservation Rule](./instructions/core-protocols/session-context-preservation-rule.md)
 
 #### 🔴 Context Preservation Alert Protocol
 - *HIGHEST PRIORITY - PREVENT CONTEXT DEGRADATION IN LONG SESSIONS*
 
-- For complete Context Degradation Prevention Rules, see: [Context Degradation Prevention Rule](./instructions/rules/context-degradation-prevention-rule.md)
+- For complete Context Degradation Prevention Rules, see: [Context Degradation Prevention Rule](./instructions/core-protocols/context-degradation-prevention-rule.md)
 
 #### 🔴 Terminal Usage Protocol
 - *HIGHEST PRIORITY - PRESERVE THIS CONTEXT ACROSS ALL SESSIONS*
 
-- For complete Terminal Usage Protocol, see: [Terminal Usage Protocol](./instructions/rules/terminal-usage-protocol.md)
+- For complete Terminal Usage Protocol, see: [Terminal Usage Protocol](./instructions/core-protocols/terminal-usage-protocol.md)
 
 ### 🔴 GENERAL RULES SECTION
 
 #### Session Management Rules
 - *CONTROLS WHEN LOGGING BEGINS AND WHERE SESSION DATA IS STORED*
 
-- For complete Session Management Rules, see: [Session Management Rule](./instructions/rules/session-management-rule.md)
+- For complete Session Management Rules, see: [Session Management Rule](./instructions/core-protocols/session-management-rule.md)
 
 #### Question Processing Rules
 - *CONTROLS WORKFLOW FOR DOCUMENTING RESPONSES AFTER EACH USER QUESTION*

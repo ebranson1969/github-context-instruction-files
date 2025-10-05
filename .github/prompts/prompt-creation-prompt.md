@@ -1,6 +1,6 @@
-# Prompt Creation Template
+# Prompt Creation Prompt Template
 
-*For detailed explanations, examples, and usage instructions, see: [Prompt Creation Guide](./guides/prompt-creation-guide.md)*
+*For detailed explanations, examples, and usage instructions, see: [Prompt Creation Guide](./guides/prompt-creation-prompt-guide.md)*
 
 ## Template: Create New Prompt
 

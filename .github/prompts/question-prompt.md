@@ -60,9 +60,8 @@
 1. Create a new project directory under `documents/project-logs/[project-name]/`
 2. Copy the complete prompt from the chat conversation to `documents/project-logs/[project-name]/original-question-prompt.md`
 3. Create the session log file `documents/project-logs/[project-name]/copilot-session-log.md`
-4. Log the complete user prompt, project context, and initial research findings
-
-**FOR CONTINUING SESSIONS:** Use the separate template at `.github/prompts/question-prompt-continuing.md`
+4. Create a continuation prompt template at `documents/project-logs/[project-name]/continuation-prompt.md` for adding future questions to this session
+5. Log the complete user prompt, project context, and initial research findings
 
 ## Research and Documentation Requirements
 Session Management Requirements (per Session Management Protocol):
@@ -73,23 +72,4 @@ Session Management Requirements (per Session Management Protocol):
 - **Log the complete prompt used in chat (copy the entire prompt from chat)**
 - **Document prompt source: .github/prompts/question-prompt.md**
 - **Create project-specific logging directory and files for new sessions**
-````
-
----
-
-## Usage Instructions
-
-### For New Sessions:
-1. Replace `[REPLACE THIS WITH YOUR SPECIFIC QUESTION OR REQUEST]` with your actual question
-2. Provide a descriptive project name based on your question
-3. Fill in the question context details
-4. Paste the complete prompt into your chat
-5. The agent will automatically create logging directories and copy the prompt
-
-### For Continuing Sessions:
-Use the separate template: `.github/prompts/question-prompt-continuing.md`
-
-### Template Variations Available:
-- **question-prompt.md** (this file) - For new sessions with automated logging
-- **question-prompt-continuing.md** - For continuing existing conversations
-- Templates are automatically copied to project logging directories when sessions begin
+```

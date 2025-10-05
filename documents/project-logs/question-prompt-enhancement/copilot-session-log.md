@@ -471,3 +471,39 @@ Session Management Requirements (per Session Management Protocol):
 - **Benefit:** Users understand they can use auto-generation or provide custom names
 
 **Current Session Question Count:** 9
+
+---
+
+### Question 10 - Remove Redundant Template Structure Section (October 5, 2025)
+**User's Original Question:** User questioned whether the "Template Structure" section is needed since it's already covered under the FOUNDATION section that references the Master Prompt Template, and asked me to show the proposed changes first, then said "do it."
+
+**Question Restatement:** User wants to remove redundant sections from prompt-creation-prompt.md that duplicate the guidance already provided by the FOUNDATION reference to the master template.
+
+**Research and Reasoning:**
+- The "Template Structure" section was redundant with the FOUNDATION instruction
+- The "Template Foundation" section also overlapped with the FOUNDATION guidance
+- Users were getting three different sections telling them essentially the same thing
+- Streamlining improves clarity and reduces confusion
+- The master template already provides the structure, so users just need customization guidance
+
+**Actions Completed:**
+1. ✅ Removed redundant "Template Structure:" section
+2. ✅ Consolidated "Template Foundation:" into "Template Customization:"
+3. ✅ Added optional field for describing unique sections specific to prompt type
+4. ✅ Maintained all essential guidance while eliminating redundancy
+
+**Files Modified:**
+- **Updated:** `.github/prompts/prompt-creation-prompt.md` (removed redundant sections)
+
+**Validation Results:**
+- Template is now cleaner and more focused
+- Eliminated confusing overlapping instructions
+- Users have clear, single source of customization guidance
+- All essential information preserved
+
+**Streamlining Achieved:**
+- **Before:** FOUNDATION + Template Structure + Template Foundation (redundant)
+- **After:** FOUNDATION + Template Customization (streamlined)
+- **Benefit:** Clear, non-redundant guidance that eliminates user confusion
+
+**Current Session Question Count:** 10

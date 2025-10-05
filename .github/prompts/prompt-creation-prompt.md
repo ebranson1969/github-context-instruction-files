@@ -48,15 +48,13 @@
 **Guide File Location:**
 .github/prompts/guides/[AUTO-GENERATE-FROM-PROJECT-NAME-OR-CUSTOM]-prompt-guide.md
 
-**Template Structure:**
-[Describe the sections and structure the new prompt should have]
-
-**Template Foundation:**
+**Template Customization:**
 - Start with master-prompt-template.md as the base structure
 - Replace bracketed variables [LIKE_THIS] with your specific content
 - Add any template-specific sections needed beyond the standard protocols
 - Keep all default YES checkboxes and validation checklists
 - Follow the established patterns for consistency
+- [Optional: Describe any specific sections or structure unique to this prompt type]
 
 ## Additional Context
 [Optional: Any specific requirements, constraints, or formatting preferences]

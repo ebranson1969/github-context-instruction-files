@@ -54,22 +54,4 @@
 
 ## Expected Deliverables
 [Describe what you expect to be delivered, created, or modified]
-
-## Automated Logging Instructions
-**FOR NEW SESSIONS:** When using this prompt for a new session, the agent should:
-1. Create a new project directory under `documents/project-logs/[project-name]/`
-2. Copy the complete prompt from the chat conversation to `documents/project-logs/[project-name]/original-question-prompt.md`
-3. Create the session log file `documents/project-logs/[project-name]/copilot-session-log.md`
-4. Create a continuation prompt template at `documents/project-logs/[project-name]/continuation-prompt.md` for adding future questions to this session
-5. Log the complete user prompt, project context, and initial research findings
-
-## Research and Documentation Requirements
-Session Management Requirements (per Session Management Protocol):
-- Log this question in the current session log
-- Document research and reasoning for all decisions made
-- Track any file modifications and their impact
-- Log git commit message if changes are pushed
-- **Log the complete prompt used in chat (copy the entire prompt from chat)**
-- **Document prompt source: .github/prompts/question-prompt.md**
-- **Create project-specific logging directory and files for new sessions**
 ```

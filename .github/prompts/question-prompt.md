@@ -55,3 +55,12 @@
 ## Expected Deliverables
 [Describe what you expect to be delivered, created, or modified]
 ```
+
+**AUTOMATED WORKFLOW FOR AGENTS:**
+When using this prompt for a new session, the agent should automatically create a continuation prompt file at `documents/project-logs/[project-name]/continuation-prompt.md` that copies ALL sections from the original prompt with these specific changes:
+
+1. **Your Question/Request section**: Replace with "[REPLACE THIS WITH YOUR NEW QUESTION - This will be added to the existing session]"
+2. **Project Information - Session Type**: Change from "New Session" to "Continuing Session"
+3. **ALL OTHER SECTIONS**: Copy exactly as they appear in the original prompt (Project Name, Question Context, Session Management Requirements, PUSH CODE Protocol, Testing and Validation, Additional Context, Expected Deliverables)
+
+This ensures continuation prompts maintain full consistency with the original prompt's settings and context.

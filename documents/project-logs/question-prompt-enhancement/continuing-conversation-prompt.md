@@ -1,12 +1,9 @@
-# Continuation Prompt Template - Question Prompt Enhancement Project
-
-*Use this template to add additional questions to the existing "Question Prompt Enhancement" session*
-
-## Template: Continue Current Session
-
-```markdown
 ## Your Question/Request
 [REPLACE THIS WITH YOUR NEW QUESTION - This will be added to the existing session]
+I need you to update .github/prompts/prompt-creation-prompt.md. Whn you create the continuing-conversation-prompt.md, I 
+want you to copy some sections from the original prompt message exactly as they are.
+1. Project Information, except for Session Type, that should remain Continuing Session
+2. Everythin except for Your Question/Request, it should start with [REPLACE THIS WITH YOUR NEW QUESTION - This will be added to the existing session]
 
 **CRITICAL**: This session must be properly logged according to established protocols. Document all research, reasoning, and file modifications throughout this process.
 
@@ -15,9 +12,9 @@
 - Session Type: Continuing Session
 
 ## Question Context
-- Question Type: [Feature Request, Bug Fix, Documentation, Code Review, Refactoring, etc.]
-- Project Area: [Describe the specific area or component being addressed]
-- Priority Level: [High, Medium, Low]
+- Question Type: Feature Request, Documentation
+- Project Area: Fixing and enhancing question-prompt.md
+- Priority Level: High
 
 ## Session Management Requirements
 **Should this question follow the established Session Management Protocol?**
@@ -50,14 +47,13 @@
 - [x] Documentation is updated if needed
 
 ## Additional Context
-Previous questions in this session:
-- Question 1: Enhanced question-prompt.md with automated logging workflow
-- Question 2: Simplified continuation workflow by removing redundant template
+.github/prompts/question-prompt.md
+.github/prompts
 
 [Add any additional context relevant to your new question]
 
 ## Expected Deliverables
-[Describe what you expect to be delivered, created, or modified for this specific question]
+Updated files as necessary to address the new question
 
 ## Continuing Session Instructions
 **FOR CONTINUING SESSIONS:** When using this prompt to continue the existing session, the agent should:
@@ -75,21 +71,3 @@ Session Management Requirements (per Session Management Protocol):
 - Log git commit message if changes are pushed
 - **Continue existing session log - increment question number**
 - **Document prompt source: continuation-prompt.md from project logging directory**
-````
-
----
-
-## Usage Instructions for This Project:
-
-### To Add Another Question to This Session:
-1. Replace `[REPLACE THIS WITH YOUR NEW QUESTION]` with your specific question
-2. Fill in the question context details
-3. Add any relevant context from previous questions if needed
-4. Copy this entire prompt and paste it into your chat
-5. The agent will add your question to the existing session log and continue the work
-
-### Session Context:
-- **Project:** Question Prompt Enhancement
-- **Current Question Count:** 2
-- **Session Log Location:** `documents/project-logs/question-prompt-enhancement/copilot-session-log.md`
-- **Previous Work:** Enhanced main template, removed redundant continuing template

@@ -1,5 +1,7 @@
 # Question Prompt Template
 
+*For detailed explanations, examples, and usage instructions, see: [Question Prompt Guide](./guides/question-prompt-guide.md)*
+
 ## Template: General Question
 
 ```markdown

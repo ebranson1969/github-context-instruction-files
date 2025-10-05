@@ -1,5 +1,7 @@
 # Workflows Creation Prompt Template
 
+*For detailed explanations, examples, and usage instructions, see: [Workflows Creation Guide](./guides/workflows-prompt-guide.md)*
+
 ## Template: Create Workflow
 
 ```markdown
@@ -81,4 +83,4 @@ Session Logging Requirements:
 - If NOT ACTIVE: Workflow file only with NOT ACTIVE status
 - Complete session logging of all actions and decisions
 - Git commit with appropriate message
-```
+````

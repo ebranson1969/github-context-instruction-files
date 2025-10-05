@@ -1,5 +1,7 @@
 # Rules Creation Prompt Template
 
+*For detailed explanations, examples, and usage instructions, see: [Rules Creation Guide](./guides/rules-prompt-guide.md)*
+
 ## Template: Create Rule File
 
 ```markdown
@@ -81,4 +83,4 @@ Session Logging Requirements:
 - If NOT ACTIVE: Rule file only with NOT ACTIVE status
 - Complete session logging of all actions and decisions
 - Git commit with appropriate message
-```
+````

@@ -53,12 +53,14 @@ Rule File Structure:
 *[Brief description of this protocol section]*
 - [Bullet point requirements]
 
-## Session Logging Protocol
-**Should this question be logged according to established session logging protocols?**
+## Session Management Requirements
+**Should this rule creation follow the established Session Management Protocol?**
 
 **Default: YES** ✅
-- [x] YES - Log this question with full documentation (timestamp, research, reasoning, actions taken)
-- [ ] NO - Skip session logging for this question
+- [x] YES - Follow complete Session Management Protocol as defined in [Session Management Protocol](../instructions/core-protocols/session-management-protocol.md)
+- [ ] NO - Skip session management requirements for this question
+
+*Note: Session Management Protocol includes logging, context preservation, and degradation prevention requirements.*
 
 ## PUSH CODE Protocol
 **Should changes be automatically pushed to the repository when complete?**
@@ -68,7 +70,7 @@ Rule File Structure:
 - [ ] NO - Do not push changes automatically (I will manually push when ready)
 
 ## Additional Context
-Session Logging Requirements:
+Session Management Requirements (per Session Management Protocol):
 - Log this rule creation in the current session log
 - Document research and reasoning for rule design decisions
 - Track file creation and modifications
@@ -81,6 +83,6 @@ Session Logging Requirements:
 - New rule file created in .github/instructions/rules/
 - If ACTIVE: Reference link added to .github/copilot-instructions.md
 - If NOT ACTIVE: Rule file only with NOT ACTIVE status
-- Complete session logging of all actions and decisions
+- Complete session management logging of all actions and decisions
 - Git commit with appropriate message
 ````

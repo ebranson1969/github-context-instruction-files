@@ -53,7 +53,7 @@ Rule File Structure:
 *[Brief description of this protocol section]*
 - [Bullet point requirements]
 
-## Session Management Requirements
+## Session Management Protocol
 **Should this rule creation follow the established Session Management Protocol?**
 
 **Default: YES** ✅
@@ -61,6 +61,13 @@ Rule File Structure:
 - [ ] NO - Skip session management requirements for this question
 
 *Note: Session Management Protocol includes logging, context preservation, and degradation prevention requirements.*
+
+### Session Start or Restart
+**Is this session a START or RESTART?**
+
+**Default: START** ✅
+- [x] START - This is a new session
+- [ ] RESTART - This is a restarted session (context and logs must be preserved)
 
 ## PUSH CODE Protocol
 **Should changes be automatically pushed to the repository when complete?**

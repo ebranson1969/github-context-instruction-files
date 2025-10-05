@@ -53,12 +53,19 @@ Workflow File Structure:
 *[Brief description of this protocol section]*
 - [Bullet point requirements]
 
-## Session Logging Protocol
-**Should this question be logged according to established session logging protocols?**
+## Session Management Protocol
+**Should this question be logged according to established session management protocols?**
 
 **Default: YES** ✅
 - [x] YES - Log this question with full documentation (timestamp, research, reasoning, actions taken)
-- [ ] NO - Skip session logging for this question
+- [ ] NO - Skip session management for this question
+
+### Session Start or Restart
+**Is this session a START or RESTART?**
+
+**Default: START** ✅
+- [x] START - This is a new session
+- [ ] RESTART - This is a restarted session (context and logs must be preserved)
 
 ## PUSH CODE Protocol
 **Should changes be automatically pushed to the repository when complete?**

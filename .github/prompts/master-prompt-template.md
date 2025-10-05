@@ -27,7 +27,7 @@ I need you to [ACTION DESCRIPTION] in the modular instruction system.
 ## [TEMPLATE-SPECIFIC SECTIONS]
 [This varies by template - could be Rule Status, Update Type, etc.]
 
-## Session Management Requirements
+## Session Management Protocol
 **Should this [ACTION] follow the established Session Management Protocol?**
 
 **Default: YES** ✅
@@ -35,6 +35,13 @@ I need you to [ACTION DESCRIPTION] in the modular instruction system.
 - [ ] NO - Skip session management requirements for this question
 
 *Note: Session Management Protocol includes logging, context preservation, and degradation prevention requirements.*
+
+### Session Start or Restart
+**Is this session a START or RESTART?**
+
+**Default: START** ✅
+- [x] START - This is a new session
+- [ ] RESTART - This is a restarted session (context and logs must be preserved)
 
 ## Reference Updates Required
 **Does this update require changes to references in other files?**
@@ -159,4 +166,3 @@ For the session log, document:
 3. **Add template-specific sections** (Rule Status for creates, Update Type for updates)
 4. **Customize the component-specific content** while keeping the standard protocols intact
 5. **Keep all the default YES checkboxes** to maintain consistency across templates
-```

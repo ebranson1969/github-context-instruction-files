@@ -1,9 +1,8 @@
 ## Your Question/Request
-[REPLACE THIS WITH YOUR NEW QUESTION - This will be added to the existing session]
-I need you to update .github/prompts/prompt-creation-prompt.md. Whn you create the continuing-conversation-prompt.md, I 
-want you to copy some sections from the original prompt message exactly as they are.
-1. Project Information, except for Session Type, that should remain Continuing Session
-2. Everythin except for Your Question/Request, it should start with [REPLACE THIS WITH YOUR NEW QUESTION - This will be added to the existing session]
+I want you to restart this conversation, but the logging protocol seems broken, so we are going to fix that. 
+1. only append to the log for now
+2. Show me new changes first and then prompt me to make the change.
+3. You can always append to the logs without asking. Follow the logging protocol for that.
 
 **CRITICAL**: This session must be properly logged according to established protocols. Document all research, reasoning, and file modifications throughout this process.
 

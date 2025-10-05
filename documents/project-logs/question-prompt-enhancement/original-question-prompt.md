@@ -2,22 +2,28 @@
 
 *For detailed explanations, examples, and usage instructions, see: [Question Prompt Guide](./guides/question-prompt-guide.md)*
 
-## Template: New Session Question
+## Template: General Question
 
 ```markdown
 ## Your Question/Request
-[REPLACE THIS WITH YOUR SPECIFIC QUESTION OR REQUEST]
+I want you to start a session to address the following question: I want to enhance question-prompt.md. For now I just 
+want you to start the logging. Create a copy of this prompt question file in the logging directory as well as create an exact copy but it 
+will address the existing conversation and the only thing that will change is the question.
+
+I also want you to change the prompt so that if it is a New Session you will copy the prompt I put in the chat and create a md file and put it with the logging directory.
+s well as create an exact copy but it
+will address the existing conversation and the only thing that will change is the question.
 
 **CRITICAL**: This session must be properly logged according to established protocols. Document all research, reasoning, and file modifications throughout this process.
 
 ## Project Information
-- Project Name: [PROVIDE A DESCRIPTIVE PROJECT NAME BASED ON YOUR QUESTION]
+- Project Name: This of a good one based on hte question
 - Session Type: New Session
 
 ## Question Context
-- Question Type: [Feature Request, Bug Fix, Documentation, Code Review, Refactoring, etc.]
-- Project Area: [Describe the specific area or component being addressed]
-- Priority Level: [High, Medium, Low]
+- Question Type: [Feature Request, Documentation]
+- Project Area: Fixing and enhancing question-prompt.md
+- Priority Level: High
 
 ## Session Management Requirements
 **Should this question follow the established Session Management Protocol?**
@@ -50,19 +56,11 @@
 - [x] Documentation is updated if needed
 
 ## Additional Context
-[Add any relevant file paths, existing issues, or background information that will help address your question]
+.github/prompts/question-prompt.md
+.github/prompts
 
 ## Expected Deliverables
-[Describe what you expect to be delivered, created, or modified]
-
-## Automated Logging Instructions
-**FOR NEW SESSIONS:** When using this prompt for a new session, the agent should:
-1. Create a new project directory under `documents/project-logs/[project-name]/`
-2. Copy the complete prompt from the chat conversation to `documents/project-logs/[project-name]/original-question-prompt.md`
-3. Create the session log file `documents/project-logs/[project-name]/copilot-session-log.md`
-4. Log the complete user prompt, project context, and initial research findings
-
-**FOR CONTINUING SESSIONS:** Use the separate template at `.github/prompts/question-prompt-continuing.md`
+files updated
 
 ## Research and Documentation Requirements
 Session Management Requirements (per Session Management Protocol):
@@ -72,24 +70,4 @@ Session Management Requirements (per Session Management Protocol):
 - Log git commit message if changes are pushed
 - **Log the complete prompt used in chat (copy the entire prompt from chat)**
 - **Document prompt source: .github/prompts/question-prompt.md**
-- **Create project-specific logging directory and files for new sessions**
 ````
-
----
-
-## Usage Instructions
-
-### For New Sessions:
-1. Replace `[REPLACE THIS WITH YOUR SPECIFIC QUESTION OR REQUEST]` with your actual question
-2. Provide a descriptive project name based on your question
-3. Fill in the question context details
-4. Paste the complete prompt into your chat
-5. The agent will automatically create logging directories and copy the prompt
-
-### For Continuing Sessions:
-Use the separate template: `.github/prompts/question-prompt-continuing.md`
-
-### Template Variations Available:
-- **question-prompt.md** (this file) - For new sessions with automated logging
-- **question-prompt-continuing.md** - For continuing existing conversations
-- Templates are automatically copied to project logging directories when sessions begin

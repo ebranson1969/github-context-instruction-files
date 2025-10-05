@@ -1,18 +1,18 @@
-# Question Prompt Template
+# Question Prompt Template - Continuing Conversation
 
 *For detailed explanations, examples, and usage instructions, see: [Question Prompt Guide](./guides/question-prompt-guide.md)*
 
-## Template: New Session Question
+## Template: Continuing Conversation Question
 
 ```markdown
 ## Your Question/Request
-[REPLACE THIS WITH YOUR SPECIFIC QUESTION OR REQUEST]
+[REPLACE THIS WITH YOUR NEW QUESTION - This template is for continuing an existing conversation/session]
 
 **CRITICAL**: This session must be properly logged according to established protocols. Document all research, reasoning, and file modifications throughout this process.
 
 ## Project Information
-- Project Name: [PROVIDE A DESCRIPTIVE PROJECT NAME BASED ON YOUR QUESTION]
-- Session Type: New Session
+- Project Name: [KEEP EXISTING PROJECT NAME FROM CURRENT SESSION]
+- Session Type: Continuing Session
 
 ## Question Context
 - Question Type: [Feature Request, Bug Fix, Documentation, Code Review, Refactoring, etc.]
@@ -50,46 +50,42 @@
 - [x] Documentation is updated if needed
 
 ## Additional Context
-[Add any relevant file paths, existing issues, or background information that will help address your question]
+[Add any relevant file paths, previous decisions, or context from earlier in the session that relates to this new question]
 
 ## Expected Deliverables
-[Describe what you expect to be delivered, created, or modified]
+[Describe what you expect to be delivered, created, or modified for this specific question]
 
-## Automated Logging Instructions
-**FOR NEW SESSIONS:** When using this prompt for a new session, the agent should:
-1. Create a new project directory under `documents/project-logs/[project-name]/`
-2. Copy the complete prompt from the chat conversation to `documents/project-logs/[project-name]/original-question-prompt.md`
-3. Create the session log file `documents/project-logs/[project-name]/copilot-session-log.md`
-4. Log the complete user prompt, project context, and initial research findings
-
-**FOR CONTINUING SESSIONS:** Use the separate template at `.github/prompts/question-prompt-continuing.md`
+## Continuing Session Instructions
+**FOR CONTINUING SESSIONS:** When using this prompt to continue an existing session, the agent should:
+1. Continue using the existing project directory under `documents/project-logs/[existing-project-name]/`
+2. Add this new question to the existing session log file
+3. Increment the question counter in the session log
+4. Reference previous context and decisions from earlier questions in the session
+5. Do NOT create new project directories or session log files
 
 ## Research and Documentation Requirements
 Session Management Requirements (per Session Management Protocol):
-- Log this question in the current session log
+- Log this question in the EXISTING session log (do not create new project directory)
 - Document research and reasoning for all decisions made
 - Track any file modifications and their impact
 - Log git commit message if changes are pushed
-- **Log the complete prompt used in chat (copy the entire prompt from chat)**
-- **Document prompt source: .github/prompts/question-prompt.md**
-- **Create project-specific logging directory and files for new sessions**
+- **Continue existing session log - increment question number**
+- **Document prompt source: .github/prompts/question-prompt-continuing.md**
 ````
 
 ---
 
 ## Usage Instructions
 
-### For New Sessions:
-1. Replace `[REPLACE THIS WITH YOUR SPECIFIC QUESTION OR REQUEST]` with your actual question
-2. Provide a descriptive project name based on your question
-3. Fill in the question context details
-4. Paste the complete prompt into your chat
-5. The agent will automatically create logging directories and copy the prompt
-
 ### For Continuing Sessions:
-Use the separate template: `.github/prompts/question-prompt-continuing.md`
+1. Replace `[REPLACE THIS WITH YOUR NEW QUESTION]` with your new question
+2. Keep the same project name from your current session
+3. Fill in the question context details for this specific question
+4. Reference any previous work or context from earlier questions
+5. The agent will add this to your existing session log
 
-### Template Variations Available:
-- **question-prompt.md** (this file) - For new sessions with automated logging
-- **question-prompt-continuing.md** - For continuing existing conversations
-- Templates are automatically copied to project logging directories when sessions begin
+### Important Notes:
+- This template is specifically for adding questions to existing sessions
+- For new sessions, use `.github/prompts/question-prompt.md`
+- The agent will increment question counters and maintain session continuity
+- Previous context and decisions will be preserved and referenced

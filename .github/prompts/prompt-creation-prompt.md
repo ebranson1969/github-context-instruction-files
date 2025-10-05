@@ -41,7 +41,10 @@
 - [ ] Other: [specify]
 
 **File Location:**
-.github/prompts/[INSERT-KEBAB-CASE-FILENAME].md
+.github/prompts/[INSERT-KEBAB-CASE-FILENAME]-prompt.md
+
+**Guide File Location:**
+.github/prompts/guides/[INSERT-KEBAB-CASE-FILENAME]-prompt-guide.md
 
 **Template Structure:**
 [Describe the sections and structure the new prompt should have]
@@ -51,6 +54,7 @@
 
 ## Expected Deliverables
 - New prompt template file created in .github/prompts/
+- New guide file created in .github/prompts/guides/
 - Template follows established formatting standards
 - Template includes appropriate session logging and push code sections
 ```

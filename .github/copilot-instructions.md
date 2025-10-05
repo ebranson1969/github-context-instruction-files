@@ -3,37 +3,22 @@
 ---
 ### 🔴 CRITICAL RULES SECTION
 
-#### 🔴 Session Logging Protocol
-- *HIGHEST PRIORITY - PRESERVE THIS CONTEXT ACROSS ALL SESSIONS*
+#### 🔴 Session Management Protocol
+- *HIGHEST PRIORITY - COMPREHENSIVE SESSION MANAGEMENT INCLUDING LOGGING, CONTEXT PRESERVATION, AND DEGRADATION PREVENTION*
 
-- For complete Session Context Preservation Rules, see: [Session Context Preservation Rule](./copilot-rules.md#session-context-preservation-rule)
-
-#### 🔴 Context Preservation Alert Protocol
-- *HIGHEST PRIORITY - PREVENT CONTEXT DEGRADATION IN LONG SESSIONS*
-
-- For complete Context Degradation Prevention Rules, see: [Context Degradation Prevention Rule](./copilot-rules.md#context-degradation-prevention-rule)
-
-#### 🔴 Terminal Usage Protocol
-- *HIGHEST PRIORITY - PRESERVE THIS CONTEXT ACROSS ALL SESSIONS*
-
-- For complete Terminal Usage Protocol, see: [Terminal Usage Protocol](./copilot-rules.md#terminal-usage-protocol)
+- For complete Session Management Protocol, see: [Session Management Protocol](./instructions/core-protocols/session-management-protocol.md)
 
 ### 🔴 GENERAL RULES SECTION
-
-#### Session Management Rules
-- *CONTROLS WHEN LOGGING BEGINS AND WHERE SESSION DATA IS STORED*
-
-- For complete Session Management Rules, see: [Session Management Rule](./copilot-rules.md#session-management-rule)
 
 #### Question Processing Rules
 - *CONTROLS WORKFLOW FOR DOCUMENTING RESPONSES AFTER EACH USER QUESTION*
 
-- For complete Question Processing Rules, see: [Question Processing Rule](./copilot-rules.md#question-processing-rule)
+- For complete Question Processing Rules, see: [Question Processing Rule](./instructions/rules/question-processing-rule.md)
 
 #### README Generation Rule
 - *AUTOMATED README GENERATION AND MAINTENANCE PROTOCOLS*
 
-- For complete README Generation Rule, see: [README Generation Rule](./copilot-rules.md#readme-generation-rule)
+- For complete README Generation Rule, see: [README Generation Rule](./instructions/rules/readme-generation-rule.md)
 
 
 ## Agent Workflow Requirements
@@ -41,22 +26,22 @@
 #### Automatic Git Operations
 - *AUTOMATED GIT OPERATIONS FOR SESSION MANAGEMENT AND CODE DEPLOYMENT*
 
-- For complete Automatic Git Operations Workflow, see: [Automatic Git Operations Workflow](./copilot-workflows.md#automatic-git-operations-workflow)
+- For complete Automatic Git Operations Workflow, see: [Automatic Git Operations Workflow](./instructions/workflows/automatic-git-operations.md)
 
 #### Manual Git Trigger
 - *USER-INITIATED GIT OPERATIONS THROUGH STANDARDIZED TRIGGER PHRASE*
 
-- For complete Manual Git Trigger Workflow, see: [Manual Git Trigger Workflow](./copilot-workflows.md#manual-git-trigger-workflow)
+- For complete Manual Git Trigger Workflow, see: [Manual Git Trigger Workflow](./instructions/workflows/manual-git-trigger.md)
 
 #### Manual Context Sync Workflow (COMMIT CONTEXT)
 - *USER-INITIATED CONTEXT FILE SYNCHRONIZATION AND GIT OPERATIONS THROUGH STANDARDIZED TRIGGER PHRASE*
 
-- For complete Manual Context Sync Workflow (COMMIT CONTEXT), see: [Manual Context Sync Workflow (COMMIT CONTEXT)](./copilot-workflows.md#manual-context-sync-workflow-commit-context)
+- For complete Manual Context Sync Workflow (COMMIT CONTEXT), see: [Manual Context Sync Workflow (COMMIT CONTEXT)](./instructions/workflows/manual-context-sync.md)
 
 #### Git Commit Message Format
 - *STANDARDIZED COMMIT MESSAGE FORMAT AND CONTENT FOR CONSISTENCY AND TRACEABILITY*
 
-- For complete Git Commit Message Formatting Workflow, see: [Git Commit Message Formatting Workflow](./copilot-workflows.md#git-commit-message-formatting-workflow)
+- For complete Git Commit Message Formatting Workflow, see: [Git Commit Message Formatting Workflow](./instructions/workflows/git-commit-message-format.md)
 
 ## Coding Style Preferences
 

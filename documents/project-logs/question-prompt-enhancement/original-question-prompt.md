@@ -2,22 +2,28 @@
 
 *For detailed explanations, examples, and usage instructions, see: [Question Prompt Guide](./guides/question-prompt-guide.md)*
 
-## Template: New Session Question
+## Template: General Question
 
 ```markdown
 ## Your Question/Request
-[REPLACE THIS WITH YOUR SPECIFIC QUESTION OR REQUEST]
+I want you to start a session to address the following question: I want to enhance question-prompt.md. For now I just 
+want you to start the logging. Create a copy of this prompt question file in the logging directory as well as create an exact copy but it 
+will address the existing conversation and the only thing that will change is the question.
+
+I also want you to change the prompt so that if it is a New Session you will copy the prompt I put in the chat and create a md file and put it with the logging directory.
+s well as create an exact copy but it
+will address the existing conversation and the only thing that will change is the question.
 
 **CRITICAL**: This session must be properly logged according to established protocols. Document all research, reasoning, and file modifications throughout this process.
 
 ## Project Information
-- Project Name: [PROVIDE A DESCRIPTIVE PROJECT NAME BASED ON YOUR QUESTION]
+- Project Name: This of a good one based on hte question
 - Session Type: New Session
 
 ## Question Context
-- Question Type: [Feature Request, Bug Fix, Documentation, Code Review, Refactoring, etc.]
-- Project Area: [Describe the specific area or component being addressed]
-- Priority Level: [High, Medium, Low]
+- Question Type: [Feature Request, Documentation]
+- Project Area: Fixing and enhancing question-prompt.md
+- Priority Level: High
 
 ## Session Management Requirements
 **Should this question follow the established Session Management Protocol?**
@@ -50,17 +56,18 @@
 - [x] Documentation is updated if needed
 
 ## Additional Context
-[Add any relevant file paths, existing issues, or background information that will help address your question]
+.github/prompts/question-prompt.md
+.github/prompts
 
 ## Expected Deliverables
-[Describe what you expect to be delivered, created, or modified]
-```
+files updated
 
-**AUTOMATED WORKFLOW FOR AGENTS:**
-When using this prompt for a new session, the agent should automatically create a continuation prompt file at `documents/project-logs/[project-name]/continuation-prompt.md` that copies ALL sections from the original prompt with these specific changes:
-
-1. **Your Question/Request section**: Replace with "[REPLACE THIS WITH YOUR NEW QUESTION - This will be added to the existing session]"
-2. **Project Information - Session Type**: Change from "New Session" to "Continuing Session"
-3. **ALL OTHER SECTIONS**: Copy exactly as they appear in the original prompt (Project Name, Question Context, Session Management Requirements, PUSH CODE Protocol, Testing and Validation, Additional Context, Expected Deliverables)
-
-This ensures continuation prompts maintain full consistency with the original prompt's settings and context.
+## Research and Documentation Requirements
+Session Management Requirements (per Session Management Protocol):
+- Log this question in the current session log
+- Document research and reasoning for all decisions made
+- Track any file modifications and their impact
+- Log git commit message if changes are pushed
+- **Log the complete prompt used in chat (copy the entire prompt from chat)**
+- **Document prompt source: .github/prompts/question-prompt.md**
+````

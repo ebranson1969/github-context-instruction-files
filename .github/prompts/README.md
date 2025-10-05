@@ -1,88 +1,98 @@
-# Project Prompts Directory
+# Prompts
 
 ## Description
-This directory contains standardized AI prompt templates that provide consistent, high-quality AI assistance across all development scenarios. These prompts ensure teams get structured, actionable feedback instead of generic responses when using AI for code review, documentation, bug analysis, feature implementation, and refactoring tasks.
+This directory contains prompt templates, examples, and guides for AI assistant interactions, providing standardized templates for creating consistent and effective AI prompts across the project.
 
 ## Directory Structure
 ```
 prompts/
 ├── README.md (this file)
-└── project.prompt.md
+├── master-prompt-template.md
+├── project.prompt.md
+├── prompt-creation-prompt.md
+├── question-prompt.md
+├── rules-prompt.md
+├── session-management-protocol-prompt.md
+├── workflows-prompt.md
+├── examples/
+│   └── README.md
+└── guides/
+    └── README.md
 ```
 
 ## Parent Directory
-- **[↑ GitHub Configuration](./../README.md)** - Parent directory with all GitHub configuration files
+- **[↑ GitHub Configuration](../README.md)** - GitHub configuration and AI assistant instructions
 
 ## Child READMEs
-*No child README files in this directory*
+- **[📁 Examples](examples/README.md)** - Real-world prompt examples and specialized templates
+- **[📁 Guides](guides/README.md)** - Comprehensive guides for using and creating prompt templates
 
-## Document Descriptions
+## File Descriptions
 
-### 🎯 **[Project Prompts](project.prompt.md)**
-**Standardized AI Interaction Templates for Development Workflows**
-- **Purpose**: Provides 5 core prompt templates that standardize how teams interact with AI across different development scenarios, ensuring consistent, high-quality responses for code review, documentation, bug analysis, feature implementation, and refactoring tasks
-- **Coverage**: 
-  - **Code Review Prompts**: Security, performance, best practices analysis
-  - **Documentation Generation**: API docs, function documentation, usage examples
-  - **Bug Analysis**: Root cause analysis, solution identification, prevention strategies
-  - **Feature Implementation**: Task breakdown, dependency identification, testing strategies
-  - **Code Refactoring**: Maintainability improvements, performance optimization, pattern implementation
-  - **Project-Specific AI Interaction Patterns**: Context setting guidelines and response format standards
-- **Usage**: Daily development work including pre-submission code reviews, emergency bug investigations, feature planning sessions, documentation creation, and technical debt reduction
-- **Target Audience**: All developers (junior to senior), team leads, security teams, DevOps engineers, anyone using AI for development assistance
-- **When to Use**:
-  - **Daily Code Review**: Before submitting pull requests or reviewing teammate's code
-  - **Crisis Management**: During production issues requiring systematic analysis (like Black Friday checkout failures)
-  - **Feature Planning**: Sprint planning sessions for complex features with external dependencies
-  - **Documentation Tasks**: After completing new features, utilities, or APIs that need team documentation
-  - **Technical Debt**: During refactoring sprints or code quality improvement initiatives
-- **Business Impact**: 
-  - **Security**: Catches critical vulnerabilities before production (preventing data breaches)
-  - **Crisis Management**: Systematic debugging saves millions in revenue during outages
-  - **Client Relations**: Professional feature planning leads to contract renewals and extensions
-  - **Team Efficiency**: Structured prompts save hours of back-and-forth with unclear AI responses
-  - **Junior Developer Growth**: Clear templates help less experienced developers get quality AI assistance
-- **Real-World Success Stories**:
-  - Sarah's authentication review caught 3 critical security issues before production
-  - Mike's Black Friday crisis analysis saved $5M+ in potential revenue loss
-  - Lisa's feature planning led to $1.2M contract extension through professional scope breakdown
-- **Integration**: 
-  - Works with `copilot-instructions.md` for overall AI behavior configuration
-  - Supports multiple prompt files for domain-specific teams (security.prompt.md, mobile.prompt.md)
-  - Integrates with session logging system for tracking prompt effectiveness
-- **Customization**: Templates can be customized for specific compliance requirements (PCI DSS, HIPAA), technology stacks, or team needs
+### 📄 **[master-prompt-template.md](master-prompt-template.md)**
+**Universal Prompt Template Foundation**
+- **Purpose**: Contains all common elements found across prompt templates, providing a standardized foundation for creating new prompts
+- **Coverage**: Universal structure patterns, standard protocol sections, validation checklists, template variables
+- **Usage**: Foundation for creating any new prompt template to ensure consistency and completeness
+- **Target Audience**: AI system administrators, prompt creators, development teams
+- **When to Use**: Creating new prompt templates, maintaining consistency across prompt system
+- **Contains**: Template structure patterns, variable definitions, standard sections, usage instructions
 
-### 📖 **[Complete Guide Documentation](../../documents/guides/copilot-instructions-guide/project-prompts-guide.md)**
-**Summary Guide for Project Prompts**
-- **Purpose**: Comprehensive overview guide explaining how to use project.prompt.md effectively, including multi-file strategies and real-world usage scenarios
-- **Location**: `documents/guides/copilot-instructions-guide/project-prompts-guide.md`
-- **Coverage**: Template explanations, usage instructions, best practices, multiple prompt file strategies, daily workflow integration
-- **Usage**: Learning the prompt system, understanding when to use each template, training team members on effective AI interaction
-- **When to Reference**: Before first use of prompt templates, when training new team members, during team prompt effectiveness reviews
+### 📄 **[rules-prompt.md](rules-prompt.md)**
+**Rule Creation Template**
+- **Purpose**: Specialized template for creating rule files in the modular instruction system
+- **Coverage**: Rule structure requirements, status options, protocol sections, session management integration
+- **Usage**: When creating new rules for AI assistant behavior or project standards
+- **Target Audience**: AI system administrators, rule creators, project leads
+- **When to Use**: Adding new behavioral rules, expanding instruction system capabilities
+- **Contains**: Rule creation workflow, structure requirements, activation protocols, validation procedures
 
-### 📚 **[Detailed Implementation Guide](../../documents/guides/copilot-instructions-guide/project-prompts-detailed-guide.md)**
-**Advanced Implementation and Optimization Guide**
-- **Purpose**: Deep implementation guidance covering advanced usage patterns, team integration strategies, and optimization techniques for maximizing AI assistance effectiveness
-- **Location**: `documents/guides/copilot-instructions-guide/project-prompts-detailed-guide.md`
-- **Coverage**: Advanced usage patterns, multi-stage prompt chains, team integration workflows, automation integration, troubleshooting, extension frameworks
-- **Usage**: Advanced AI integration, custom prompt development, team training programs, performance optimization initiatives
-- **When to Reference**: When implementing advanced AI workflows, creating custom prompts, optimizing existing prompt usage, training senior developers
+### 📄 **[session-management-protocol-prompt.md](session-management-protocol-prompt.md)**
+**Session Protocol Update Template**
+- **Purpose**: Specialized template for updating the critical session management protocol file
+- **Coverage**: Protocol update procedures, validation requirements, impact assessment, reference updates
+- **Usage**: When modifying the core session management protocol that governs all AI interactions
+- **Target Audience**: AI system administrators, protocol maintainers
+- **When to Use**: Updating session management behavior, improving context preservation, fixing protocol issues
+- **Contains**: Update workflows, validation checklists, impact assessment procedures, testing requirements
 
-### 🎯 **[Real-World Examples](../../documents/guides/copilot-instructions-guide/examples/README.md)**
-**Practical Usage Scenarios and Business Case Studies**
-- **Purpose**: Collection of 8 detailed examples showing realistic business scenarios where prompt templates made significant impact
-- **Location**: `documents/guides/copilot-instructions-guide/examples/`
-- **Coverage**: Crisis management (Black Friday), security reviews (PCI compliance), feature planning (client contracts), performance optimization, refactoring strategies
-- **Examples Include**:
-  - **Authentication Security Review**: Preventing production security vulnerabilities
-  - **Black Friday Crisis**: $50K/minute revenue loss systematic debugging
-  - **Client Contract Planning**: $500K contract renewal through professional feature breakdown
-  - **Performance Optimization**: 45-second to 5-second dashboard load time improvements
-  - **Security Compliance**: PCI DSS payment processing reviews
-- **Usage**: Learning from real scenarios, finding examples matching current situations, training teams on effective prompt usage
-- **When to Reference**: Before applying prompts to new scenarios, during team training, as reference during emergencies
+### 📄 **[prompt-creation-prompt.md](prompt-creation-prompt.md)**
+**Prompt Template Creator**
+- **Purpose**: Template for creating new prompt templates using the master template foundation
+- **Coverage**: Prompt specifications, audience targeting, file location standards, template customization
+- **Usage**: When creating entirely new types of prompt templates for the system
+- **Target Audience**: Prompt system designers, AI administrators, template creators
+- **When to Use**: Expanding prompt capabilities, adding new interaction types, creating specialized templates
+- **Contains**: Template creation workflow, customization guidelines, foundation integration, structure requirements
+
+### 📄 **[project.prompt.md](project.prompt.md)**
+**General Project Prompts**
+- **Purpose**: Collection of general-purpose prompts for common development and project management tasks
+- **Coverage**: Code review, documentation generation, bug analysis, feature implementation, refactoring prompts
+- **Usage**: Quick access to standardized prompts for routine development activities
+- **Target Audience**: Developers, project managers, QA testers, documentation writers
+- **When to Use**: Daily development tasks, code reviews, documentation creation, problem solving
+- **Contains**: Ready-to-use prompt templates for common development scenarios
+
+### 📄 **[question-prompt.md](question-prompt.md)**
+**Question Templates**
+- **Purpose**: Templates for structuring questions and requests to AI assistants
+- **Coverage**: Question formatting, context provision, requirement specification
+- **Usage**: Ensuring well-structured and effective AI interactions
+- **Target Audience**: All team members interacting with AI assistants
+- **When to Use**: Asking questions, making requests, seeking AI assistance
+- **Contains**: Question structure templates, context guidelines, effective communication patterns
+
+### 📄 **[workflows-prompt.md](workflows-prompt.md)**
+**Workflow Creation Templates**
+- **Purpose**: Templates for creating workflow automation and procedure documentation
+- **Coverage**: Workflow structure, automation requirements, procedure documentation
+- **Usage**: When creating new automated workflows or documenting procedures
+- **Target Audience**: Workflow designers, automation engineers, process managers
+- **When to Use**: Creating automated processes, documenting procedures, standardizing workflows
+- **Contains**: Workflow template structures, automation guidelines, procedure documentation standards
 
 ---
 
-*Last updated: September 28, 2025*
-*Part of: GitHub Context Instruction Files Project - GitHub Configuration Documentation*
+*Last updated: October 5, 2025*
+*Part of: GitHub Context Instruction Files Project*

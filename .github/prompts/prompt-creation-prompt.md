@@ -8,6 +8,8 @@
 ## Your Question/Request
 [Describe what type of prompt you want to create - e.g., "Create a prompt template for code review", "Create a bug report prompt", "Create a feature request template"]
 
+**FOUNDATION**: Use [Master Prompt Template](./master-prompt-template.md) as the foundation for creating new prompt templates. This template contains all the standard sections and protocols that should be included in every prompt.
+
 ## Session Logging Protocol
 **Should this question be logged according to established session logging protocols?**
 
@@ -48,6 +50,13 @@
 
 **Template Structure:**
 [Describe the sections and structure the new prompt should have]
+
+**Template Foundation:**
+- Start with master-prompt-template.md as the base structure
+- Replace bracketed variables [LIKE_THIS] with your specific content
+- Add any template-specific sections needed beyond the standard protocols
+- Keep all default YES checkboxes and validation checklists
+- Follow the established patterns for consistency
 
 ## Additional Context
 [Optional: Any specific requirements, constraints, or formatting preferences]

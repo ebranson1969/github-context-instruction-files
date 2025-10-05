@@ -227,4 +227,58 @@ Session Management Requirements (per Session Management Protocol):
 
 **Current Session Question Count:** 3
 
+**Git Commit Information for Questions 2-3:**
+- **Commit Hash:** 8e6407a
+- **Commit Message:** "refactor(prompts): clean up question-prompt template structure"
+- **Branch:** feature/session-prompt
+- **Files Changed:** 10 files changed with template structure improvements
+- **Push Status:** ✅ Successfully pushed to remote repository
+
+**Final Session Status:** COMPLETE - All question prompt enhancements implemented and deployed
+
+**Summary of All Improvements:**
+1. ✅ Enhanced main template with automated logging workflow
+2. ✅ Simplified continuation workflow (removed redundant template)
+3. ✅ Cleaned template structure (removed usage instructions)
+4. ✅ Proper separation of concerns between template and documentation
+5. ✅ All changes committed and pushed to repository
+
 ---
+
+### Question 4 - Enforce Strict Template Content Rule (October 5, 2025)
+**User's Original Question:** "CAn you update the templet to say this? Only what is to be copied and put in hte chat should be in *-prompt.md, all help, examples and usage instructions belong in *-prompt-guide.md. This must be strictly followed."
+
+**Question Restatement:** User wants to enforce strict separation where prompt files contain only the content to be copied to chat, while all help, examples, and usage instructions belong in the guide files.
+
+**Research and Reasoning:**
+- User is establishing a clear architectural rule for template organization
+- Prompt files should contain only the actual prompt structure for copying
+- All instructional content, examples, and guidance belongs in separate guide files
+- This ensures clean separation and prevents confusion about what to copy
+- Template was still containing some instructional sections that needed removal
+
+**Actions Completed:**
+1. ✅ Removed "Automated Logging Instructions" section from template
+2. ✅ Removed "Research and Documentation Requirements" section from template
+3. ✅ Template now contains only the prompt structure to be copied to chat
+4. ✅ Maintained reference to guide file for all instructions and guidance
+
+**Files Modified:**
+- **Updated:** `.github/prompts/question-prompt.md` (removed all instructional content)
+
+**Validation Results:**
+- Template now strictly follows the rule: only copyable content
+- All instructional content properly belongs in the guide file
+- Clean separation between template structure and guidance documentation
+- Template is focused solely on the prompt to be used in chat
+
+**Architectural Rule Enforced:**
+- **Rule:** Only content to be copied to chat belongs in *-prompt.md files
+- **All help, examples, usage instructions:** Belong in *-prompt-guide.md files
+- **Template Content:** Pure prompt structure only
+- **Guidance Content:** Separate guide files only
+
+**Current Session Question Count:** 4
+
+---
+

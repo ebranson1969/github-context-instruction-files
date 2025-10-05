@@ -437,3 +437,37 @@ Session Management Requirements (per Session Management Protocol):
 - **Benefit:** Prompt creation tasks will now be logged by default, improving project documentation
 
 **Current Session Question Count:** 8
+
+---
+
+### Question 9 - Enhance Filename Placeholder for Auto-Generation (October 5, 2025)
+**User's Original Question:** User requested to update the filename placeholder from `[INSERT-KEBAB-CASE-FILENAME]` to `[AUTO-GENERATE-FROM-PROJECT-NAME-OR-CUSTOM]` to make it clear that filenames can be auto-generated from project names or customized by users.
+
+**Question Restatement:** User wants to enhance the filename placeholder in prompt-creation-prompt.md to be more descriptive and indicate that it can auto-generate from project name or allow custom overrides.
+
+**Research and Reasoning:**
+- Current placeholder `[INSERT-KEBAB-CASE-FILENAME]` doesn't clearly indicate auto-generation capability
+- New placeholder `[AUTO-GENERATE-FROM-PROJECT-NAME-OR-CUSTOM]` is more descriptive
+- This makes it clear to users that they can either let the system auto-generate or provide custom names
+- Improves user experience by clarifying the dual functionality
+
+**Actions Completed:**
+1. ✅ Updated both File Location and Guide File Location placeholders
+2. ✅ Changed from `[INSERT-KEBAB-CASE-FILENAME]` to `[AUTO-GENERATE-FROM-PROJECT-NAME-OR-CUSTOM]`
+3. ✅ Maintained consistency between prompt and guide file naming
+
+**Files Modified:**
+- **Updated:** `.github/prompts/prompt-creation-prompt.md` (enhanced filename placeholders)
+
+**Validation Results:**
+- Placeholder is now more descriptive and user-friendly
+- Clearly indicates auto-generation capability from project names
+- Allows for custom filename overrides when needed
+- Improves template usability and clarity
+
+**Enhancement Achieved:**
+- **Before:** `[INSERT-KEBAB-CASE-FILENAME]` - unclear about auto-generation
+- **After:** `[AUTO-GENERATE-FROM-PROJECT-NAME-OR-CUSTOM]` - clear dual functionality
+- **Benefit:** Users understand they can use auto-generation or provide custom names
+
+**Current Session Question Count:** 9

@@ -13,9 +13,9 @@
 ## Session Logging Protocol
 **Should this question be logged according to established session logging protocols?**
 
-**Default: NO** ❌
-- [ ] YES - Log this question with full documentation (timestamp, research, reasoning, actions taken)
-- [x] NO - Skip session logging for this question
+**Default: YES** ✅
+- [x] YES - Log this question with full documentation (timestamp, research, reasoning, actions taken)
+- [ ] NO - Skip session logging for this question
 
 ## PUSH CODE Protocol
 **Should changes be automatically pushed to the repository when complete?**
@@ -43,10 +43,10 @@
 - [ ] Other: [specify]
 
 **File Location:**
-.github/prompts/[INSERT-KEBAB-CASE-FILENAME]-prompt.md
+.github/prompts/[AUTO-GENERATE-FROM-PROJECT-NAME-OR-CUSTOM]-prompt.md
 
 **Guide File Location:**
-.github/prompts/guides/[INSERT-KEBAB-CASE-FILENAME]-prompt-guide.md
+.github/prompts/guides/[AUTO-GENERATE-FROM-PROJECT-NAME-OR-CUSTOM]-prompt-guide.md
 
 **Template Structure:**
 [Describe the sections and structure the new prompt should have]

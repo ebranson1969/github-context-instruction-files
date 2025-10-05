@@ -13,11 +13,6 @@
 
 - For complete Context Degradation Prevention Rules, see: [Context Degradation Prevention Rule](./instructions/core-protocols/context-degradation-prevention-rule.md)
 
-#### 🔴 Terminal Usage Protocol
-- *HIGHEST PRIORITY - PRESERVE THIS CONTEXT ACROSS ALL SESSIONS*
-
-- For complete Terminal Usage Protocol, see: [Terminal Usage Protocol](./instructions/core-protocols/terminal-usage-protocol.md)
-
 ### 🔴 GENERAL RULES SECTION
 
 #### Session Management Rules

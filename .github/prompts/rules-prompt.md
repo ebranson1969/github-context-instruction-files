@@ -51,12 +51,6 @@ Rule File Structure:
 *[Brief description of this protocol section]*
 - [Bullet point requirements]
 
-## Status
-**What is the status of this rule?**
-
-- [ ] **ACTIVE** - [Brief description of rule purpose and scope]
-- [ ] **NOT ACTIVE** - [Brief description of rule purpose and scope]
-
 ## Session Logging Protocol
 **Should this question be logged according to established session logging protocols?**
 

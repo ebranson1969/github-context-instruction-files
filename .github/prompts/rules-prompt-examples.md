@@ -168,12 +168,6 @@ Rule File Structure:
 - All security decisions must include rationale and approval chain
 - Audit trail must be accessible for compliance reviews
 
-## Status
-**What is the status of this rule?**
-
-- [x] **ACTIVE** - Critical security protocols for maintaining secure development and deployment practices
-- [ ] **NOT ACTIVE** - Critical security protocols for maintaining secure development and deployment practices
-
 ## Session Logging Protocol
 **Should this question be logged according to established session logging protocols?**
 
@@ -276,12 +270,6 @@ Rule File Structure:
 - Immediate investigation required for all performance alerts
 - Escalation to senior developers for issues not resolved within 30 minutes
 
-## Status
-**What is the status of this rule?**
-
-- [ ] **ACTIVE** - Draft performance monitoring protocols pending infrastructure setup and team review
-- [x] **NOT ACTIVE** - Draft performance monitoring protocols pending infrastructure setup and team review
-
 ## Session Logging Protocol
 **Should this question be logged according to established session logging protocols?**
 
@@ -383,12 +371,6 @@ Rule File Structure:
 *Quality assurance procedures for all documentation updates*
 - All documentation changes require peer review before publication
 - Documentation must be tested for accuracy and completeness
-
-## Status
-**What is the status of this rule?**
-
-- [x] **ACTIVE** - Essential documentation standards for maintaining project quality and team productivity
-- [ ] **NOT ACTIVE** - Essential documentation standards for maintaining project quality and team productivity
 
 ## Session Logging Protocol
 **Should this question be logged according to established session logging protocols?**
@@ -494,12 +476,6 @@ Rule File Structure:
 *Security requirements for backup storage and access management*
 - Backup access must be restricted to authorized personnel with multi-factor authentication
 - All backup access attempts must be logged and monitored
-
-## Status
-**What is the status of this rule?**
-
-- [x] **ACTIVE** - Critical data protection protocols essential for business continuity and regulatory compliance
-- [ ] **NOT ACTIVE** - Critical data protection protocols essential for business continuity and regulatory compliance
 
 ## Session Logging Protocol
 **Should this question be logged according to established session logging protocols?**

@@ -68,6 +68,11 @@ Session Management Requirements (per Session Management Protocol):
   - Examples: "fix-authentication-bug", "add-user-dashboard", "refactor-payment-processing"
   - Replace any project name placeholder with the generated name in all prompt files created
 - **🚨 CRITICAL REQUIREMENT: Automated continuation prompt creation for new sessions**
+  0. **Git Branch Management for New Sessions:**
+     a. If the user says they are starting a new conversation, PUSH CODE first
+     b. Check if the current branch matches the project name
+     c. If it does not match: switch to develop, pull down the latest, and create a branch based on the project name
+     d. If it is a continuation or restart: just make sure we are on the correct branch
   1. Copy ALL sections from original prompt with only these modifications:
      a. "Your Question/Request" section: Replace with "[REPLACE THIS WITH YOUR NEW QUESTION - This will be added to the existing session]"
      b. ALL OTHER SECTIONS: Copy exactly as they appear in the original prompt

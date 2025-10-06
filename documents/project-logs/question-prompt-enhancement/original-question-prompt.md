@@ -1,10 +1,3 @@
-# Question Prompt Template
-
-*For detailed explanations, examples, and usage instructions, see: [Question Prompt Guide](./guides/question-prompt-guide.md)*
-
-## Template: General Question
-
-```markdown
 ## Your Question/Request
 I want you to start a session to address the following question: I want to enhance question-prompt.md. For now I just 
 want you to start the logging. Create a copy of this prompt question file in the logging directory as well as create an exact copy but it 
@@ -70,4 +63,3 @@ Session Management Requirements (per Session Management Protocol):
 - Log git commit message if changes are pushed
 - **Log the complete prompt used in chat (copy the entire prompt from chat)**
 - **Document prompt source: .github/prompts/question-prompt.md**
-````

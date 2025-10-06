@@ -15,7 +15,7 @@ I want you to restart this conversation, but the logging protocol seems broken, 
 - Project Area: Fixing and enhancing question-prompt.md
 - Priority Level: High
 
-## Session Management Requirements
+## Session Management Protocol
 **Should this question follow the established Session Management Protocol?**
 
 **Default: YES** ✅
@@ -23,6 +23,13 @@ I want you to restart this conversation, but the logging protocol seems broken, 
 - [ ] NO - Skip session management requirements for this question
 
 *Note: Session Management Protocol includes logging, context preservation, and degradation prevention requirements.*
+
+### Session Start or Restart
+**Is this session a START or RESTART?**
+
+**Default: START** ✅
+- [ ] START - This is a new session
+- [x] RESTART - This is a restarted session (context and logs must be preserved)
 
 ## PUSH CODE Protocol
 **Should changes be automatically pushed to the repository when complete?**

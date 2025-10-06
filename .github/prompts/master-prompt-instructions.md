@@ -18,11 +18,12 @@
 *Note: Session Management Protocol includes logging, context preservation, and degradation prevention requirements.*
 
 ### Session Start or Restart
-**Is this session a START or RESTART?**
+**Is this session a START, RESTART, or CONTINUING?**
 
 **Default: START** ✅
 - [x] START - This is a new session
 - [ ] RESTART - This is a restarted session (context and logs must be preserved)
+- [ ] CONTINUING - This is a continuing conversation in an active session (no session management changes needed)
 
 ## PUSH CODE Protocol
 **Should changes be automatically pushed to the repository when complete?**
@@ -61,12 +62,24 @@ Session Management Requirements (per Session Management Protocol):
 - Complete session management logging of all actions and decisions
 - Git commit with detailed change description
 - Impact assessment of changes on existing workflows
+- **🚨 CRITICAL REQUIREMENT: Automatic project name generation**
+  - When user provides a question but no project name, automatically generate a descriptive project name based on the question content
+  - Project name format: Use kebab-case (lowercase with hyphens) suitable for git branch creation
+  - Examples: "fix-authentication-bug", "add-user-dashboard", "refactor-payment-processing"
+  - Replace any project name placeholder with the generated name in all prompt files created
 - **🚨 CRITICAL REQUIREMENT: Automated continuation prompt creation for new sessions**
-  1. Create continuation prompt file at `documents/project-logs/[project-name]/continuation-prompt.md`
-  2. Copy ALL sections from original prompt with only these modifications:
-     - "Your Question/Request" section: Replace with "[REPLACE THIS WITH YOUR NEW QUESTION - This will be added to the existing session]"
-     - ALL OTHER SECTIONS: Copy exactly as they appear in original prompt
+  1. Copy ALL sections from original prompt with only these modifications:
+     a. "Your Question/Request" section: Replace with "[REPLACE THIS WITH YOUR NEW QUESTION - This will be added to the existing session]"
+     b. ALL OTHER SECTIONS: Copy exactly as they appear in the original prompt
+     c. If the user provided a prompt file, copy that prompt verbatim instead
+     d. If you generated a project name automatically, ensure the generated project name replaces any project name placeholder in both documents
+  2. Create continuation prompt file at `documents/project-logs/[project-name]/continuation-prompt.md`
+     a. It should be an exact copy of the original prompt with the "Your Question/Request" section replaced with "[REPLACE THIS WITH YOUR NEW QUESTION - This will be added to the existing session]"
+     b. If the user provided a prompt file, copy that prompt verbatim
+     c. The continuation prompt should be set to RESTART instead of START in the Session Management Protocol
+     d. If you generated a project name automatically, ensure the generated project name is used in both the file path and within the prompt content
   3. This ensures session continuity and prompt consistency across all interactions
+  4. Copy the complete contents of master-prompt-instructions.md into both prompts you create instead of using the link reference
 
 ## Change Documentation Template
 For the session log, document:

@@ -8,8 +8,6 @@
 ## Your Question/Request
 I need you to create a new rule file in the modular instruction system.
 
-**CRITICAL**: This session must be properly logged according to established protocols. Document all research, reasoning, and file modifications throughout this process.
-
 Rule Information:
 - Rule Name: [INSERT RULE NAME HERE]
 - Rule Description: [INSERT WHAT THIS RULE ESTABLISHES OR CONTROLS]
@@ -53,43 +51,11 @@ Rule File Structure:
 *[Brief description of this protocol section]*
 - [Bullet point requirements]
 
-## Session Management Protocol
-**Should this rule creation follow the established Session Management Protocol?**
-
-**Default: YES** ✅
-- [x] YES - Follow complete Session Management Protocol as defined in [Session Management Protocol](../instructions/core-protocols/session-management-protocol.md)
-- [ ] NO - Skip session management requirements for this question
-
-*Note: Session Management Protocol includes logging, context preservation, and degradation prevention requirements.*
-
-### Session Start or Restart
-**Is this session a START or RESTART?**
-
-**Default: START** ✅
-- [x] START - This is a new session
-- [ ] RESTART - This is a restarted session (context and logs must be preserved)
-
-## PUSH CODE Protocol
-**Should changes be automatically pushed to the repository when complete?**
-
-**Default: YES** ✅
-- [x] YES - Execute PUSH CODE workflow when all changes are complete
-- [ ] NO - Do not push changes automatically (I will manually push when ready)
-
-## Additional Context
-Session Management Requirements (per Session Management Protocol):
-- Log this rule creation in the current session log
-- Document research and reasoning for rule design decisions
-- Track file creation and modifications
-- If ACTIVE: Log git commit message when changes are pushed to both rule file and copilot-instructions.md
-- If NOT ACTIVE: Log git commit message when changes are pushed to rule file only
-- **Log the complete prompt used in chat (copy the entire prompt from chat)**
-- **Document prompt source: .github/prompts/rules-prompt.md**
-
 ## Expected Deliverables
 - New rule file created in .github/instructions/rules/
 - If ACTIVE: Reference link added to .github/copilot-instructions.md
 - If NOT ACTIVE: Rule file only with NOT ACTIVE status
-- Complete session management logging of all actions and decisions
-- Git commit with appropriate message
+
+## Common Instructions
+*For complete session management protocols, validation requirements, and documentation standards, see: [Master Prompt Instructions](./master-prompt-instructions.md)*
 ````

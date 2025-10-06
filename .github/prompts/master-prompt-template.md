@@ -1,14 +1,10 @@
-# Master Prompt Template
+# Master Prompt Instructions
 
-*This template contains all the common elements found across all prompt templates in the system. Use this as a foundation for creating new prompt templates.*
+*This file contains all the common instructions and protocols that are shared across all prompts in the system. These instructions should be included in or referenced by every prompt template.*
 
-*For detailed explanations, examples, and usage instructions, see: [Master Prompt Template Guide](./guides/master-prompt-template-guide.md)*
+*For detailed explanations, examples, and usage instructions, see: [Master Prompt Instructions Guide](./guides/master-prompt-template-guide.md)*
 
-## Common Template Structure
-
-```markdown
-## Your Question/Request
-I need you to complete this task in the modular instruction system.
+## Common Instructions for All Prompts
 
 **CRITICAL**: This session must be properly logged according to established protocols. Document all research, reasoning, and file modifications throughout this process.
 
@@ -74,4 +70,3 @@ For the session log, document:
 - Testing/validation performed
 - Files modified beyond the main file
 - Future considerations or follow-up needed
-```

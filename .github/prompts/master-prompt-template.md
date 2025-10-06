@@ -8,12 +8,12 @@
 
 ```markdown
 ## Your Question/Request
-I need you to [ACTION DESCRIPTION] in the modular instruction system.
+I need you to complete this task in the modular instruction system.
 
 **CRITICAL**: This session must be properly logged according to established protocols. Document all research, reasoning, and file modifications throughout this process.
 
 ## Session Management Protocol
-**Should this [ACTION] follow the established Session Management Protocol?**
+**Should this task follow the established Session Management Protocol?**
 
 **Default: YES** ✅
 - [x] YES - Follow complete Session Management Protocol as defined in [Session Management Protocol](../instructions/core-protocols/session-management-protocol.md)
@@ -36,31 +36,31 @@ I need you to [ACTION DESCRIPTION] in the modular instruction system.
 - [ ] NO - Do not push changes automatically (I will manually push when ready)
 
 ## Testing and Validation
-**Should the [COMPONENT] be tested for consistency?**
+**Should this be tested for consistency?**
 
 **Default: YES** ✅
-- [x] YES - Validate that all [COMPONENT] sections work together cohesively
+- [x] YES - Validate that all sections work together cohesively
 - [ ] NO - Skip validation testing
 
 ### Validation Checklist:
 - [x] All section references are correct
-- [x] [COMPONENT] flow is logical and complete
+- [x] Flow is logical and complete
 - [x] No contradictions between sections
 - [x] All links and references are functional
 - [x] Status section reflects current state
 
 ## Additional Context
 Session Management Requirements (per Session Management Protocol):
-- Log this [ACTION] in the current session log
-- Document research and reasoning for [COMPONENT] [ACTION] decisions
+- Log this action in the current session log
+- Document research and reasoning for decisions
 - Track file modifications and their impact
-- Log git commit message when changes are pushed to [COMPONENT] file
+- Log git commit message when changes are pushed to files
 - **Log the complete prompt used in chat (copy the entire prompt from chat)**
 - **Document prompt source: .github/prompts/[SOURCE-FILE-NAME].md**
 
 ## Expected Deliverables
-- [ACTION RESULT] [COMPONENT] file with requested changes
-- Validation of all internal [COMPONENT] consistency
+- Updated file with requested changes
+- Validation of all internal consistency
 - Updated references in other files if needed
 - Complete session management logging of all actions and decisions
 - Git commit with detailed change description
@@ -68,10 +68,10 @@ Session Management Requirements (per Session Management Protocol):
 
 ## Change Documentation Template
 For the session log, document:
-- Original [COMPONENT] state
+- Original state
 - Specific changes made
 - Rationale for each change
 - Testing/validation performed
-- Files modified beyond the main [COMPONENT] file
+- Files modified beyond the main file
 - Future considerations or follow-up needed
-````
+```

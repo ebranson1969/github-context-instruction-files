@@ -1,256 +1,276 @@
 # Rules Creation Prompt Guide
 
-*This guide explains how to use the Rules Creation Prompt Template to create new rule files in the modular instruction system.*
+*This guide explains how to use the Rules Creation Prompt Template to create comprehensive rule files in the modular instruction system, based on real examples from existing rules.*
 
 ## Overview
 
-The Rules Creation Prompt Template (`rules-prompt.md`) is designed to create new rule files that establish standardized protocols, requirements, or constraints within the GitHub Copilot instruction system. Rules can be either ACTIVE (referenced in the main instructions) or NOT ACTIVE (created but not yet implemented).
+The Rules Creation Prompt Template creates structured rule files that establish detailed protocols, requirements, and verification procedures. Rules follow a standardized format with multiple protocol sections, enhanced sub-requirements, and mandatory status declarations.
 
-## Purpose and Usage
+## Real-World Rule Analysis
 
-### What This Prompt Creates
-- **Rule files** in `.github/instructions/rules/` directory
-- **Reference links** in `.github/copilot-instructions.md` (for ACTIVE rules)
-- **Standardized rule structure** with consistent formatting
-- **Protocol documentation** for specific instruction areas
+Based on existing rules in the system, here are the actual patterns and structures used:
 
-### When to Use This Prompt
-- Creating new protocols that need to be enforced across the system
-- Establishing standards for specific types of work or content
-- Defining requirements for particular workflows or processes
-- Setting up constraints or guidelines for AI interactions
+### README Generation Rule Structure
+- **3 Protocol Sections**: File Format Requirements, Parent-Child Relationships, Directory Linking Protocol
+- **Detailed Requirements**: Each section has 4-6 specific requirements
+- **Cross-linking Logic**: Complex hierarchical relationship management
+- **Status**: ACTIVE with detailed justification
+
+### Session Management Protocol Structure  
+- **6 Major Protocol Sections**: Initiation, Storage, Mandatory Logging, Continuity, Context Degradation Prevention, Early Warning
+- **Complex Sub-requirements**: Nested bullet points with specific thresholds and technical rationale
+- **Verification Requirements**: Explicit verification steps and gating requirements
+- **Technical Depth**: Includes question counting, threshold management, and user choice preservation
 
 ## Template Field Breakdown
 
 ### Rule Information Section
-This section defines the basic metadata for your new rule:
 
-**Rule Name**: The display name that will appear in documentation
-- Use descriptive, clear naming (e.g., "Question Processing Rule", "README Generation Rule")
-- Should be title case and descriptive of the rule's purpose
+**Rule Name**: Clear, descriptive title that indicates the rule's domain
+- Examples from existing rules: "README Generation Rule", "Session Management Protocol"
+- Use title case and focus on the main function or area controlled
 
-**Rule Description**: Brief explanation of what the rule establishes or controls
-- Keep concise but informative
-- Explain the scope and purpose of the rule
-- Use italicized text format in the actual rule file
+**Rule Description**: Comprehensive description in italics explaining scope and purpose
+- Real example: *"Defines comprehensive standards for creating and maintaining README files with proper linking, formatting, and organizational structure."*
+- Should explain both what the rule does and why it's important
 
-**File Location**: Standardized path in kebab-case format
-- Always follows pattern: `.github/instructions/rules/[kebab-case-name]-rule.md`
-- Examples: `question-processing-rule.md`, `readme-generation-rule.md`
+**File Location**: Follows strict naming convention
+- Pattern: `.github/instructions/rules/[kebab-case-name]-rule.md`
+- Real examples: `readme-generation-rule.md`, `session-management-protocol.md`
 
 ### Protocol Sections Configuration
-Define the main sections your rule will contain:
 
-**Protocol/Section Names**: The major areas your rule covers
-- Examples: "Processing Requirements", "Validation Steps", "Output Standards"
-- Each section should focus on a specific aspect of the rule
+**Number of Sections**: Real rules have 3-6 major protocol sections
+- Simple rules (README): 3 focused sections
+- Complex rules (Session Management): 6 comprehensive sections
 
-**Brief Descriptions**: Short explanation of what each section will address
-- Helps organize the rule content logically
-- Guides the AI in creating appropriate content for each section
+**Section Names**: Use descriptive, action-oriented titles
+- Real examples: "File Format and Structure Requirements", "Mandatory Session Logging", "Context Degradation Prevention"
+- Each section should address a distinct aspect of the rule's domain
 
-### Specific Requirements
-Detail the exact requirements for each protocol section:
-- Use bullet points for clarity
-- Be specific about what needs to be included
-- Consider validation criteria, process steps, output formats, etc.
+### Detailed Requirements Structure
 
-## Rule Status Configuration
+Based on actual rules, each protocol section contains:
 
-### ACTIVE Rules
-**When to choose ACTIVE:**
-- Rule is ready for immediate implementation
-- You want it referenced in the main copilot instructions
-- Rule should be enforced across relevant workflows
+**Main Requirements**: 4-6 specific, actionable bullet points
+- Use clear, direct language
+- Include specific technical details when applicable
+- Reference exact file paths, formats, or procedures
 
-**Requirements for ACTIVE rules:**
-- **Priority Description**: Uppercase description of the rule's importance
-  - Examples: "CONTROLS WORKFLOW", "CRITICAL RULES", "AUTOMATED OPERATIONS"
-- **Reference Description**: Text that describes what the rule covers
-  - Examples: "Question Processing Rules", "Git Operations Workflow"
-- **Location in copilot-instructions.md**: Where to add the reference
-  - Options: "CRITICAL RULES SECTION" or "GENERAL RULES SECTION"
+**Enhanced/Sub-Requirements**: Nested requirements for complex scenarios
+- Real example from Session Management: "10-Question Threshold" with detailed sub-bullets
+- Use for conditional logic, exceptions, or advanced scenarios
 
-### NOT ACTIVE Rules
-**When to choose NOT ACTIVE:**
-- Rule is being drafted but not ready for implementation
-- You want to create the rule file without activating it yet
-- Rule needs review before being made active
+**Verification Steps**: Explicit validation requirements
+- Real pattern: "The agent MUST verify..." or "All agent interactions must be logged..."
+- Include gating requirements where applicable
 
-## Reference Link Format
+## Complete Real-World Examples
 
-For ACTIVE rules, the template provides the exact format for adding references to the main instructions:
+### Example 1: Documentation Standards Rule (Based on README Generation Rule)
 
-### Critical Rules Format:
-```markdown
-#### 🔴 [Rule Name]
-- *[PRIORITY DESCRIPTION IN UPPERCASE]*
-- For complete [Reference Description], see: [[Rule Name]](./instructions/rules/[filename]-rule.md)
-```
-
-### General Rules Format:
-```markdown
-#### [Rule Name]
-- *[PRIORITY DESCRIPTION IN UPPERCASE]*
-- For complete [Reference Description], see: [[Rule Name]](./instructions/rules/[filename]-rule.md)
-```
-
-## Rule File Structure
-
-The template creates rule files with this standardized structure:
-
-```markdown
-# [Rule Name]
-*[Rule Description]*
-
-## [Protocol/Section Name 1]
-*[Brief description of this protocol section]*
-- [Bullet point requirements]
-
-## [Protocol/Section Name 2]
-*[Brief description of this protocol section]*
-- [Bullet point requirements]
-```
-
-### Best Practices for Rule Structure:
-1. **Clear section names** that indicate the specific area being addressed
-2. **Descriptive introductions** for each section explaining its purpose
-3. **Actionable bullet points** that provide specific, implementable requirements
-4. **Logical flow** from general concepts to specific implementation details
-
-## Usage Examples
-
-### Example 1: Creating a Critical Workflow Rule
-```markdown
-Rule Information:
-- Rule Name: Session Management Protocol
-- Rule Description: Establishes comprehensive session management including logging, context preservation, and degradation prevention
-- File Location: .github/instructions/rules/session-management-protocol-rule.md
-
-Protocol Sections Needed:
-- Logging Requirements: Define what must be logged in each session
-- Context Preservation: Specify how to maintain context across sessions
-- Degradation Prevention: Establish protocols to prevent session quality loss
-
-Rule Status: ACTIVE
-Priority Description: HIGHEST PRIORITY - COMPREHENSIVE SESSION MANAGEMENT
-Reference Description: Session Management Protocol
-Location: CRITICAL RULES SECTION
-```
-
-### Example 2: Creating a Content Standards Rule
 ```markdown
 Rule Information:
 - Rule Name: README Generation Rule
-- Rule Description: Automated README generation and maintenance protocols
+- Rule Description: Defines comprehensive standards for creating and maintaining README files with proper linking, formatting, and organizational structure
 - File Location: .github/instructions/rules/readme-generation-rule.md
 
 Protocol Sections Needed:
-- Content Requirements: Define required sections and formatting
-- Update Triggers: Specify when READMEs should be regenerated
-- Validation Standards: Establish quality criteria for generated content
+- File Format and Structure Requirements: Basic README creation and format standards
+- Parent-Child README Relationships: Hierarchical file relationships and cross-linking
+- Directory Linking Protocol: Cross-directory README linking requirements
+
+Detailed Requirements for Each Protocol Section:
+
+### File Format and Structure Requirements
+- Main Requirements:
+  - The README should always be a Markdown file
+  - When asked to create a README in a directory: Create the README and link all documents in that folder to it
+  - Give a detailed description of what each document is and what it is to be used for
+  - All READMEs should have the following format: Title, Description, Links to all documents in the directory presented as a tree structure, Links to parent directory README.md, Links to child README.md files if any, Detailed description of each document in the directory and what it is to be used for
+- Enhanced/Sub-Requirements (if applicable):
+  - Tree structure presentation must be hierarchical and logical
+  - Document descriptions must explain both purpose and usage
+- Verification Steps (if applicable):
+  - Verify all documents in directory are linked and described
+
+### Parent-Child README Relationships
+- Main Requirements:
+  - If a document is named just README.md, it could be a parent to other README files in this directory
+  - Child documents should have the format README-<something>.md
+  - The parent README.md should have links to all child README files in that directory
+  - Each child README file should have a link back to the parent README.md file
+- Enhanced/Sub-Requirements (if applicable):
+  - Maintain bidirectional linking between parent and child files
+  - Update parent README when new child READMEs are created
+- Verification Steps (if applicable):
+  - Verify bidirectional links are functional and current
+
+### Directory Linking Protocol
+- Main Requirements:
+  - Link the README you just created to the parent directory README
+  - If there is no parent directory README, create one and link the child README to it
+  - If there is a parent directory README, add a link to the child README in the parent README
+  - This rule should be applied whenever a new README is created or an existing README is updated
+  - All READMEs up to the parent directory should be updated
+- Enhanced/Sub-Requirements (if applicable):
+  - Cascade updates through the entire directory hierarchy
+  - Maintain consistency across all levels of documentation
+- Verification Steps (if applicable):
+  - Verify entire directory chain is properly linked and updated
 
 Rule Status: ACTIVE
 Priority Description: AUTOMATED README GENERATION AND MAINTENANCE PROTOCOLS
 Reference Description: README Generation Rule
 Location: GENERAL RULES SECTION
+Status Description: Core documentation rule that ensures consistent README file creation and maintenance across all project directories. Required for maintaining organized documentation hierarchy.
 ```
 
-### Example 3: Creating a Draft Rule
+### Example 2: Critical System Protocol (Based on Session Management Protocol)
+
 ```markdown
 Rule Information:
-- Rule Name: Code Review Standards
-- Rule Description: Establishes comprehensive code review requirements and processes
-- File Location: .github/instructions/rules/code-review-standards-rule.md
+- Rule Name: Session Management Protocol
+- Rule Description: Comprehensive session management system that ensures context preservation, prevents degradation, and maintains optimal AI assistant performance across all interactions
+- File Location: .github/instructions/core-protocols/session-management-protocol.md
 
 Protocol Sections Needed:
-- Review Criteria: Define what aspects must be reviewed
-- Process Requirements: Establish the review workflow
-- Documentation Standards: Specify required documentation for reviews
+- Session Initiation Protocol: When and how session logging should be started
+- Session Storage Protocol: Standardized file structure and naming conventions
+- Mandatory Session Logging: Documentation requirements for all interactions
+- Session Continuity: Maintaining connection between sessions
+- Context Degradation Prevention: Proactive session length management
+- Early Warning Protocol: Additional context awareness for optimal management
 
-Rule Status: NOT ACTIVE
-(No additional information needed for NOT ACTIVE rules)
+Detailed Requirements for Each Protocol Section:
+
+### Session Initiation Protocol
+- Main Requirements:
+  - The user will explicitly indicate when a session requires logging by providing a project name
+  - Alternatively, the user may provide a location containing previous conversation history for context continuation
+  - Sessions should only be logged when explicitly requested by the user
+  - All session logging must be associated with a clearly identified project name
+- Enhanced/Sub-Requirements (if applicable):
+  - Exception: when previous context logging is provided, logging continues automatically
+  - Project name identification is mandatory for all logged sessions
+- Verification Steps (if applicable):
+  - Verify project name is clearly identified before starting session logging
+
+### Context Degradation Prevention
+- Main Requirements:
+  - Question Counting: Track question count starting from 1 at the beginning of each logged session
+  - 10-Question Threshold: When a logged session reaches exactly 10 questions AND after completing the git commit and logging to chat, immediately prompt the user
+  - One-Time Trigger: This prompt should only appear ONCE per session when crossing the 10-question threshold
+  - User Choice Preservation: Always allow the user to choose whether to restart - never force a session restart
+- Enhanced/Sub-Requirements (if applicable):
+  - Technical Rationale: AI models have finite context windows, and practical experience shows that foundational context begins losing priority much earlier than theoretical limits suggest
+  - Context Refresh Benefits: Session restart reloads all .github files with full priority, ensuring consistent instruction adherence
+  - Specific prompt message: "⚠️ **Session Context Alert**: You've reached 10 questions in this session. Based on observed patterns, AI context begins degrading around 8-10 questions, requiring reminders of previously established information. Would you like to end this session and start a new one to refresh the full context?"
+- Verification Steps (if applicable):
+  - The agent MUST verify question count after every user interaction
+  - Verify the threshold prompt is triggered exactly once at question 10
+
+Rule Status: ACTIVE
+Priority Description: HIGHEST PRIORITY - COMPREHENSIVE SESSION MANAGEMENT INCLUDING LOGGING, CONTEXT PRESERVATION, AND DEGRADATION PREVENTION
+Reference Description: Session Management Protocol
+Location: CRITICAL RULES SECTION
+Status Description: Critical protocol that maintains optimal AI performance through proactive context management, mandatory logging, and degradation prevention. Essential for consistent instruction adherence across all interactions.
 ```
+
+## Template Usage Guidelines
+
+### When to Create New Rules
+
+**Create rules for:**
+- Standardizing complex multi-step processes
+- Establishing verification requirements for critical workflows
+- Managing system-wide protocols that affect multiple components
+- Implementing quality control measures
+
+**Don't create rules for:**
+- Simple one-time instructions
+- Highly specific, non-repeatable tasks
+- Temporary or experimental procedures
+
+### Rule Complexity Levels
+
+**Simple Rules (3-4 sections)**: Focus on straightforward processes with clear requirements
+- Example: File format standards, basic linking protocols
+
+**Complex Rules (5-6 sections)**: Handle sophisticated workflows with nested logic
+- Example: Session management, context degradation prevention
+
+**Critical Protocols**: Rules that affect system stability or user experience
+- Require enhanced verification steps and detailed technical rationale
+
+### Required Elements for All Rules
+
+1. **Italicized rule description** explaining scope and purpose
+2. **Multiple protocol sections** (minimum 3, typically 4-6)
+3. **Specific, actionable requirements** in each section
+4. **Enhanced sub-requirements** for complex scenarios
+5. **Verification steps** where validation is critical
+6. **Mandatory Status section** with ACTIVE designation and detailed description
 
 ## Integration with Master Instructions
 
-This prompt template leverages the Master Prompt Instructions for:
-- **Session Management Protocol**: Logging and documentation requirements
-- **PUSH CODE Protocol**: Automatic git operations
-- **Testing and Validation**: Consistency checking procedures
-- **Change Documentation**: Standardized logging format
+This prompt template integrates with Master Prompt Instructions for:
+- Session management and logging protocols
+- Git operations and commit procedures  
+- Validation and testing requirements
+- Documentation standards
 
-Only rule-specific deliverables are defined in this template:
-- Creation of the rule file in the correct location
-- Addition of reference links for ACTIVE rules
-- Proper status management (ACTIVE/NOT ACTIVE)
+Rule-specific elements handled by this template:
+- Complex protocol section structure
+- Enhanced sub-requirements and verification steps
+- ACTIVE/NOT ACTIVE status management
+- Reference link generation for copilot-instructions.md
 
-## File Management
+## Best Practices from Real Rules
 
-### Directory Structure
-Rules are organized in a dedicated directory:
-```
-.github/instructions/rules/
-├── session-management-protocol-rule.md
-├── readme-generation-rule.md
-├── question-processing-rule.md
-└── [new-rule-name]-rule.md
-```
+### Writing Effective Requirements
+- Use specific, actionable language ("The agent MUST verify..." not "Consider verifying...")
+- Include technical details when relevant (file paths, formats, thresholds)
+- Provide rationale for complex requirements (especially in enhanced sub-requirements)
 
-### Naming Conventions
-- **File names**: Use kebab-case with `-rule.md` suffix
-- **Rule names**: Use title case, descriptive names
-- **Section names**: Use clear, action-oriented headings
+### Structuring Protocol Sections
+- Each section should focus on one distinct aspect of the rule
+- Use descriptive section names that indicate the specific area being addressed
+- Organize from general concepts to specific implementation details
 
-### Activation Process
-1. **Create rule file** using this prompt template
-2. **Review content** for completeness and accuracy
-3. **Add reference link** to `.github/copilot-instructions.md` (if ACTIVE)
-4. **Test integration** to ensure rule works with existing instructions
-5. **Document changes** in session logs
+### Verification and Validation
+- Include explicit verification steps for critical requirements
+- Use gating language where appropriate ("MUST verify before proceeding")
+- Specify what constitutes successful validation
 
-## Troubleshooting
+## Troubleshooting Real-World Issues
 
-### Common Issues
-1. **Unclear rule scope**: Be specific about what the rule covers and doesn't cover
-2. **Missing protocol sections**: Ensure all necessary areas are addressed
-3. **Inconsistent formatting**: Follow the standardized rule file structure
-4. **Incorrect reference links**: Use exact format provided in template
+### Common Rule Creation Problems
+1. **Insufficient detail in requirements**: Real rules need specific, actionable bullet points
+2. **Missing verification steps**: Critical workflows require explicit validation requirements  
+3. **Unclear protocol boundaries**: Each section should address a distinct functional area
+4. **Inadequate status description**: Must explain both what the rule does and why it's required
 
-### Validation Checklist
-- [ ] Rule name is descriptive and clear
-- [ ] File location follows kebab-case naming convention
-- [ ] All protocol sections have clear descriptions
-- [ ] Requirements are specific and actionable
-- [ ] ACTIVE status includes all required information
-- [ ] Reference link format is correct (if ACTIVE)
-- [ ] Rule content follows standardized structure
+### Validation Checklist Based on Real Rules
+- [ ] Rule has 3-6 well-defined protocol sections
+- [ ] Each section has 4-6 specific requirements
+- [ ] Enhanced sub-requirements address complex scenarios
+- [ ] Verification steps are included where critical
+- [ ] Status section includes ACTIVE designation and detailed description
+- [ ] Technical rationale provided for complex requirements
+- [ ] File naming follows kebab-case convention with -rule.md suffix
 
-## Related Files
+## Related Files and Dependencies
 
-- **Rules Creation Prompt**: `../rules-prompt.md` (this guide's subject)
+- **Rules Creation Prompt**: `../rules-prompt.md` 
 - **Master Prompt Instructions**: `../master-prompt-instructions.md`
-- **Session Management Protocol**: `../instructions/core-protocols/session-management-protocol.md`
+- **Existing Rules Directory**: `../instructions/rules/`
+- **Core Protocols Directory**: `../instructions/core-protocols/`
 - **Main Copilot Instructions**: `../copilot-instructions.md`
-
-## Maintenance and Updates
-
-### When to Update Rules
-- When new requirements are identified
-- When existing protocols need modification
-- When rules conflict with other instructions
-- When workflow changes require rule updates
-
-### Update Process
-1. **Modify rule file** with necessary changes
-2. **Update reference links** if rule name or location changes
-3. **Document changes** in session logs
-4. **Validate integration** with other instructions
-5. **Test implementation** to ensure rules work as expected
 
 ## Version History
 
-- **v2.0** (October 2025): Complete guide redesign with comprehensive examples and detailed field explanations
-- Integrated with Master Prompt Instructions system
-- Added troubleshooting and maintenance sections
-- Enhanced with practical usage examples and best practices
+- **v3.0** (October 2025): Complete guide rewrite based on analysis of real existing rules
+- Added examples directly derived from README Generation Rule and Session Management Protocol
+- Enhanced with actual complexity patterns and verification requirements from production rules
+- Integrated real-world troubleshooting based on existing rule structures

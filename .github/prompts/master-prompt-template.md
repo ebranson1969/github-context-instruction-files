@@ -7,27 +7,10 @@
 ## Common Template Structure
 
 ```markdown
-# [TEMPLATE NAME] Prompt Template
-
-*For detailed explanations, examples, and usage instructions, see: [[TEMPLATE NAME] Guide](./guides/[template-name]-guide.md)*
-
-## Template: [ACTION] [COMPONENT NAME]
-
-```markdown
 ## Your Question/Request
 I need you to [ACTION DESCRIPTION] in the modular instruction system.
 
 **CRITICAL**: This session must be properly logged according to established protocols. Document all research, reasoning, and file modifications throughout this process.
-
-[COMPONENT TYPE] Information:
-- [COMPONENT TYPE] Name: [INSERT NAME]
-- [COMPONENT TYPE] Description: [INSERT DESCRIPTION]
-- File Location: [INSERT FILE PATH]
-
-[SECTIONS BLOCK - VARIES BY TEMPLATE TYPE]
-
-## [TEMPLATE-SPECIFIC SECTIONS]
-[This varies by template - could be Rule Status, Update Type, etc.]
 
 ## Session Management Protocol
 **Should this [ACTION] follow the established Session Management Protocol?**
@@ -75,11 +58,6 @@ Session Management Requirements (per Session Management Protocol):
 - **Log the complete prompt used in chat (copy the entire prompt from chat)**
 - **Document prompt source: .github/prompts/[SOURCE-FILE-NAME].md**
 
-Special Considerations for [COMPONENT TYPE] [ACTION]:
-- [INSERT COMPONENT-SPECIFIC CONSIDERATIONS]
-- [INSERT IMPACT CONSIDERATIONS]
-- [INSERT COMPATIBILITY CONSIDERATIONS]
-
 ## Expected Deliverables
 - [ACTION RESULT] [COMPONENT] file with requested changes
 - Validation of all internal [COMPONENT] consistency
@@ -96,4 +74,4 @@ For the session log, document:
 - Testing/validation performed
 - Files modified beyond the main [COMPONENT] file
 - Future considerations or follow-up needed
-```
+````

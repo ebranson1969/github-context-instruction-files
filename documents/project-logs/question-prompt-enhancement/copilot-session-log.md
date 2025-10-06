@@ -306,3 +306,55 @@ Set the "Session Start or Restart" section to RESTART (instead of START) since t
 **Prompt Source:** Continuing conversation from existing session
 
 **Status:** ✅ COMPLETED - Continuing conversation prompt now matches the standardized Session Management Protocol format used across all prompt templates, with RESTART appropriately selected for session continuations.
+
+**Git Commit Information:**
+- **Commit Hash:** ea46ee5
+- **Commit Message:** "feat(prompts): complete session management protocol standardization"
+- **Branch:** develop
+- **Files Changed:** 3 files (continuing conversation prompt + session log updates)
+- **Push Status:** ✅ Successfully pushed to remote repository
+- **Data Transfer:** 8 objects, 1.86 KiB transferred
+
+---
+
+### Question 5 - Master Template Guide Creation and Cleanup (October 6, 2025)
+**User's Original Question:** User requested to move all the Template Variables Reference, Create/Update Template Specific Sections, Standard Protocol Defaults, and Usage Instructions from the master-prompt-template.md file to a guide file, following the same pattern as other prompt templates.
+
+**Question Context:** The master-prompt-template.md file contained extensive reference content that should be in a separate guide file to maintain consistency with the other prompt templates in the system, which all have corresponding guide files.
+
+**Research and Reasoning:**
+- Identified that master-prompt-template.md contained reference content that belongs in a guide file
+- Other prompt templates (workflows-prompt.md, rules-prompt.md, etc.) all have separate guide files
+- Master template should focus on the core template structure, not detailed reference information
+- Guide file should contain variables reference, usage instructions, examples, and best practices
+- This maintains consistency across the entire prompt template system
+
+**Actions Taken:**
+1. Created new guide file: `master-prompt-template-guide.md` in the guides directory
+2. Moved all reference content from master template to the guide:
+   - Template Variables Reference (Universal Variables, Create/Update Template Specific Sections)
+   - Standard Protocol Defaults
+   - Usage Instructions
+3. Enhanced the guide with additional helpful sections:
+   - Overview and explanation
+   - Template Types (General, Component Creation, Component Update)
+   - Best Practices for template consistency
+   - Examples of different template types
+   - Troubleshooting section with common issues and validation steps
+4. Updated master-prompt-template.md to add guide reference link at the top
+5. Removed all reference sections from master template, keeping only the Common Template Structure
+
+**Files Modified:**
+- **Created:** `.github/prompts/guides/master-prompt-template-guide.md` - Comprehensive guide with all reference content and additional helpful sections
+- **Updated:** `.github/prompts/master-prompt-template.md` - Cleaned up to contain only core template structure with guide reference link
+
+**Key Improvements:**
+- Master template now focuses solely on the essential common template structure
+- All detailed reference information organized in dedicated guide file
+- Added comprehensive documentation including examples and troubleshooting
+- Maintains consistency with other prompt templates that have separate guide files
+- Enhanced user experience with better organization and additional helpful content
+
+**Prompt Source:** Continuing conversation from existing session
+
+**Status:** ✅ COMPLETED - Master prompt template system now follows the same pattern as other prompt templates with clean template file and comprehensive separate guide file.

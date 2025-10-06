@@ -2,6 +2,8 @@
 
 *This template contains all the common elements found across all prompt templates in the system. Use this as a foundation for creating new prompt templates.*
 
+*For detailed explanations, examples, and usage instructions, see: [Master Prompt Template Guide](./guides/master-prompt-template-guide.md)*
+
 ## Common Template Structure
 
 ```markdown
@@ -42,15 +44,6 @@ I need you to [ACTION DESCRIPTION] in the modular instruction system.
 **Default: START** ✅
 - [x] START - This is a new session
 - [ ] RESTART - This is a restarted session (context and logs must be preserved)
-
-## Reference Updates Required
-**Does this update require changes to references in other files?**
-
-**Default: YES** ✅
-- [x] YES - Update references following the existing prompt template structure patterns
-- [ ] NO - No reference updates needed
-
-*Note: Follow the established patterns used in other .github/prompts/ templates for consistency.*
 
 ## PUSH CODE Protocol
 **Should changes be automatically pushed to the repository when complete?**
@@ -104,65 +97,3 @@ For the session log, document:
 - Files modified beyond the main [COMPONENT] file
 - Future considerations or follow-up needed
 ```
-
-## Template Variables Reference
-
-### **Universal Variables (Used in All Templates):**
-- `[TEMPLATE NAME]` - Name of the specific template (e.g., "Question Processing Rule Creation")
-- `[ACTION]` - What's being done (Create, Update)
-- `[COMPONENT NAME]` - What's being worked on (Question Processing Rule, Session Management Protocol)
-- `[COMPONENT TYPE]` - Type of component (Rule, Protocol, Workflow)
-- `[SOURCE-FILE-NAME]` - The filename of the prompt template
-
-### **Create Template Specific Sections:**
-```markdown
-## [COMPONENT] Status
-**Should this [COMPONENT] be ACTIVE or NOT ACTIVE?**
-
-- [x] **ACTIVE** - Create [COMPONENT] file AND add reference link to .github/copilot-instructions.md
-- [ ] **NOT ACTIVE** - Create [COMPONENT] file only (no reference link)
-
-### [COMPONENT] Details:
-- Priority Description: [INSERT PRIORITY DESCRIPTION IN UPPERCASE]
-- Reference Description: [INSERT DESCRIPTION FOR THE LINK TEXT]
-- Location in copilot-instructions.md: [INSERT WHERE TO ADD THE REFERENCE LINK]
-
-### Reference Link Format (for ACTIVE [COMPONENTS]):
-#### [COMPONENT NAME]
-- *[PRIORITY DESCRIPTION IN UPPERCASE]*
-
-- For complete [Reference Description], see: [[COMPONENT NAME]](./instructions/[path]/[filename].md)
-```
-
-### **Update Template Specific Sections:**
-```markdown
-## Update Type
-**What type of update is this?**
-
-- [x] **ENHANCEMENT** - Adding new functionality or improving existing protocols
-- [ ] **BUG FIX** - Correcting errors or issues in existing protocols
-- [ ] **CLARIFICATION** - Improving documentation or clarity without changing functionality
-- [ ] **RESTRUCTURE** - Reorganizing sections or improving structure
-
-### Update Details:
-- Change Description: [INSERT DESCRIPTION OF WHAT IS BEING CHANGED]
-- Rationale: [INSERT WHY THIS CHANGE IS NEEDED]
-- Impact Assessment: [INSERT HOW THIS AFFECTS EXISTING WORKFLOWS]
-```
-
-## Standard Protocol Defaults
-
-**All templates use these defaults:**
-- Session Management Requirements: YES ✅
-- Reference Updates Required: YES ✅ 
-- PUSH CODE Protocol: YES ✅
-- Testing and Validation: YES ✅
-- All Validation Checklist items: ✅ (pre-checked)
-
-## Usage Instructions
-
-1. **Copy this master template** as the foundation for any new prompt template
-2. **Replace all bracketed variables** with specific values for your use case
-3. **Add template-specific sections** (Rule Status for creates, Update Type for updates)
-4. **Customize the component-specific content** while keeping the standard protocols intact
-5. **Keep all the default YES checkboxes** to maintain consistency across templates

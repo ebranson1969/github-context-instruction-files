@@ -61,6 +61,12 @@ Session Management Requirements (per Session Management Protocol):
 - Complete session management logging of all actions and decisions
 - Git commit with detailed change description
 - Impact assessment of changes on existing workflows
+- **🚨 CRITICAL REQUIREMENT: Automated continuation prompt creation for new sessions**
+  1. Create continuation prompt file at `documents/project-logs/[project-name]/continuation-prompt.md`
+  2. Copy ALL sections from original prompt with only these modifications:
+     - "Your Question/Request" section: Replace with "[REPLACE THIS WITH YOUR NEW QUESTION - This will be added to the existing session]"
+     - ALL OTHER SECTIONS: Copy exactly as they appear in original prompt
+  3. This ensures session continuity and prompt consistency across all interactions
 
 ## Change Documentation Template
 For the session log, document:

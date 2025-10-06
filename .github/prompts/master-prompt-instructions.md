@@ -72,12 +72,12 @@ Session Management Requirements (per Session Management Protocol):
      a. "Your Question/Request" section: Replace with "[REPLACE THIS WITH YOUR NEW QUESTION - This will be added to the existing session]"
      b. ALL OTHER SECTIONS: Copy exactly as they appear in the original prompt
      c. If the user provided a prompt file, copy that prompt verbatim instead
-     d. If you generated a project name automatically, ensure the generated project name replaces any project name placeholder in both documents
+     d. If the AI automatically generated a project name, ensure the generated project name replaces any project name placeholder in both documents
   2. Create continuation prompt file at `documents/project-logs/[project-name]/continuation-prompt.md`
      a. It should be an exact copy of the original prompt with the "Your Question/Request" section replaced with "[REPLACE THIS WITH YOUR NEW QUESTION - This will be added to the existing session]"
      b. If the user provided a prompt file, copy that prompt verbatim
      c. The continuation prompt should be set to RESTART instead of START in the Session Management Protocol
-     d. If you generated a project name automatically, ensure the generated project name is used in both the file path and within the prompt content
+     d. If the AI automatically generated a project name, ensure the generated project name is used in both the file path and within the prompt content
   3. This ensures session continuity and prompt consistency across all interactions
   4. Copy the complete contents of master-prompt-instructions.md into both prompts you create instead of using the link reference
 

@@ -2,7 +2,7 @@
 
 *This file contains all the common instructions and protocols that are shared across all prompts in the system. These instructions should be included in or referenced by every prompt template.*
 
-*For detailed explanations, examples, and usage instructions, see: [Master Prompt Instructions Guide](./guides/master-prompt-template-guide.md)*
+*For detailed explanations, examples, and usage instructions, see: [Master Prompt Instructions Guide](./guides/master-prompt-instructions-guide.md)*
 
 ## Common Instructions for All Prompts
 

@@ -18,9 +18,31 @@ Protocol Sections Needed:
 - [INSERT PROTOCOL/SECTION NAME 2]: [INSERT BRIEF DESCRIPTION]
 - [ADD MORE SECTIONS AS NEEDED]
 
-Specific Requirements:
-- [INSERT BULLET POINT REQUIREMENTS FOR EACH PROTOCOL SECTION]
-- [ADD MORE REQUIREMENTS AS NEEDED]
+Detailed Requirements for Each Protocol Section:
+*For each protocol section above, provide the following:*
+
+### [Protocol/Section Name 1]
+- Main Requirements:
+  - [INSERT SPECIFIC REQUIREMENT 1]
+  - [INSERT SPECIFIC REQUIREMENT 2]
+  - [ADD MORE AS NEEDED]
+- Enhanced/Sub-Requirements (if applicable):
+  - [INSERT SUB-REQUIREMENT 1]
+  - [INSERT SUB-REQUIREMENT 2]
+- Verification Steps (if applicable):
+  - [INSERT VERIFICATION REQUIREMENT]
+
+### [Protocol/Section Name 2]
+- Main Requirements:
+  - [INSERT SPECIFIC REQUIREMENT 1]
+  - [INSERT SPECIFIC REQUIREMENT 2]
+- Enhanced/Sub-Requirements (if applicable):
+  - [INSERT SUB-REQUIREMENT 1]
+  - [INSERT SUB-REQUIREMENT 2]
+- Verification Steps (if applicable):
+  - [INSERT VERIFICATION REQUIREMENT]
+
+[REPEAT FOR ADDITIONAL SECTIONS]
 
 ## Rule Status
 **Should this rule be ACTIVE or NOT ACTIVE?**
@@ -32,6 +54,7 @@ Specific Requirements:
 - Priority Description: [INSERT PRIORITY DESCRIPTION IN UPPERCASE]
 - Reference Description: [INSERT DESCRIPTION FOR THE LINK TEXT]
 - Location in copilot-instructions.md: [INSERT WHERE TO ADD THE REFERENCE LINK - CRITICAL or GENERAL RULES SECTION]
+- Status Description: [INSERT DETAILED DESCRIPTION OF WHAT THIS RULE ACCOMPLISHES AND WHY IT'S REQUIRED]
 
 ### Reference Link Format (for ACTIVE rules):
 #### 🔴 [Rule Name] (if critical) OR #### [Rule Name] (if general)
@@ -39,17 +62,32 @@ Specific Requirements:
 
 - For complete [Reference Description], see: [[Rule Name]](./instructions/rules/[filename]-rule.md)
 
-Rule File Structure:
+## Rule File Structure:
 # [Rule Name]
 *[Rule Description]*
 
 ## [Protocol/Section Name 1]
 *[Brief description of this protocol section]*
-- [Bullet point requirements]
+- [Main requirement 1]
+- [Main requirement 2]
+- Enhanced/Sub-Requirements (if applicable):
+  - [Sub-requirement 1]
+  - [Sub-requirement 2]
+- [Verification steps if applicable]
 
 ## [Protocol/Section Name 2]
 *[Brief description of this protocol section]*
-- [Bullet point requirements]
+- [Main requirement 1]
+- [Main requirement 2]
+- Enhanced/Sub-Requirements (if applicable):
+  - [Sub-requirement 1]
+  - [Sub-requirement 2]
+- [Verification steps if applicable]
+
+[REPEAT FOR ADDITIONAL SECTIONS]
+
+## Status
+**ACTIVE** - [Detailed description of what this rule accomplishes and why it's required for the system]
 
 ## Expected Deliverables
 - New rule file created in .github/instructions/rules/

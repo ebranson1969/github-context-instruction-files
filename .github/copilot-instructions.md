@@ -6,19 +6,19 @@
 #### 🔴 Session Management Protocol
 - *HIGHEST PRIORITY - COMPREHENSIVE SESSION MANAGEMENT INCLUDING LOGGING, CONTEXT PRESERVATION, AND DEGRADATION PREVENTION*
 
-- For complete Session Management Protocol, see: [Session Management Protocol](./instructions/core-protocols/session-management-protocol.md)
+- For complete Session Management Protocol, see: [Session Management Protocol](.github/instructions/core-protocols/session-management-protocol.md)
 
 ### 🔴 GENERAL RULES SECTION
 
 #### Question Processing Rules
 - *CONTROLS WORKFLOW FOR DOCUMENTING RESPONSES AFTER EACH USER QUESTION*
 
-- For complete Question Processing Rules, see: [Question Processing Rule](./instructions/rules/question-processing-rule.md)
+- For complete Question Processing Rules, see: [Question Processing Rule](.github/instructions/rules/question-processing-rule.md)
 
 #### README Generation Rule
 - *AUTOMATED README GENERATION AND MAINTENANCE PROTOCOLS*
 
-- For complete README Generation Rule, see: [README Generation Rule](./instructions/rules/readme-generation-rule.md)
+- For complete README Generation Rule, see: [README Generation Rule](.github/instructions/rules/readme-generation-rule.md)
 
 
 ## Agent Workflow Requirements
@@ -26,22 +26,22 @@
 #### Automatic Git Operations
 - *AUTOMATED GIT OPERATIONS FOR SESSION MANAGEMENT AND CODE DEPLOYMENT*
 
-- For complete Automatic Git Operations Workflow, see: [Automatic Git Operations Workflow](./instructions/workflows/automatic-git-operations.md)
+- For complete Automatic Git Operations Workflow, see: [Automatic Git Operations Workflow](.github/instructions/workflows/automatic-git-operations.md)
 
 #### Manual Git Trigger
 - *USER-INITIATED GIT OPERATIONS THROUGH STANDARDIZED TRIGGER PHRASE*
 
-- For complete Manual Git Trigger Workflow, see: [Manual Git Trigger Workflow](./instructions/workflows/manual-git-trigger.md)
+- For complete Manual Git Trigger Workflow, see: [Manual Git Trigger Workflow](.github/instructions/workflows/manual-git-trigger.md)
 
 #### Manual Context Sync Workflow (COMMIT CONTEXT)
 - *USER-INITIATED CONTEXT FILE SYNCHRONIZATION AND GIT OPERATIONS THROUGH STANDARDIZED TRIGGER PHRASE*
 
-- For complete Manual Context Sync Workflow (COMMIT CONTEXT), see: [Manual Context Sync Workflow (COMMIT CONTEXT)](./instructions/workflows/manual-context-sync.md)
+- For complete Manual Context Sync Workflow (COMMIT CONTEXT), see: [Manual Context Sync Workflow (COMMIT CONTEXT)](.github/instructions/workflows/manual-context-sync.md)
 
 #### Git Commit Message Format
 - *STANDARDIZED COMMIT MESSAGE FORMAT AND CONTENT FOR CONSISTENCY AND TRACEABILITY*
 
-- For complete Git Commit Message Formatting Workflow, see: [Git Commit Message Formatting Workflow](./instructions/workflows/git-commit-message-format.md)
+- For complete Git Commit Message Formatting Workflow, see: [Git Commit Message Formatting Workflow](.github/instructions/workflows/git-commit-message-format.md)
 
 ## Coding Style Preferences
 

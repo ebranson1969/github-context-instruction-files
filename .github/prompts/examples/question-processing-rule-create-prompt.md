@@ -44,7 +44,7 @@ Specific Requirements:
 #### Question Processing Rules
 - *CONTROLS WORKFLOW FOR DOCUMENTING RESPONSES AFTER EACH USER QUESTION*
 
-- For complete Question Processing Rules, see: [Question Processing Rule](./instructions/rules/question-processing-rule.md)
+- For complete Question Processing Rules, see: [Question Processing Rule](.github/instructions/rules/question-processing-rule.md)
 
 Rule File Structure:
 # Question Processing Rule
@@ -78,7 +78,7 @@ Rule File Structure:
 **Should this rule creation follow the established Session Management Protocol?**
 
 **Default: YES** ✅
-- [x] YES - Follow complete Session Management Protocol as defined in [Session Management Protocol](../instructions/core-protocols/session-management-protocol.md)
+- [x] YES - Follow complete Session Management Protocol as defined in [Session Management Protocol](.github/instructions/core-protocols/session-management-protocol.md)
 - [ ] NO - Skip session management requirements for this question
 
 *Note: Session Management Protocol includes logging, context preservation, and degradation prevention requirements.*

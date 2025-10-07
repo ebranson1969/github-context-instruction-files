@@ -39,7 +39,7 @@ Specific Requirements:
 #### [Workflow Name]
 - *[PURPOSE DESCRIPTION IN UPPERCASE]*
 
-- For complete [Reference Description], see: [[Workflow Name]](./instructions/workflows/[filename]-workflow.md)
+- For complete [Reference Description], see: [[Workflow Name]](.github/instructions/workflows/[filename]-workflow.md)
 
 Workflow File Structure:
 # [Workflow Name]

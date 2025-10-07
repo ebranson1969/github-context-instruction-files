@@ -11,11 +11,11 @@ core-protocols/
 ```
 
 ## Parent Directory
-- **[↑ Instructions](../README.md)** - Modular instruction system for AI assistant behavior
+- **[↑ Instructions](.github/instructions/README.md)** - Modular instruction system for AI assistant behavior
 
 ## Protocol Descriptions
 
-### 📄 **[session-management-protocol.md](session-management-protocol.md)**
+### 📄 **[session-management-protocol.md](.github/instructions/core-protocols/session-management-protocol.md)**
 **Comprehensive Session Management System**
 - **Purpose**: Ensures context preservation, prevents degradation, and maintains optimal AI assistant performance across all interactions
 - **Coverage**: Session initiation, storage protocols, mandatory logging, continuity management, context degradation prevention, failure recovery

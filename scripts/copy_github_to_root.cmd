@@ -1,49 +1,17 @@
 @echo off
-REM CMD script to reset branch to master state and copy .github files to project root.
-REM Enhanced version with git reset functionality and session logging.
+REM CMD script to copy .github files to project root.
+REM Simple file copying without git operations.
 
 setlocal enabledelayedexpansion
 
 echo ========================================
-echo Git Reset and Copy Script - CMD Version
+echo File Copy Script - CMD Version
 echo ========================================
 echo Session started: %date% %time%
 
-REM Step 1: Switch to master branch
+REM Copy files from .github to project root
 echo.
-echo Step 1: Switching to master branch...
-git checkout master
-if !errorlevel! neq 0 (
-    echo Error: Failed to switch to master branch
-    echo Session ended with error: %date% %time%
-    exit /b 1
-)
-echo Successfully switched to master branch
-
-REM Step 2: Reset to origin/master (hard reset)
-echo.
-echo Step 2: Resetting to origin/master...
-echo This will revert all changes, remove new files, and restore deleted files
-git fetch origin
-git reset --hard origin/master
-if !errorlevel! neq 0 (
-    echo Error: Failed to reset to origin/master
-    echo Session ended with error: %date% %time%
-    exit /b 1
-)
-echo Successfully reset to origin/master
-
-REM Step 3: Clean untracked files and directories
-echo.
-echo Step 3: Cleaning untracked files and directories...
-git clean -fd
-if !errorlevel! neq 0 (
-    echo Warning: Git clean had issues, continuing...
-)
-
-REM Step 4: Copy files from .github to project root
-echo.
-echo Step 4: Copying files from .github to project root...
+echo Copying files from .github to project root...
 
 set "src_dir=.github"
 set "dest_dir=."
@@ -84,7 +52,6 @@ for /r "%src_dir%" %%F in (*) do (
 echo.
 echo ========================================
 echo Session Summary:
-echo - Branch reset to origin/master: SUCCESS
 echo - Files copied: !copied_files!
 echo - Session ended: %date% %time%
 echo ========================================

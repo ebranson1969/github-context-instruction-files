@@ -1,6 +1,6 @@
 @echo off
 REM CMD script to copy .github files to project root.
-REM Simple file copying without git operations.
+REM Simple file copying without git operations, with cleanup of existing files.
 
 setlocal enabledelayedexpansion
 
@@ -8,10 +8,6 @@ echo ========================================
 echo File Copy Script - CMD Version
 echo ========================================
 echo Session started: %date% %time%
-
-REM Copy files from .github to project root
-echo.
-echo Copying files from .github to project root...
 
 set "src_dir=.github"
 set "dest_dir=."
@@ -21,6 +17,45 @@ if not exist "%src_dir%" (
     echo Session ended with error: %date% %time%
     exit /b 1
 )
+
+REM Step 1: Clean up existing copied files
+echo.
+echo Step 1: Cleaning up existing copied files and directories...
+
+set cleaned_files=0
+for /r "%src_dir%" %%F in (*) do (
+    set "src_file=%%F"
+    set "full_path=%%F"
+
+    REM Calculate relative path by removing source directory prefix
+    set "rel_path=!full_path:%cd%\%src_dir%\=!"
+    set "dest_file=%dest_dir%\!rel_path!"
+
+    REM Delete existing file if it exists
+    if exist "!dest_file!" (
+        del /Q "!dest_file!" >nul 2>&1
+        if !errorlevel! equ 0 (
+            echo Deleted: !dest_file!
+            set /a cleaned_files+=1
+        ) else (
+            echo Warning: Could not delete !dest_file!
+        )
+    )
+)
+
+REM Clean up empty directories that might have been created from previous copies
+for /d %%D in (instructions prompts) do (
+    if exist "%%D" (
+        echo Removing directory: %%D
+        rmdir /S /Q "%%D" >nul 2>&1
+    )
+)
+
+echo Cleaned up %cleaned_files% files and directories
+
+REM Step 2: Copy files from .github to project root
+echo.
+echo Step 2: Copying files from .github to project root...
 
 set copied_files=0
 for /r "%src_dir%" %%F in (*) do (
@@ -52,6 +87,7 @@ for /r "%src_dir%" %%F in (*) do (
 echo.
 echo ========================================
 echo Session Summary:
+echo - Files cleaned up: !cleaned_files!
 echo - Files copied: !copied_files!
 echo - Session ended: %date% %time%
 echo ========================================

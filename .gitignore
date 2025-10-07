@@ -20,3 +20,8 @@ node_modules/
 *.tmp
 *.temp
 /.gradle/
+/instructions/
+/prompts/
+/copilot-instructions.md
+/git-commit-instructions.md
+/yntax is incorrect.

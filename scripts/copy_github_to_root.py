@@ -53,6 +53,18 @@ def copy_files():
     log_message("Step 1: Cleaning up existing copied files and directories...")
 
     cleaned_files = 0
+
+    # Clean up the specially renamed README file
+    github_readme_dest = os.path.join(dest_dir, 'github-context-readme.md')
+    if os.path.exists(github_readme_dest):
+        try:
+            os.remove(github_readme_dest)
+            log_message(f"Deleted: {github_readme_dest}")
+            cleaned_files += 1
+        except Exception as e:
+            log_message(f"Warning: Could not delete {github_readme_dest}: {e}")
+
+    # Clean up other files from .github
     for root, dirs, files in os.walk(src_dir):
         rel_path = os.path.relpath(root, src_dir)
 
@@ -61,8 +73,12 @@ def copy_files():
         else:
             target_dir = os.path.join(dest_dir, rel_path)
 
-        # Delete existing files
+        # Delete existing files (skip only the root README.md)
         for file in files:
+            # Only skip the root .github/README.md file
+            if file.lower() == 'readme.md' and rel_path == '.':
+                continue  # Skip the root .github/README.md file
+
             dest_file = os.path.join(target_dir, file)
             if os.path.exists(dest_file):
                 try:
@@ -106,16 +122,23 @@ def copy_files():
         # Copy each file
         for file in files:
             src_file = os.path.join(root, file)
-            dest_file = os.path.join(target_dir, file)
-            
+
+            # Handle only the root .github/README.md specially
+            if file.lower() == 'readme.md' and rel_path == '.':
+                dest_file = os.path.join(dest_dir, 'github-context-readme.md')
+                rename_note = " (renamed)"
+            else:
+                dest_file = os.path.join(target_dir, file)
+                rename_note = ""
+
             try:
                 shutil.copy2(src_file, dest_file)
 
                 # Update timestamps in the copied file
                 if update_file_timestamps(dest_file, current_datetime):
-                    log_message(f"Copied and updated timestamps: {src_file} -> {dest_file}")
+                    log_message(f"Copied and updated timestamps: {src_file} -> {dest_file}{rename_note}")
                 else:
-                    log_message(f"Copied (timestamp update failed): {src_file} -> {dest_file}")
+                    log_message(f"Copied (timestamp update failed): {src_file} -> {dest_file}{rename_note}")
 
                 copied_files += 1
             except Exception as e:
@@ -126,6 +149,7 @@ def copy_files():
     print("Session Summary:")
     print(f"- Files cleaned up: {cleaned_files}")
     print(f"- Files copied with timestamp updates: {copied_files}")
+    print(f"- Root .github/README.md renamed to github-context-readme.md")
     print(f"- Updated to current date/time: {current_datetime}")
     log_message("Session ended")
     print("=" * 50)

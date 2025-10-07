@@ -1,5 +1,17 @@
 ## Your Question/Request
-[REPLACE THIS WITH YOUR NEW QUESTION - This will be added to the existing session]
+This is what I want to work on now, earlier I ask you the following:
+1. I need you to make sure you are on the master branch
+2. I need you to reset the branch to origin/master
+    1. Any change on the disk should be reverted to match exactly what is in master.
+    2. Any changed files should be reverted to match exactly what is in master.
+    3. Any new files should be removed.
+    4. Any deleted files should be restored.
+3. I need you to log the session using the session management protocols.
+4. Do not take these steps until I say so, just tell me what you plean to do and wait for my approval.
+5. But start the log
+
+I found a problem with the logging and we fixed it but now I need you to do that above again or go back into the log and
+find the old context for the question if it still exists.
 
 ## Project Information
 - Project Name: Git Branch Reset Scripts
@@ -13,14 +25,14 @@
 scripts <- All the scripts in that folder
 Master Prompt Instructions <- .github/prompts/master-prompt-instructions.md
 If you see files are empty you are wrong and you need to find another way to read them.
-You must follow the session management protocols in the master prompt instructions document.
+You must follow the session management protocols in the master prompt instructions document. 
 You must log the session using the session management protocols in the master prompt instructions document.
 You must not update any files except the logs and to create the prompts until I say so.
 
 scripts altered and the session logged using the session management protocols
 You also followed the instruction in the master prompt instructions document. This is very important. If I say don't update any files
 
-## Common Instructions
+## Common Instructions <- And all these are really important so follow them.
 # Master Prompt Instructions
 
 *This file contains all the common instructions and protocols that are shared across all prompts in the system. These instructions should be included in or referenced by every prompt template.*

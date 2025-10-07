@@ -1,6 +1,6 @@
 @echo off
 REM CMD script to copy .github files to project root.
-REM Simple file copying without git operations, with cleanup of existing files.
+REM Simple file copying without git operations, with cleanup of existing files and timestamp updates.
 
 setlocal enabledelayedexpansion
 
@@ -17,6 +17,14 @@ if not exist "%src_dir%" (
     echo Session ended with error: %date% %time%
     exit /b 1
 )
+
+REM Get current date and time in a standardized format
+for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "dt=%%a"
+set "current_date=%dt:~0,4%-%dt:~4,2%-%dt:~6,2%"
+set "current_time=%dt:~8,2%:%dt:~10,2%:%dt:~12,2%"
+set "current_datetime=%current_date% %current_time%"
+
+echo Current date/time for updates: %current_datetime%
 
 REM Step 1: Clean up existing copied files
 echo.
@@ -53,9 +61,9 @@ for /d %%D in (instructions prompts) do (
 
 echo Cleaned up %cleaned_files% files and directories
 
-REM Step 2: Copy files from .github to project root
+REM Step 2: Copy files from .github to project root with timestamp updates
 echo.
-echo Step 2: Copying files from .github to project root...
+echo Step 2: Copying files from .github to project root with timestamp updates...
 
 set copied_files=0
 for /r "%src_dir%" %%F in (*) do (
@@ -77,7 +85,9 @@ for /r "%src_dir%" %%F in (*) do (
     REM Copy file with overwrite
     copy /Y "!src_file!" "!dest_file!" >nul
     if !errorlevel! equ 0 (
-        echo Copied: !src_file! -^> !dest_file!
+        REM Update timestamps in the copied file
+        powershell -Command "(Get-Content '!dest_file!' -Raw) -replace '\d{4}-\d{2}-\d{2}( \d{2}:\d{2}:\d{2})?', '%current_datetime%' | Set-Content '!dest_file!' -NoNewline"
+        echo Copied and updated timestamps: !src_file! -^> !dest_file!
         set /a copied_files+=1
     ) else (
         echo Error copying: !src_file!
@@ -88,7 +98,8 @@ echo.
 echo ========================================
 echo Session Summary:
 echo - Files cleaned up: !cleaned_files!
-echo - Files copied: !copied_files!
+echo - Files copied with timestamp updates: !copied_files!
+echo - Updated to current date/time: %current_datetime%
 echo - Session ended: %date% %time%
 echo ========================================
 

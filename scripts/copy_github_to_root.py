@@ -1,16 +1,34 @@
 #!/usr/bin/env python3
 """
 Python script to copy .github files to project root.
-Simple file copying without git operations, with cleanup of existing files.
+Simple file copying without git operations, with cleanup of existing files and timestamp updates.
 """
 import os
 import shutil
 import sys
+import re
 from datetime import datetime
 
 def log_message(message):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"[{timestamp}] {message}")
+
+def update_file_timestamps(file_path, current_datetime):
+    """Update date/time patterns in the file content"""
+    try:
+        with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+            content = f.read()
+
+        # Replace date patterns (YYYY-MM-DD and YYYY-MM-DD HH:MM:SS)
+        updated_content = re.sub(r'\d{4}-\d{2}-\d{2}(?:\s+\d{2}:\d{2}:\d{2})?', current_datetime, content)
+
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(updated_content)
+
+        return True
+    except Exception as e:
+        log_message(f"Warning: Could not update timestamps in {file_path}: {e}")
+        return False
 
 def copy_files():
     print("=" * 50)
@@ -21,6 +39,10 @@ def copy_files():
     src_dir = '.github'
     dest_dir = '.'
     
+    # Get current datetime
+    current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    log_message(f"Current date/time for updates: {current_datetime}")
+
     if not os.path.exists(src_dir):
         log_message(f"Error: {src_dir} directory not found")
         log_message("Session ended with error")
@@ -62,9 +84,9 @@ def copy_files():
 
     log_message(f"Cleaned up {cleaned_files} files and directories")
 
-    # Step 2: Copy files from .github to project root
+    # Step 2: Copy files from .github to project root with timestamp updates
     print()
-    log_message("Step 2: Copying files from .github to project root...")
+    log_message("Step 2: Copying files from .github to project root with timestamp updates...")
 
     copied_files = 0
     for root, dirs, files in os.walk(src_dir):
@@ -88,8 +110,14 @@ def copy_files():
             
             try:
                 shutil.copy2(src_file, dest_file)
+
+                # Update timestamps in the copied file
+                if update_file_timestamps(dest_file, current_datetime):
+                    log_message(f"Copied and updated timestamps: {src_file} -> {dest_file}")
+                else:
+                    log_message(f"Copied (timestamp update failed): {src_file} -> {dest_file}")
+
                 copied_files += 1
-                log_message(f"Copied: {src_file} -> {dest_file}")
             except Exception as e:
                 log_message(f"Error copying {src_file}: {e}")
 
@@ -97,7 +125,8 @@ def copy_files():
     print("=" * 50)
     print("Session Summary:")
     print(f"- Files cleaned up: {cleaned_files}")
-    print(f"- Files copied: {copied_files}")
+    print(f"- Files copied with timestamp updates: {copied_files}")
+    print(f"- Updated to current date/time: {current_datetime}")
     log_message("Session ended")
     print("=" * 50)
 

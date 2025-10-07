@@ -12,11 +12,11 @@ rules/
 ```
 
 ## Parent Directory
-- **[↑ Instructions](../README.md)** - Modular instruction system for AI assistant behavior
+- **[↑ Instructions](.github/instructions/README.md)** - Modular instruction system for AI assistant behavior
 
 ## Rule Descriptions
 
-### 📄 **[question-processing-rule.md](question-processing-rule.md)**
+### 📄 **[question-processing-rule.md](.github/instructions/rules/question-processing-rule.md)**
 **Question Documentation Workflow**
 - **Purpose**: Controls what happens after each user question is asked and defines the complete workflow for documenting responses
 - **Coverage**: Question logging protocols, research documentation, change tracking, git commit message logging
@@ -25,7 +25,7 @@ rules/
 - **When to Use**: Every user question and interaction - mandatory workflow enforcement
 - **Contains**: Question logging requirements, research documentation protocols, change tracking procedures, git integration
 
-### 📄 **[readme-generation-rule.md](readme-generation-rule.md)**
+### 📄 **[readme-generation-rule.md](.github/instructions/rules/readme-generation-rule.md)**
 **README File Standards and Automation**
 - **Purpose**: Defines comprehensive standards for creating and maintaining README files with proper linking, formatting, and organizational structure
 - **Coverage**: File format requirements, parent-child relationships, directory linking protocols, content standards

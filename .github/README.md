@@ -17,15 +17,15 @@ This directory contains all GitHub-specific configuration files, AI assistant in
 ```
 
 ## Parent Directory
-- **[↑ Project Root](../README.md)** - Main project documentation
+- **[↑ Project Root](README.md)** - Main project documentation
 
 ## Child READMEs
-- **[📁 Instructions](instructions/README.md)** - Modular instruction system for AI assistant behavior
-- **[📁 Prompts](prompts/README.md)** - Prompt templates and examples for AI interactions
+- **[📁 Instructions](.github/instructions/README.md)** - Modular instruction system for AI assistant behavior
+- **[📁 Prompts](.github/prompts/README.md)** - Prompt templates and examples for AI interactions
 
 ## File Descriptions
 
-### 📄 **[copilot-instructions.md](copilot-instructions.md)**
+### 📄 **[copilot-instructions.md](.github/copilot-instructions.md)**
 **Master AI Assistant Configuration**
 - **Purpose**: Primary configuration file that defines GitHub Copilot behavior, coding standards, and workflow protocols
 - **Coverage**: Critical rules, general rules, workflow requirements, coding style preferences, architectural patterns
@@ -34,7 +34,7 @@ This directory contains all GitHub-specific configuration files, AI assistant in
 - **When to Use**: Always active - referenced by AI assistant in every interaction
 - **Contains**: Session management protocols, coding standards, documentation requirements, architectural guidelines
 
-### 📄 **[git-commit-instructions.md](git-commit-instructions.md)**
+### 📄 **[git-commit-instructions.md](.github/git-commit-instructions.md)**
 **Git Commit Message Standards**
 - **Purpose**: Defines standardized commit message format and content requirements for consistency and traceability
 - **Coverage**: Commit message structure, categorization, scope definitions, breaking change protocols
@@ -43,7 +43,7 @@ This directory contains all GitHub-specific configuration files, AI assistant in
 - **When to Use**: Every git commit operation, code review processes, project history analysis
 - **Contains**: Commit format specifications, category definitions, scope guidelines, examples
 
-### 📄 **[README-template.md](README-template.md)**
+### 📄 **[README-template.md](.github/README-template.md)**
 **README File Template**
 - **Purpose**: Standardized template for creating consistent README files across the project
 - **Coverage**: README structure, content requirements, formatting standards, linking protocols

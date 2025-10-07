@@ -44,7 +44,7 @@ Specific Requirements:
 #### README Generation Rule
 - *AUTOMATED README GENERATION AND MAINTENANCE PROTOCOLS*
 
-- For complete README Generation Rule, see: [README Generation Rule](./instructions/rules/readme-generation-rule.md)
+- For complete README Generation Rule, see: [README Generation Rule](.github/instructions/rules/readme-generation-rule.md)
 
 Rule File Structure:
 # README Generation Rule
@@ -72,7 +72,7 @@ Rule File Structure:
 **Should this rule creation follow the established Session Management Protocol?**
 
 **Default: YES** ✅
-- [x] YES - Follow complete Session Management Protocol as defined in [Session Management Protocol](../instructions/core-protocols/session-management-protocol.md)
+- [x] YES - Follow complete Session Management Protocol as defined in [Session Management Protocol](.github/instructions/core-protocols/session-management-protocol.md)
 - [ ] NO - Skip session management requirements for this question
 
 *Note: Session Management Protocol includes logging, context preservation, and degradation prevention requirements.*

@@ -17,16 +17,16 @@ instructions/
 ```
 
 ## Parent Directory
-- **[↑ GitHub Configuration](../README.md)** - GitHub configuration and AI assistant instructions
+- **[↑ GitHub Configuration](.github/README.md)** - GitHub configuration and AI assistant instructions
 
 ## Child READMEs
-- **[📁 Core Protocols](core-protocols/README.md)** - Critical protocols for session management and context preservation
-- **[📁 Rules](rules/README.md)** - General rules for AI behavior and documentation workflows
-- **[📁 Workflows](workflows/README.md)** - Automated workflow templates and procedures
+- **[📁 Core Protocols](.github/instructions/core-protocols/README.md)** - Critical protocols for session management and context preservation
+- **[📁 Rules](.github/instructions/rules/README.md)** - General rules for AI behavior and documentation workflows
+- **[📁 Workflows](.github/instructions/workflows/README.md)** - Automated workflow templates and procedures
 
 ## File Descriptions
 
-### 📄 **[project-instructions.md](project-instructions.md)**
+### 📄 **[project-instructions.md](.github/instructions/project-instructions.md)**
 **Project-Specific Guidelines**
 - **Purpose**: Contains project-specific instructions and guidelines that supplement the main copilot instructions
 - **Coverage**: Project-specific coding patterns, architectural decisions, team conventions

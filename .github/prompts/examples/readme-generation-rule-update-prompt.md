@@ -54,7 +54,7 @@ Rule File Structure (Current):
 **Should this rule update follow the established Session Management Protocol?**
 
 **Default: YES** ✅
-- [x] YES - Follow complete Session Management Protocol as defined in [Session Management Protocol](../instructions/core-protocols/session-management-protocol.md)
+- [x] YES - Follow complete Session Management Protocol as defined in [Session Management Protocol](.github/instructions/core-protocols/session-management-protocol.md)
 - [ ] NO - Skip session management requirements for this question
 
 *Note: Session Management Protocol includes logging, context preservation, and degradation prevention requirements.*
@@ -120,4 +120,4 @@ For the session log, document:
 - Testing/validation performed
 - Files modified beyond the main rule file
 - Future considerations or follow-up needed
-```
+````

@@ -23,5 +23,5 @@
 [Describe what you expect to be delivered, created, or modified]
 
 ## Common Instructions
-*For complete session management protocols, validation requirements, and documentation standards, see: [Master Prompt Instructions](./master-prompt-instructions.md)*
+*For complete session management protocols, validation requirements, and documentation standards, see: [Master Prompt Instructions](.github/prompts/master-prompt-instructions.md)*
 ```

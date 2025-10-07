@@ -8,7 +8,7 @@
 ## Your Question/Request
 [Describe what type of prompt you want to create - e.g., "Create a prompt template for code review", "Create a bug report prompt", "Create a feature request template"]
 
-**FOUNDATION**: Use [Master Prompt Template](./master-prompt-template.md) as the foundation for creating new prompt templates. This template contains all the standard sections and protocols that should be included in every prompt.
+**FOUNDATION**: Use [Master Prompt Template](.github/prompts/master-prompt-template.md) as the foundation for creating new prompt templates. This template contains all the standard sections and protocols that should be included in every prompt.
 
 ## Session Management Protocol
 **Should this question be logged according to established session management protocols?**
@@ -71,4 +71,4 @@
 - New guide file created in .github/prompts/guides/
 - Template follows established formatting standards
 - Template includes appropriate session logging and push code sections
-```
+````

@@ -122,7 +122,7 @@ Standardized format for documenting all changes in session logs.
 [Specific task description here]
 
 ## Common Instructions
-*For complete protocols, see: [Master Prompt Instructions](../master-prompt-instructions.md)*
+*For complete protocols, see: [Master Prompt Instructions](.github/prompts/master-prompt-instructions.md)*
 
 **CRITICAL**: This session must be properly logged according to established protocols...
 
@@ -137,7 +137,7 @@ Standardized format for documenting all changes in session logs.
 [Specific task description here]
 
 ## Session Management
-**All common protocols apply**: Follow instructions in [Master Prompt Instructions](../master-prompt-instructions.md)
+**All common protocols apply**: Follow instructions in [Master Prompt Instructions](.github/prompts/master-prompt-instructions.md)
 
 [Only task-specific additional instructions here]
 ```
@@ -193,10 +193,10 @@ Standardized format for documenting all changes in session logs.
 
 ## Related Files
 
-- **Master Prompt Instructions**: `../master-prompt-instructions.md` (this guide's subject)
-- **Session Management Protocol**: `../instructions/core-protocols/session-management-protocol.md`
-- **Automatic Git Operations**: `../instructions/workflows/automatic-git-operations.md`
-- **Manual Git Trigger**: `../instructions/workflows/manual-git-trigger.md`
+- **Master Prompt Instructions**: `.github/prompts/master-prompt-instructions.md` (this guide's subject)
+- **Session Management Protocol**: `.github/instructions/core-protocols/session-management-protocol.md`
+- **Automatic Git Operations**: `.github/instructions/workflows/automatic-git-operations.md`
+- **Manual Git Trigger**: `.github/instructions/workflows/manual-git-trigger.md`
 
 ## Version History
 

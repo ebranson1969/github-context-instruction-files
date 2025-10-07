@@ -60,7 +60,7 @@ Detailed Requirements for Each Protocol Section:
 #### 🔴 [Rule Name] (if critical) OR #### [Rule Name] (if general)
 - *[PRIORITY DESCRIPTION IN UPPERCASE]*
 
-- For complete [Reference Description], see: [[Rule Name]](./instructions/rules/[filename]-rule.md)
+- For complete [Reference Description], see: [[Rule Name]](.github/instructions/rules/[filename]-rule.md)
 
 ## Rule File Structure:
 # [Rule Name]
@@ -95,5 +95,5 @@ Detailed Requirements for Each Protocol Section:
 - If NOT ACTIVE: Rule file only with NOT ACTIVE status
 
 ## Common Instructions
-*For complete session management protocols, validation requirements, and documentation standards, see: [Master Prompt Instructions](./master-prompt-instructions.md)*
+*For complete session management protocols, validation requirements, and documentation standards, see: [Master Prompt Instructions](.github/prompts/master-prompt-instructions.md)*
 ````

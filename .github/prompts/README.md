@@ -7,12 +7,11 @@ This directory contains prompt templates, examples, and guides for AI assistant 
 ```
 prompts/
 ├── README.md (this file)
-├── master-prompt-template.md
+├── master-prompt-instructions.md
 ├── project.prompt.md
 ├── prompt-creation-prompt.md
 ├── question-prompt.md
 ├── rules-prompt.md
-├── session-management-protocol-prompt.md
 ├── workflows-prompt.md
 ├── examples/
 │   └── README.md
@@ -21,15 +20,15 @@ prompts/
 ```
 
 ## Parent Directory
-- **[↑ GitHub Configuration](../README.md)** - GitHub configuration and AI assistant instructions
+- **[↑ GitHub Configuration](.github/README.md)** - GitHub configuration and AI assistant instructions
 
 ## Child READMEs
-- **[📁 Examples](examples/README.md)** - Real-world prompt examples and specialized templates
-- **[📁 Guides](guides/README.md)** - Comprehensive guides for using and creating prompt templates
+- **[📁 Examples](.github/prompts/examples/README.md)** - Real-world prompt examples and specialized templates
+- **[📁 Guides](.github/prompts/guides/README.md)** - Comprehensive guides for using and creating prompt templates
 
 ## File Descriptions
 
-### 📄 **[master-prompt-template.md](master-prompt-template.md)**
+### 📄 **[master-prompt-instructions.md](.github/prompts/master-prompt-instructions.md)**
 **Universal Prompt Template Foundation**
 - **Purpose**: Contains all common elements found across prompt templates, providing a standardized foundation for creating new prompts
 - **Coverage**: Universal structure patterns, standard protocol sections, validation checklists, template variables
@@ -38,7 +37,7 @@ prompts/
 - **When to Use**: Creating new prompt templates, maintaining consistency across prompt system
 - **Contains**: Template structure patterns, variable definitions, standard sections, usage instructions
 
-### 📄 **[rules-prompt.md](rules-prompt.md)**
+### 📄 **[rules-prompt.md](.github/prompts/rules-prompt.md)**
 **Rule Creation Template**
 - **Purpose**: Specialized template for creating rule files in the modular instruction system
 - **Coverage**: Rule structure requirements, status options, protocol sections, session management integration
@@ -47,7 +46,7 @@ prompts/
 - **When to Use**: Adding new behavioral rules, expanding instruction system capabilities
 - **Contains**: Rule creation workflow, structure requirements, activation protocols, validation procedures
 
-### 📄 **[session-management-protocol-prompt.md](session-management-protocol-prompt.md)**
+### 📄 **[session-management-protocol-prompt.md](.github/prompts/session-management-protocol-prompt.md)**
 **Session Protocol Update Template**
 - **Purpose**: Specialized template for updating the critical session management protocol file
 - **Coverage**: Protocol update procedures, validation requirements, impact assessment, reference updates
@@ -56,7 +55,7 @@ prompts/
 - **When to Use**: Updating session management behavior, improving context preservation, fixing protocol issues
 - **Contains**: Update workflows, validation checklists, impact assessment procedures, testing requirements
 
-### 📄 **[prompt-creation-prompt.md](prompt-creation-prompt.md)**
+### 📄 **[prompt-creation-prompt.md](.github/prompts/prompt-creation-prompt.md)**
 **Prompt Template Creator**
 - **Purpose**: Template for creating new prompt templates using the master template foundation
 - **Coverage**: Prompt specifications, audience targeting, file location standards, template customization
@@ -65,7 +64,7 @@ prompts/
 - **When to Use**: Expanding prompt capabilities, adding new interaction types, creating specialized templates
 - **Contains**: Template creation workflow, customization guidelines, foundation integration, structure requirements
 
-### 📄 **[project.prompt.md](project.prompt.md)**
+### 📄 **[project.prompt.md](.github/prompts/project.prompt.md)**
 **General Project Prompts**
 - **Purpose**: Collection of general-purpose prompts for common development and project management tasks
 - **Coverage**: Code review, documentation generation, bug analysis, feature implementation, refactoring prompts
@@ -74,7 +73,7 @@ prompts/
 - **When to Use**: Daily development tasks, code reviews, documentation creation, problem solving
 - **Contains**: Ready-to-use prompt templates for common development scenarios
 
-### 📄 **[question-prompt.md](question-prompt.md)**
+### 📄 **[question-prompt.md](.github/prompts/question-prompt.md)**
 **Question Templates**
 - **Purpose**: Templates for structuring questions and requests to AI assistants
 - **Coverage**: Question formatting, context provision, requirement specification
@@ -83,7 +82,7 @@ prompts/
 - **When to Use**: Asking questions, making requests, seeking AI assistance
 - **Contains**: Question structure templates, context guidelines, effective communication patterns
 
-### 📄 **[workflows-prompt.md](workflows-prompt.md)**
+### 📄 **[workflows-prompt.md](.github/prompts/workflows-prompt.md)**
 **Workflow Creation Templates**
 - **Purpose**: Templates for creating workflow automation and procedure documentation
 - **Coverage**: Workflow structure, automation requirements, procedure documentation

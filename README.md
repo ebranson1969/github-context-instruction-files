@@ -1,73 +1,67 @@
-# GitHub Context Instruction Files
+# GitHub Configuration
 
 ## Description
-This repository contains comprehensive GitHub Copilot instruction files and documentation that establish standardized protocols for AI-assisted development workflows. The system includes context preservation rules, automated git operations, session management protocols, and detailed coding guidelines to ensure consistent and reliable AI assistance across all development sessions.
+This directory contains all GitHub-specific configuration files, AI assistant instructions, and modular instruction systems for the GitHub Context Instruction Files project.
 
 ## Directory Structure
-
 ```
+.github/
 ├── README.md (this file)
-├── .github/
-│   ├── copilot-instructions.md
-│   ├── copilot-rules.md
-│   ├── copilot-templates.md
-│   ├── copilot-workflows.md
-│   ├── git-commit-instructions.md
-│   ├── README-template.md
-│   ├── instructions/
-│   │   ├── README.md
-│   │   └── project-instructions.md
-│   └── prompts/
-│       ├── README.md
-│       ├── project.prompt.md
-│       ├── rules-prompt.md
-│       └── workflows-prompt.md
+├── README-template.md
+├── copilot-instructions.md
+├── git-commit-instructions.md
+├── instructions/
+│   └── README.md
+└── prompts/
+    └── README.md
 ```
 
-## Child Documentation Links
-*No child documentation in root directory*
+## Parent Directory
+- **[↑ Project Root](../README.md)** - Main project documentation
 
-## Core Context Files (in .github directory)
+## Child READMEs
+- **[📁 Instructions](instructions/README.md)** - Modular instruction system for AI assistant behavior
+- **[📁 Prompts](prompts/README.md)** - Prompt templates and examples for AI interactions
 
-### **copilot-instructions.md**
-Primary GitHub Copilot configuration file containing critical rules, session management protocols, and coding style preferences. This file establishes the foundation for all AI-assisted development sessions and includes references to detailed protocols defined in supporting files.
+## File Descriptions
 
-### **copilot-rules.md**
-Detailed protocol definitions for session context preservation, question processing workflows, README generation standards, and context degradation prevention. Contains the core operational rules that govern AI assistant behavior throughout development sessions.
+### 📄 **[copilot-instructions.md](copilot-instructions.md)**
+**Master AI Assistant Configuration**
+- **Purpose**: Primary configuration file that defines GitHub Copilot behavior, coding standards, and workflow protocols
+- **Coverage**: Critical rules, general rules, workflow requirements, coding style preferences, architectural patterns
+- **Usage**: Automatically loaded by GitHub Copilot to ensure consistent AI behavior across all interactions
+- **Target Audience**: Development teams, AI system administrators, project leads
+- **When to Use**: Always active - referenced by AI assistant in every interaction
+- **Contains**: Session management protocols, coding standards, documentation requirements, architectural guidelines
 
-### **copilot-workflows.md**
-Automated workflow definitions including git operations, manual trigger protocols, and context synchronization procedures. Establishes standardized processes for code deployment, session management, and context file synchronization.
+### 📄 **[git-commit-instructions.md](git-commit-instructions.md)**
+**Git Commit Message Standards**
+- **Purpose**: Defines standardized commit message format and content requirements for consistency and traceability
+- **Coverage**: Commit message structure, categorization, scope definitions, breaking change protocols
+- **Usage**: Reference for all git commit operations to maintain consistent project history
+- **Target Audience**: All developers, AI assistants, project managers
+- **When to Use**: Every git commit operation, code review processes, project history analysis
+- **Contains**: Commit format specifications, category definitions, scope guidelines, examples
 
-### **copilot-templates.md**
-Standardized templates and formats for consistent documentation, commit messages, and session logging. Provides reusable structures to maintain consistency across all project documentation and development workflows.
+### 📄 **[README-template.md](README-template.md)**
+**README File Template**
+- **Purpose**: Standardized template for creating consistent README files across the project
+- **Coverage**: README structure, content requirements, formatting standards, linking protocols
+- **Usage**: Foundation for creating new README files that follow project standards
+- **Target Audience**: Documentation writers, developers, project maintainers
+- **When to Use**: Creating new README files, updating existing documentation, maintaining consistency
+- **Contains**: Template structure, content guidelines, formatting examples
 
-### **git-commit-instructions.md**
-Specialized instructions for git commit message formatting, automated commit procedures, and version control integration. Ensures consistent and traceable commit history with proper documentation linkage.
+### 📄 **[project-instructions.md](instructions/project-instructions.md)**
+**Project-Specific Guidelines**
+- **Purpose**: Contains project-specific instructions and guidelines that supplement the main copilot instructions
+- **Coverage**: Project-specific coding patterns, architectural decisions, team conventions
+- **Usage**: Additional context for AI assistant behavior specific to this project
+- **Target Audience**: Development team members, AI assistants, new contributors
+- **When to Use**: Project onboarding, AI-assisted development, code review processes
+- **Contains**: Project conventions, specific requirements, team agreements
 
-### **README-template.md**
-Template content for deployment to master branch during COMMIT CONTEXT workflow. Contains standardized template repository documentation explaining branch strategy and usage instructions.
+---
 
-## Development Files (in .github directory)
-
-### **instructions/ directory**
-Contains project-specific development guidelines and setup instructions for implementing the GitHub Copilot instruction system.
-
-### **prompts/ directory**
-Contains AI interaction templates and frameworks including project prompts, rules prompts, and workflow prompts for standardized AI assistance patterns.
-
-## Usage Instructions
-
-1. **Development Work**: All context files are maintained in the `.github` directory during development
-2. **COMMIT CONTEXT Workflow**: Use this command to deploy clean structure to master branch
-3. **Template System**: This develop branch contains full development environment; master branch contains deployment-ready files
-4. **Git Operations**: Use Manual Git Trigger Workflow (`PUSH CODE`) for committing changes
-
-## Key Features
-
-- **Context File Development**: Full development environment in `.github` directory
-- **Deployment Workflow**: COMMIT CONTEXT flattens structure for master branch deployment
-- **Template Storage**: README-template.md stores deployment README content
-- **Development Tools**: Comprehensive instruction and prompt systems for AI assistance
-
-## Status: ACTIVE - DEVELOP BRANCH
-This is the development branch containing the full context file development environment. The master branch contains the deployment-ready template files.
+*Last updated: October 5, 2025*
+*Part of: GitHub Context Instruction Files Project*

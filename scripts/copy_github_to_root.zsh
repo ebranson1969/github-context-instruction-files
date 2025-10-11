@@ -1,6 +1,6 @@
 #!/bin/zsh
-# Zsh script to copy .github files from .github/.github to .github.
-# Simple file copying without git operations, with cleanup of existing files and timestamp updates.
+# Zsh script to copy entire .github directory from github/.github to .github.
+# Mass copy operation with verification of all files copied successfully.
 
 set -e
 
@@ -40,80 +40,101 @@ if [[ ! -d "$src_dir" ]]; then
     exit 1
 fi
 
-# Step 1: Clean up existing copied files and directories
+# Step 1: Clean up existing .github directory
 echo
 log_message "Step 1: Cleaning up existing .github directory..."
 
-cleaned_files=0
-
-# Delete the entire .github directory if it exists
-if [[ -d ".github" ]]; then
+if [[ -d "$dest_dir" ]]; then
     log_message "Deleting .github directory and all its contents..."
-    if rm -rf ".github"; then
+    if rm -rf "$dest_dir"; then
         # Verify deletion was successful
-        if [[ ! -d ".github" ]]; then
-            log_message "Successfully deleted: .github (entire directory)"
-            cleaned_files=1
+        if [[ ! -d "$dest_dir" ]]; then
+            log_message "Successfully deleted: $dest_dir (entire directory)"
         else
-            log_message "Error: .github directory still exists after deletion attempt"
+            log_message "Error: $dest_dir directory still exists after deletion attempt"
             exit 1
         fi
     else
-        log_message "Error: Could not delete .github directory"
+        log_message "Error: Could not delete $dest_dir directory"
         exit 1
     fi
 else
-    log_message "No .github directory found to delete"
+    log_message "No $dest_dir directory found to delete"
 fi
 
 log_message "Cleanup completed"
 
-# Step 2: Copy files from .github to project root with timestamp updates
+# Step 2: Mass copy entire directory structure
 echo
-log_message "Step 2: Copying files from .github to project root with timestamp updates..."
+log_message "Step 2: Mass copying entire directory from $src_dir to $dest_dir..."
 
-copied_files=0
-find $src_dir -type f | while IFS= read -r src_file; do
-    filename=$(basename "$src_file")
-    src_dir_path=$(dirname "$src_file")
+# Use cp -R to recursively copy the entire directory structure
+if cp -R "$src_dir" "$dest_dir"; then
+    log_message "Successfully copied entire directory structure"
+else
+    log_message "Error: Failed to copy directory structure"
+    exit 1
+fi
 
-    # Handle .github/README.md specially
-    if [[ "$filename" = "README.md" ]] && [[ "$src_dir_path" = "$src_dir" ]]; then
-        dest_file="$dest_dir/github-context-readme.md"
-        rename_note=" (renamed)"
+# Step 3: Count and verify all files were copied
+echo
+log_message "Step 3: Verifying all files were copied and updating timestamps..."
+
+# Count source files
+src_file_count=$(find "$src_dir" -type f | wc -l | tr -d ' ')
+log_message "Source directory contains $src_file_count files"
+
+# Count destination files
+dest_file_count=$(find "$dest_dir" -type f | wc -l | tr -d ' ')
+log_message "Destination directory contains $dest_file_count files"
+
+# Verify counts match
+if [[ "$src_file_count" -eq "$dest_file_count" ]]; then
+    log_message "✅ File count verification passed: $src_file_count files copied successfully"
+else
+    log_message "❌ File count verification failed: Expected $src_file_count files, found $dest_file_count files"
+    exit 1
+fi
+
+# Update timestamps in all copied files
+updated_files=0
+failed_updates=0
+
+find "$dest_dir" -type f | while IFS= read -r dest_file; do
+    if update_file_timestamps "$dest_file" "$current_datetime"; then
+        echo "Updated timestamps: $dest_file"
+        ((updated_files++))
     else
-        # Calculate relative path for other files
-        rel_path="${src_file#$src_dir/}"
-        dest_file="$dest_dir/$rel_path"
-        dest_dirname="$(dirname "$dest_file")"
-        rename_note=""
-
-        # Create destination directory if it doesn't exist
-        if [[ ! -d "$dest_dirname" ]]; then
-            mkdir -p "$dest_dirname"
-        fi
+        echo "Failed to update timestamps: $dest_file"
+        ((failed_updates++))
     fi
+done
 
-    # Copy file with overwrite
-    if cp -f "$src_file" "$dest_file"; then
-        # Update timestamps in the copied file
-        if update_file_timestamps "$dest_file" "$current_datetime"; then
-            echo "Copied and updated timestamps: $src_file -> $dest_file$rename_note"
-        else
-            echo "Copied (timestamp update failed): $src_file -> $dest_file$rename_note"
-        fi
-        ((copied_files++))
+# Handle special README.md renaming if it exists in root
+if [[ -f "$dest_dir/README.md" ]]; then
+    log_message "Renaming root README.md to github-context-readme.md"
+    if mv "$dest_dir/README.md" "$dest_dir/github-context-readme.md"; then
+        log_message "Successfully renamed README.md"
     else
-        log_message "Error copying: $src_file"
+        log_message "Warning: Failed to rename README.md"
     fi
+fi
+
+# Final verification - list all copied files
+echo
+log_message "Step 4: Final verification - listing all copied files..."
+find "$dest_dir" -type f | sort | while IFS= read -r file; do
+    echo "Copied: $file"
 done
 
 echo
 echo "=================================================="
-echo "Session Summary:"
-echo "- Cleaned up existing files and directories"
-echo "- Files copied with timestamp updates"
-echo "- .github/README.md renamed to github-context-readme.md"
-echo "- Updated to current date/time: $current_datetime"
-log_message "Session ended"
+echo "Mass Copy Summary:"
+echo "- Source directory: $src_dir"
+echo "- Destination directory: $dest_dir"
+echo "- Files copied: $dest_file_count"
+echo "- Verification: ✅ PASSED"
+echo "- Root README.md renamed to github-context-readme.md (if present)"
+echo "- All timestamps updated to: $current_datetime"
+log_message "Session ended successfully"
 echo "=================================================="

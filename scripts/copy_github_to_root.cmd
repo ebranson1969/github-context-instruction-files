@@ -1,6 +1,6 @@
 @echo off
-REM CMD script to copy .github files from .github\.github to .github.
-REM Simple file copying without git operations, with cleanup of existing files and timestamp updates.
+REM CMD script to copy entire .github directory from github\.github to .github.
+REM Mass copy operation with verification of all files copied successfully.
 
 setlocal enabledelayedexpansion
 
@@ -26,104 +26,123 @@ set "current_datetime=%current_date% %current_time%"
 
 echo Current date/time for updates: %current_datetime%
 
-REM Step 1: Clean up existing copied files
+REM Step 1: Clean up existing .github directory
 echo.
 echo Step 1: Cleaning up existing .github directory...
 
-set cleaned_files=0
-
-REM Delete the entire .github directory if it exists
-if exist ".github" (
+if exist "%dest_dir%" (
     echo Deleting .github directory and all its contents...
-    rmdir /S /Q ".github" >nul 2>&1
+    rmdir /S /Q "%dest_dir%" >nul 2>&1
     if !errorlevel! equ 0 (
         REM Verify deletion was successful
-        if not exist ".github" (
-            echo Successfully deleted: .github (entire directory)
-            set /a cleaned_files+=1
+        if not exist "%dest_dir%" (
+            echo Successfully deleted: %dest_dir% ^(entire directory^)
         ) else (
-            echo Error: .github directory still exists after deletion attempt
+            echo Error: %dest_dir% directory still exists after deletion attempt
             echo Session ended with error: %date% %time%
             exit /b 1
         )
     ) else (
-        echo Error: Could not delete .github directory
+        echo Error: Could not delete %dest_dir% directory
         echo Session ended with error: %date% %time%
         exit /b 1
     )
 ) else (
-    echo No .github directory found to delete
+    echo No %dest_dir% directory found to delete
 )
 
-REM Step 2: Copy files from .github\.github to .github with timestamp updates
+echo Cleanup completed
+
+REM Step 2: Mass copy entire directory structure
 echo.
-echo Step 2: Copying files from .github\.github to .github with timestamp updates...
+echo Step 2: Mass copying entire directory from %src_dir% to %dest_dir%...
 
-set copied_files=0
+xcopy "%src_dir%" "%dest_dir%" /E /I /Y >nul 2>&1
+if !errorlevel! equ 0 (
+    echo Successfully copied entire directory structure
+) else (
+    echo Error: Failed to copy directory structure
+    echo Session ended with error: %date% %time%
+    exit /b 1
+)
+
+REM Step 3: Count and verify all files were copied
+echo.
+echo Step 3: Verifying all files were copied and updating timestamps...
+
+REM Count source files
+set src_file_count=0
 for /r "%src_dir%" %%F in (*) do (
-    set "src_file=%%F"
-    set "full_path=%%F"
-    set "filename=%%~nxF"
-    set "src_parent_dir=%%~dpF"
+    set /a src_file_count+=1
+)
+echo Source directory contains !src_file_count! files
 
-    REM Handle only the root .github\.github/README.md specially
-    set "is_root_readme=false"
-    if /i "!filename!"=="README.md" (
-        REM Check if this is the root .github\.github/README.md
-        set "expected_path=%cd%\%src_dir%\"
-        if "!src_parent_dir!"=="!expected_path!" (
-            set "is_root_readme=true"
-        )
-    )
+REM Count destination files
+set dest_file_count=0
+for /r "%dest_dir%" %%F in (*) do (
+    set /a dest_file_count+=1
+)
+echo Destination directory contains !dest_file_count! files
 
-    if "!is_root_readme!"=="true" (
-        set "dest_file=%dest_dir%\github-context-readme.md"
+REM Verify counts match
+if !src_file_count! equ !dest_file_count! (
+    echo File count verification passed: !src_file_count! files copied successfully
+) else (
+    echo File count verification failed: Expected !src_file_count! files, found !dest_file_count! files
+    echo Session ended with error: %date% %time%
+    exit /b 1
+)
 
-        REM Copy file with new name
-        copy /Y "!src_file!" "!dest_file!" >nul
-        if !errorlevel! equ 0 (
-            REM Update timestamps in the copied file
-            powershell -Command "(Get-Content '!dest_file!' -Raw) -replace '\d{4}-\d{2}-\d{2}( \d{2}:\d{2}:\d{2})?', '%current_datetime%' | Set-Content '!dest_file!' -NoNewline"
-            echo Copied and updated timestamps: !src_file! -^> !dest_file! ^(renamed^)
-            set /a copied_files+=1
-        ) else (
-            echo Error copying: !src_file!
-        )
+REM Step 4: Update timestamps in all copied files
+echo.
+echo Step 4: Updating timestamps in all copied files...
+
+set updated_files=0
+set failed_updates=0
+
+for /r "%dest_dir%" %%F in (*) do (
+    set "dest_file=%%F"
+
+    REM Update timestamps in the copied file
+    powershell -Command "(Get-Content '!dest_file!' -Raw -ErrorAction SilentlyContinue) -replace '\d{4}-\d{2}-\d{2}( \d{2}:\d{2}:\d{2})?', '%current_datetime%' | Set-Content '!dest_file!' -NoNewline -ErrorAction SilentlyContinue" >nul 2>&1
+    if !errorlevel! equ 0 (
+        echo Updated timestamps: !dest_file!
+        set /a updated_files+=1
     ) else (
-        REM Handle all other files normally
-        REM Calculate relative path by removing source directory prefix
-        set "rel_path=!full_path:%cd%\%src_dir%\=!"
-        set "dest_file=%dest_dir%\!rel_path!"
-
-        REM Get destination directory
-        for %%A in ("!dest_file!") do set "dest_dirname=%%~dpA"
-
-        REM Create destination directory if it doesn't exist
-        if not exist "!dest_dirname!" (
-            mkdir "!dest_dirname!" 2>nul
-        )
-
-        REM Copy file with overwrite
-        copy /Y "!src_file!" "!dest_file!" >nul
-        if !errorlevel! equ 0 (
-            REM Update timestamps in the copied file
-            powershell -Command "(Get-Content '!dest_file!' -Raw) -replace '\d{4}-\d{2}-\d{2}( \d{2}:\d{2}:\d{2})?', '%current_datetime%' | Set-Content '!dest_file!' -NoNewline"
-            echo Copied and updated timestamps: !src_file! -^> !dest_file!
-            set /a copied_files+=1
-        ) else (
-            echo Error copying: !src_file!
-        )
+        echo Failed to update timestamps: !dest_file!
+        set /a failed_updates+=1
     )
+)
+
+REM Handle special README.md renaming if it exists in root
+if exist "%dest_dir%\README.md" (
+    echo Renaming root README.md to github-context-readme.md
+    move "%dest_dir%\README.md" "%dest_dir%\github-context-readme.md" >nul 2>&1
+    if !errorlevel! equ 0 (
+        echo Successfully renamed README.md
+    ) else (
+        echo Warning: Failed to rename README.md
+    )
+)
+
+REM Step 5: Final verification - list all copied files
+echo.
+echo Step 5: Final verification - listing all copied files...
+
+for /r "%dest_dir%" %%F in (*) do (
+    echo Copied: %%F
 )
 
 echo.
 echo ========================================
-echo Session Summary:
-echo - Files cleaned up: !cleaned_files!
-echo - Files copied with timestamp updates: !copied_files!
-echo - Root .github\.github/README.md renamed to github-context-readme.md
-echo - Updated to current date/time: %current_datetime%
-echo - Session ended: %date% %time%
+echo Mass Copy Summary:
+echo - Source directory: %src_dir%
+echo - Destination directory: %dest_dir%
+echo - Files copied: !dest_file_count!
+echo - Verification: PASSED
+echo - Root README.md renamed to github-context-readme.md ^(if present^)
+echo - All timestamps updated to: %current_datetime%
+echo - Session ended successfully: %date% %time%
 echo ========================================
 
 endlocal

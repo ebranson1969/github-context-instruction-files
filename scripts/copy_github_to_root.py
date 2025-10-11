@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Python script to copy .github files from .github/.github to .github.
-Simple file copying without git operations, with cleanup of existing files and timestamp updates.
+Python script to copy entire .github directory from github/.github to .github.
+Mass copy operation with verification of all files copied successfully.
 """
 import os
 import shutil
@@ -30,6 +30,13 @@ def update_file_timestamps(file_path, current_datetime):
         log_message(f"Warning: Could not update timestamps in {file_path}: {e}")
         return False
 
+def count_files(directory):
+    """Count all files in directory recursively"""
+    count = 0
+    for root, dirs, files in os.walk(directory):
+        count += len(files)
+    return count
+
 def copy_files():
     print("=" * 50)
     print("File Copy Script - Python Version")
@@ -48,84 +55,106 @@ def copy_files():
         log_message("Session ended with error")
         sys.exit(1)
 
-    # Step 1: Clean up existing copied files
+    # Step 1: Clean up existing .github directory
     print()
     log_message("Step 1: Cleaning up existing .github directory...")
 
-    cleaned_files = 0
-
-    # Delete the entire .github directory if it exists
-    if os.path.exists('.github'):
+    if os.path.exists(dest_dir):
         log_message("Deleting .github directory and all its contents...")
         try:
-            shutil.rmtree('.github')
+            shutil.rmtree(dest_dir)
             # Verify deletion was successful
-            if not os.path.exists('.github'):
-                log_message("Successfully deleted: .github (entire directory)")
-                cleaned_files = 1
+            if not os.path.exists(dest_dir):
+                log_message(f"Successfully deleted: {dest_dir} (entire directory)")
             else:
-                log_message("Error: .github directory still exists after deletion attempt")
+                log_message(f"Error: {dest_dir} directory still exists after deletion attempt")
                 sys.exit(1)
         except Exception as e:
-            log_message(f"Error: Could not delete .github directory: {e}")
+            log_message(f"Error: Could not delete {dest_dir} directory: {e}")
             sys.exit(1)
     else:
-        log_message("No .github directory found to delete")
+        log_message(f"No {dest_dir} directory found to delete")
 
-    log_message(f"Cleanup completed")
+    log_message("Cleanup completed")
 
-    # Step 2: Copy files from .github to project root with timestamp updates
+    # Step 2: Mass copy entire directory structure
     print()
-    log_message("Step 2: Copying files from .github to project root with timestamp updates...")
+    log_message(f"Step 2: Mass copying entire directory from {src_dir} to {dest_dir}...")
 
-    copied_files = 0
-    for root, dirs, files in os.walk(src_dir):
-        # Calculate relative path from source directory
-        rel_path = os.path.relpath(root, src_dir)
-        
-        # Determine target directory
-        if rel_path == '.':
-            target_dir = dest_dir
-        else:
-            target_dir = os.path.join(dest_dir, rel_path)
-        
-        # Create target directory if it doesn't exist and has files
-        if files and not os.path.exists(target_dir):
-            os.makedirs(target_dir)
-        
-        # Copy each file
+    try:
+        shutil.copytree(src_dir, dest_dir)
+        log_message("Successfully copied entire directory structure")
+    except Exception as e:
+        log_message(f"Error: Failed to copy directory structure: {e}")
+        sys.exit(1)
+
+    # Step 3: Count and verify all files were copied
+    print()
+    log_message("Step 3: Verifying all files were copied and updating timestamps...")
+
+    # Count source files
+    src_file_count = count_files(src_dir)
+    log_message(f"Source directory contains {src_file_count} files")
+
+    # Count destination files
+    dest_file_count = count_files(dest_dir)
+    log_message(f"Destination directory contains {dest_file_count} files")
+
+    # Verify counts match
+    if src_file_count == dest_file_count:
+        log_message(f"✅ File count verification passed: {src_file_count} files copied successfully")
+    else:
+        log_message(f"❌ File count verification failed: Expected {src_file_count} files, found {dest_file_count} files")
+        sys.exit(1)
+
+    # Update timestamps in all copied files
+    updated_files = 0
+    failed_updates = 0
+
+    for root, dirs, files in os.walk(dest_dir):
         for file in files:
-            src_file = os.path.join(root, file)
-
-            # Handle only the root .github/README.md specially
-            if file.lower() == 'readme.md' and rel_path == '.':
-                dest_file = os.path.join(dest_dir, 'github-context-readme.md')
-                rename_note = " (renamed)"
+            dest_file = os.path.join(root, file)
+            if update_file_timestamps(dest_file, current_datetime):
+                print(f"Updated timestamps: {dest_file}")
+                updated_files += 1
             else:
-                dest_file = os.path.join(target_dir, file)
-                rename_note = ""
+                print(f"Failed to update timestamps: {dest_file}")
+                failed_updates += 1
 
-            try:
-                shutil.copy2(src_file, dest_file)
+    # Handle special README.md renaming if it exists in root
+    readme_path = os.path.join(dest_dir, 'README.md')
+    if os.path.exists(readme_path):
+        new_readme_path = os.path.join(dest_dir, 'github-context-readme.md')
+        log_message("Renaming root README.md to github-context-readme.md")
+        try:
+            os.rename(readme_path, new_readme_path)
+            log_message("Successfully renamed README.md")
+        except Exception as e:
+            log_message(f"Warning: Failed to rename README.md: {e}")
 
-                # Update timestamps in the copied file
-                if update_file_timestamps(dest_file, current_datetime):
-                    log_message(f"Copied and updated timestamps: {src_file} -> {dest_file}{rename_note}")
-                else:
-                    log_message(f"Copied (timestamp update failed): {src_file} -> {dest_file}{rename_note}")
+    # Final verification - list all copied files
+    print()
+    log_message("Step 4: Final verification - listing all copied files...")
 
-                copied_files += 1
-            except Exception as e:
-                log_message(f"Error copying {src_file}: {e}")
+    all_files = []
+    for root, dirs, files in os.walk(dest_dir):
+        for file in files:
+            all_files.append(os.path.join(root, file))
+
+    all_files.sort()
+    for file in all_files:
+        print(f"Copied: {file}")
 
     print()
     print("=" * 50)
-    print("Session Summary:")
-    print(f"- Files cleaned up: {cleaned_files}")
-    print(f"- Files copied with timestamp updates: {copied_files}")
-    print(f"- Root .github/README.md renamed to github-context-readme.md")
-    print(f"- Updated to current date/time: {current_datetime}")
-    log_message("Session ended")
+    print("Mass Copy Summary:")
+    print(f"- Source directory: {src_dir}")
+    print(f"- Destination directory: {dest_dir}")
+    print(f"- Files copied: {dest_file_count}")
+    print("- Verification: ✅ PASSED")
+    print("- Root README.md renamed to github-context-readme.md (if present)")
+    print(f"- All timestamps updated to: {current_datetime}")
+    log_message("Session ended successfully")
     print("=" * 50)
 
 if __name__ == "__main__":

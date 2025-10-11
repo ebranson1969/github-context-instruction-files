@@ -1,94 +1,49 @@
 @echo off
-REM CMD script to delete .github files from .github.
-REM Simple cleanup script to remove previously copied files.
+REM CMD script to delete the .github folder and all its contents from project root.
+REM Simple cleanup script to remove the entire .github directory.
 
 setlocal enabledelayedexpansion
 
 echo ========================================
-echo Delete GitHub Files - CMD Version
+echo Delete GitHub Folder - CMD Version
 echo ========================================
 echo Session started: %date% %time%
 
-set "src_dir=.github\.github"
-set "dest_dir=.github"
+set "github_dir=.github"
 
-if not exist "%src_dir%" (
-    echo Warning: %src_dir% directory not found
-    echo Cannot determine which files to delete
+if not exist "%github_dir%" (
+    echo Warning: %github_dir% directory not found
+    echo Nothing to delete
     echo Session ended: %date% %time%
-    exit /b 1
+    exit /b 0
 )
 
-REM Delete copied files from .github
+REM Delete the entire .github directory
 echo.
-echo Deleting copied files from .github directory...
+echo Deleting .github directory and all its contents...
 
-set deleted_files=0
-
-REM Delete the specially renamed README file
-if exist ".\github-context-readme.md" (
-    del /Q ".\github-context-readme.md" >nul 2>&1
-    if !errorlevel! equ 0 (
-        echo Deleted: .\github-context-readme.md
-        set /a deleted_files+=1
+rmdir /S /Q "%github_dir%" >nul 2>&1
+if !errorlevel! equ 0 (
+    REM Verify deletion was successful
+    if not exist "%github_dir%" (
+        echo Successfully deleted: %github_dir%
+        echo Deleted: %github_dir% ^(entire directory^)
     ) else (
-        echo Warning: Could not delete .\github-context-readme.md
+        echo Error: %github_dir% directory still exists after deletion attempt
+        echo Session ended with error: %date% %time%
+        exit /b 1
     )
-)
-
-REM Delete other files from .github
-for /r "%src_dir%" %%F in (*) do (
-    set "src_file=%%F"
-    set "full_path=%%F"
-    set "filename=%%~nxF"
-    set "src_parent_dir=%%~dpF"
-
-    REM Only skip the root .github/README.md file (not subdirectory README.md files)
-    set "skip_file=false"
-    if /i "!filename!"=="README.md" (
-        REM Check if this is the root .github/README.md
-        set "expected_path=%cd%\%src_dir%\"
-        if "!src_parent_dir!"=="!expected_path!" (
-            set "skip_file=true"
-        )
-    )
-
-    if "!skip_file!"=="false" (
-        REM Calculate relative path by removing source directory prefix
-        set "rel_path=!full_path:%cd%\%src_dir%\=!"
-        set "dest_file=%dest_dir%\!rel_path!"
-
-        REM Delete existing file if it exists
-        if exist "!dest_file!" (
-            del /Q "!dest_file!" >nul 2>&1
-            if !errorlevel! equ 0 (
-                echo Deleted: !dest_file!
-                set /a deleted_files+=1
-            ) else (
-                echo Warning: Could not delete !dest_file!
-            )
-        )
-    )
-)
-
-REM Delete empty directories that might have been created from previous copies
-for /d %%D in (instructions prompts) do (
-    if exist "%%D" (
-        echo Removing directory: %%D
-        rmdir /S /Q "%%D" >nul 2>&1
-        if !errorlevel! equ 0 (
-            echo Successfully removed directory: %%D
-        ) else (
-            echo Warning: Could not remove directory: %%D
-        )
-    )
+) else (
+    echo Error: Could not delete %github_dir%
+    echo Session ended with error: %date% %time%
+    exit /b 1
 )
 
 echo.
 echo ========================================
 echo Deletion Summary:
-echo - Files deleted: !deleted_files!
-echo - Session ended: %date% %time%
+echo - Deleted entire .github directory and all contents
+echo Session ended: %date% %time%
 echo ========================================
 
 endlocal

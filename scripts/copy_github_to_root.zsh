@@ -27,7 +27,7 @@ echo "File Copy Script - Zsh Version"
 echo "=================================================="
 log_message "Session started"
 
-src_dir=".github/.github"
+src_dir="github/.github"
 dest_dir=".github"
 
 # Get current datetime
@@ -42,51 +42,31 @@ fi
 
 # Step 1: Clean up existing copied files and directories
 echo
-log_message "Step 1: Cleaning up existing copied files and directories..."
+log_message "Step 1: Cleaning up existing .github directory..."
 
 cleaned_files=0
 
-# Clean up the specially renamed README file
-if [[ -f "$dest_dir/github-context-readme.md" ]]; then
-    if rm -f "$dest_dir/github-context-readme.md"; then
-        echo "Deleted: $dest_dir/github-context-readme.md"
-        ((cleaned_files++))
+# Delete the entire .github directory if it exists
+if [[ -d ".github" ]]; then
+    log_message "Deleting .github directory and all its contents..."
+    if rm -rf ".github"; then
+        # Verify deletion was successful
+        if [[ ! -d ".github" ]]; then
+            log_message "Successfully deleted: .github (entire directory)"
+            cleaned_files=1
+        else
+            log_message "Error: .github directory still exists after deletion attempt"
+            exit 1
+        fi
     else
-        log_message "Warning: Could not delete $dest_dir/github-context-readme.md"
+        log_message "Error: Could not delete .github directory"
+        exit 1
     fi
+else
+    log_message "No .github directory found to delete"
 fi
 
-# Clean up other files from .github (skip README.md as it gets renamed)
-find $src_dir -type f | while IFS= read -r src_file; do
-    filename=$(basename "$src_file")
-
-    # Skip the .github/README.md file as it gets renamed
-    if [[ "$filename" != "README.md" ]] || [[ "$(dirname "$src_file")" != "$src_dir" ]]; then
-        # Calculate relative path
-        rel_path="${src_file#$src_dir/}"
-        dest_file="$dest_dir/$rel_path"
-
-        # Delete existing file if it exists
-        if [[ -f "$dest_file" ]]; then
-            if rm -f "$dest_file"; then
-                echo "Deleted: $dest_file"
-                ((cleaned_files++))
-            else
-                log_message "Warning: Could not delete $dest_file"
-            fi
-        fi
-    fi
-done
-
-# Clean up directories that might have been created from previous copies
-for dir_name in "instructions" "prompts"; do
-    if [[ -d "$dest_dir/$dir_name" ]]; then
-        log_message "Removing directory: $dest_dir/$dir_name"
-        rm -rf "$dest_dir/$dir_name"
-    fi
-done
-
-log_message "Cleaned up existing files and directories"
+log_message "Cleanup completed"
 
 # Step 2: Copy files from .github to project root with timestamp updates
 echo

@@ -1,6 +1,6 @@
 #!/bin/bash
-# Bash script to delete .github files from .github.
-# Simple cleanup script to remove previously copied files.
+# Bash script to delete the .github folder and all its contents from project root.
+# Simple cleanup script to remove the entire .github directory.
 
 set -e
 
@@ -9,73 +9,40 @@ log_message() {
 }
 
 echo "=================================================="
-echo "Delete GitHub Files - Bash Version"
+echo "Delete GitHub Folder - Bash Version"
 echo "=================================================="
 log_message "Session started"
 
-src_dir=".github/.github"
-dest_dir=".github"
+github_dir=".github"
 
-if [ ! -d "$src_dir" ]; then
-    log_message "Warning: $src_dir directory not found"
-    log_message "Cannot determine which files to delete"
+if [ ! -d "$github_dir" ]; then
+    log_message "Warning: $github_dir directory not found"
+    log_message "Nothing to delete"
     log_message "Session ended"
+    exit 0
+fi
+
+# Delete the entire .github directory
+echo
+log_message "Deleting .github directory and all its contents..."
+
+if rm -rf "$github_dir"; then
+    # Verify deletion was successful
+    if [ ! -d "$github_dir" ]; then
+        log_message "Successfully deleted: $github_dir"
+        echo "Deleted: $github_dir (entire directory)"
+    else
+        log_message "Error: $github_dir directory still exists after deletion attempt"
+        exit 1
+    fi
+else
+    log_message "Error: Could not delete $github_dir"
     exit 1
 fi
-
-# Delete copied files from .github
-echo
-log_message "Deleting copied files from .github directory..."
-
-deleted_files=0
-
-# Delete the specially renamed README file
-if [ -f "$dest_dir/github-context-readme.md" ]; then
-    if rm -f "$dest_dir/github-context-readme.md"; then
-        echo "Deleted: $dest_dir/github-context-readme.md"
-        ((deleted_files++))
-    else
-        log_message "Warning: Could not delete $dest_dir/github-context-readme.md"
-    fi
-fi
-
-# Delete other files from .github (skip README.md as it gets renamed)
-find "$src_dir" -type f | while IFS= read -r src_file; do
-    filename=$(basename "$src_file")
-
-    # Skip the .github/README.md file as it gets renamed
-    if [ "$filename" != "README.md" ] || [ "$(dirname "$src_file")" != "$src_dir" ]; then
-        # Calculate relative path
-        rel_path="${src_file#$src_dir/}"
-        dest_file="$dest_dir/$rel_path"
-
-        # Delete existing file if it exists
-        if [ -f "$dest_file" ]; then
-            if rm -f "$dest_file"; then
-                echo "Deleted: $dest_file"
-                ((deleted_files++))
-            else
-                log_message "Warning: Could not delete $dest_file"
-            fi
-        fi
-    fi
-done
-
-# Delete directories that might have been created from previous copies
-for dir_name in "instructions" "prompts"; do
-    if [ -d "$dest_dir/$dir_name" ]; then
-        log_message "Removing directory: $dest_dir/$dir_name"
-        if rm -rf "$dest_dir/$dir_name"; then
-            log_message "Successfully removed directory: $dest_dir/$dir_name"
-        else
-            log_message "Warning: Could not remove directory: $dest_dir/$dir_name"
-        fi
-    fi
-done
 
 echo
 echo "=================================================="
 echo "Deletion Summary:"
-echo "- Files deleted from project root"
+echo "- Deleted entire .github directory and all contents"
 log_message "Session ended"
 echo "=================================================="

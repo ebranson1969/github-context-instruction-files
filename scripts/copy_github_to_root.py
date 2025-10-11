@@ -36,9 +36,9 @@ def copy_files():
     print("=" * 50)
     log_message("Session started")
 
-    src_dir = os.path.join('.github', '.github')
-    dest_dir = '.'
-    
+    src_dir = os.path.join('github', '.github')
+    dest_dir = '.github'
+
     # Get current datetime
     current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     log_message(f"Current date/time for updates: {current_datetime}")
@@ -50,55 +50,29 @@ def copy_files():
 
     # Step 1: Clean up existing copied files
     print()
-    log_message("Step 1: Cleaning up existing copied files and directories...")
+    log_message("Step 1: Cleaning up existing .github directory...")
 
     cleaned_files = 0
 
-    # Clean up the specially renamed README file
-    github_readme_dest = os.path.join(dest_dir, 'github-context-readme.md')
-    if os.path.exists(github_readme_dest):
+    # Delete the entire .github directory if it exists
+    if os.path.exists('.github'):
+        log_message("Deleting .github directory and all its contents...")
         try:
-            os.remove(github_readme_dest)
-            log_message(f"Deleted: {github_readme_dest}")
-            cleaned_files += 1
+            shutil.rmtree('.github')
+            # Verify deletion was successful
+            if not os.path.exists('.github'):
+                log_message("Successfully deleted: .github (entire directory)")
+                cleaned_files = 1
+            else:
+                log_message("Error: .github directory still exists after deletion attempt")
+                sys.exit(1)
         except Exception as e:
-            log_message(f"Warning: Could not delete {github_readme_dest}: {e}")
+            log_message(f"Error: Could not delete .github directory: {e}")
+            sys.exit(1)
+    else:
+        log_message("No .github directory found to delete")
 
-    # Clean up other files from .github
-    for root, dirs, files in os.walk(src_dir):
-        rel_path = os.path.relpath(root, src_dir)
-
-        if rel_path == '.':
-            target_dir = dest_dir
-        else:
-            target_dir = os.path.join(dest_dir, rel_path)
-
-        # Delete existing files (skip only the root README.md)
-        for file in files:
-            # Only skip the root .github/README.md file
-            if file.lower() == 'readme.md' and rel_path == '.':
-                continue  # Skip the root .github/README.md file
-
-            dest_file = os.path.join(target_dir, file)
-            if os.path.exists(dest_file):
-                try:
-                    os.remove(dest_file)
-                    log_message(f"Deleted: {dest_file}")
-                    cleaned_files += 1
-                except Exception as e:
-                    log_message(f"Warning: Could not delete {dest_file}: {e}")
-
-    # Clean up directories that might have been created from previous copies
-    for dir_name in ['instructions', 'prompts']:
-        dir_path = os.path.join(dest_dir, dir_name)
-        if os.path.exists(dir_path) and os.path.isdir(dir_path):
-            try:
-                shutil.rmtree(dir_path)
-                log_message(f"Removed directory: {dir_path}")
-            except Exception as e:
-                log_message(f"Warning: Could not remove directory {dir_path}: {e}")
-
-    log_message(f"Cleaned up {cleaned_files} files and directories")
+    log_message(f"Cleanup completed")
 
     # Step 2: Copy files from .github to project root with timestamp updates
     print()

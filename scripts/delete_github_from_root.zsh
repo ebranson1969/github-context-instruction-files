@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Zsh script to delete .github files from project root.
+# Zsh script to delete .github files from .github.
 # Simple cleanup script to remove previously copied files.
 
 set -e
@@ -13,8 +13,8 @@ echo "Delete GitHub Files - Zsh Version"
 echo "=================================================="
 log_message "Session started"
 
-src_dir=".github"
-dest_dir="."
+src_dir=".github/.github"
+dest_dir=".github"
 
 if [[ ! -d "$src_dir" ]]; then
     log_message "Warning: $src_dir directory not found"

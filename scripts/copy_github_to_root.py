@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Python script to copy .github files to project root.
+Python script to copy .github files from .github/.github to .github.
 Simple file copying without git operations, with cleanup of existing files and timestamp updates.
 """
 import os
@@ -36,7 +36,7 @@ def copy_files():
     print("=" * 50)
     log_message("Session started")
 
-    src_dir = '.github'
+    src_dir = os.path.join('.github', '.github')
     dest_dir = '.'
     
     # Get current datetime

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Python script to delete .github files from project root.
+Python script to delete .github files from .github.
 Simple cleanup script to remove previously copied files.
 """
 import os
@@ -18,8 +18,8 @@ def delete_files():
     print("=" * 50)
     log_message("Session started")
 
-    src_dir = '.github'
-    dest_dir = '.'
+    src_dir = os.path.join('.github', '.github')
+    dest_dir = '.github'
 
     if not os.path.exists(src_dir):
         log_message(f"Warning: {src_dir} directory not found")

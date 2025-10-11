@@ -1,5 +1,5 @@
 @echo off
-REM CMD script to delete .github files from project root.
+REM CMD script to delete .github files from .github.
 REM Simple cleanup script to remove previously copied files.
 
 setlocal enabledelayedexpansion
@@ -9,8 +9,8 @@ echo Delete GitHub Files - CMD Version
 echo ========================================
 echo Session started: %date% %time%
 
-set "src_dir=.github"
-set "dest_dir=."
+set "src_dir=.github\.github"
+set "dest_dir=.github"
 
 if not exist "%src_dir%" (
     echo Warning: %src_dir% directory not found

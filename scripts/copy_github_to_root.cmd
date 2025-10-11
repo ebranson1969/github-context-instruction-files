@@ -1,5 +1,5 @@
 @echo off
-REM CMD script to copy .github files to project root.
+REM CMD script to copy .github files from .github\.github to .github.
 REM Simple file copying without git operations, with cleanup of existing files and timestamp updates.
 
 setlocal enabledelayedexpansion
@@ -9,8 +9,8 @@ echo File Copy Script - CMD Version
 echo ========================================
 echo Session started: %date% %time%
 
-set "src_dir=.github"
-set "dest_dir=."
+set "src_dir=.github\.github"
+set "dest_dir=.github"
 
 if not exist "%src_dir%" (
     echo Error: %src_dir% directory not found
@@ -33,27 +33,27 @@ echo Step 1: Cleaning up existing copied files and directories...
 set cleaned_files=0
 
 REM Clean up the specially renamed README file
-if exist ".\github-context-readme.md" (
-    del /Q ".\github-context-readme.md" >nul 2>&1
+if exist "%dest_dir%\github-context-readme.md" (
+    del /Q "%dest_dir%\github-context-readme.md" >nul 2>&1
     if !errorlevel! equ 0 (
-        echo Deleted: .\github-context-readme.md
+        echo Deleted: %dest_dir%\github-context-readme.md
         set /a cleaned_files+=1
     ) else (
-        echo Warning: Could not delete .\github-context-readme.md
+        echo Warning: Could not delete %dest_dir%\github-context-readme.md
     )
 )
 
-REM Clean up other files from .github
+REM Clean up other files from .github\.github
 for /r "%src_dir%" %%F in (*) do (
     set "src_file=%%F"
     set "full_path=%%F"
     set "filename=%%~nxF"
     set "src_parent_dir=%%~dpF"
 
-    REM Only skip the root .github/README.md file (not subdirectory README.md files)
+    REM Only skip the root .github\.github/README.md file (not subdirectory README.md files)
     set "skip_file=false"
     if /i "!filename!"=="README.md" (
-        REM Check if this is the root .github/README.md
+        REM Check if this is the root .github\.github/README.md
         set "expected_path=%cd%\%src_dir%\"
         if "!src_parent_dir!"=="!expected_path!" (
             set "skip_file=true"
@@ -80,17 +80,17 @@ for /r "%src_dir%" %%F in (*) do (
 
 REM Clean up empty directories that might have been created from previous copies
 for /d %%D in (instructions prompts) do (
-    if exist "%%D" (
-        echo Removing directory: %%D
-        rmdir /S /Q "%%D" >nul 2>&1
+    if exist "%dest_dir%\%%D" (
+        echo Removing directory: %dest_dir%\%%D
+        rmdir /S /Q "%dest_dir%\%%D" >nul 2>&1
     )
 )
 
 echo Cleaned up %cleaned_files% files and directories
 
-REM Step 2: Copy files from .github to project root with timestamp updates
+REM Step 2: Copy files from .github\.github to .github with timestamp updates
 echo.
-echo Step 2: Copying files from .github to project root with timestamp updates...
+echo Step 2: Copying files from .github\.github to .github with timestamp updates...
 
 set copied_files=0
 for /r "%src_dir%" %%F in (*) do (
@@ -99,10 +99,10 @@ for /r "%src_dir%" %%F in (*) do (
     set "filename=%%~nxF"
     set "src_parent_dir=%%~dpF"
 
-    REM Handle only the root .github/README.md specially
+    REM Handle only the root .github\.github/README.md specially
     set "is_root_readme=false"
     if /i "!filename!"=="README.md" (
-        REM Check if this is the root .github/README.md
+        REM Check if this is the root .github\.github/README.md
         set "expected_path=%cd%\%src_dir%\"
         if "!src_parent_dir!"=="!expected_path!" (
             set "is_root_readme=true"
@@ -154,7 +154,7 @@ echo ========================================
 echo Session Summary:
 echo - Files cleaned up: !cleaned_files!
 echo - Files copied with timestamp updates: !copied_files!
-echo - Root .github/README.md renamed to github-context-readme.md
+echo - Root .github\.github/README.md renamed to github-context-readme.md
 echo - Updated to current date/time: %current_datetime%
 echo - Session ended: %date% %time%
 echo ========================================

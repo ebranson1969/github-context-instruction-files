@@ -1,5 +1,5 @@
 #!/bin/bash
-# Bash script to copy .github files to project root.
+# Bash script to copy .github files from .github/.github to .github.
 # Simple file copying without git operations, with cleanup of existing files and timestamp updates.
 
 set -e
@@ -27,8 +27,8 @@ echo "File Copy Script - Bash Version"
 echo "=================================================="
 log_message "Session started"
 
-src_dir=".github"
-dest_dir="."
+src_dir=".github/.github"
+dest_dir=".github"
 
 # Get current datetime
 current_datetime=$(date '+%Y-%m-%d %H:%M:%S')
